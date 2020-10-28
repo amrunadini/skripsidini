@@ -54,6 +54,17 @@ class C_siswa extends CI_Controller
 	public function entitas(){
 		$this->load->view('V_entitas');
 	}
+	public function entitas1(){
+		echo $_POST["kolom1"];
+		echo "<br>";
+		echo $_POST["kolom2"];
+		echo "<br>";
+		echo $_POST["kolom3"];
+		echo "<br>";
+		echo $_POST["kolom4"];
+		echo "<br>";
+		echo $_POST["kolom5"];
+	}
 
 	public function atribut(){
 		$this->load->view('V_atribut');
