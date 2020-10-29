@@ -102,72 +102,28 @@
                   <div class="validate"></div>
                 </div>
             </div>
-            <!-- <div class="row" data-aos="fade-up" data-aos-delay="300">
-              <p>Masukkan hasil observasi sesuai kategori</p>
-            </div>
-            <div class="container" data-aos="fade-up" data-aos-delay="300">
-              <div class="row">
-                <label class="control-label" for="ourField">Entitas</label>
-              </div>
-            </div>
-            <div class="container" data-aos="fade-up" data-aos-delay="300">
-              <form role="form">
-                  <div id="myRepeatingFields">
-                    <div class="entry input-group col-lg-3">
-                      <input class="form-control" name="fields[]" type="text" placeholder="Masukkan disini" />
-                      <span class="input-group-btn">
-                        <button type="button" class="btn btn-success btn-lg btn-add">
-                          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        </button>
-                      </span>
-                    </div>
-                  </div> 
-                </form>
-                <br>
-                <small>Tekan <span class="glyphicon glyphicon-plus gs"></span> untuk menambah form</small>
-            </div>
-            <script>
-              $(function()
-              {
-                $(document).on('click', '.btn-add', function(e)
-                {
-                  e.preventDefault();
-                  var controlForm = $('#myRepeatingFields:first'),
-                  currentEntry = $(this).parents('.entry:first'),
-                  newEntry = $(currentEntry.clone()).appendTo(controlForm);
-                  newEntry.find('input').val('');
-                  controlForm.find('.entry:not(:last) .btn-add')
-                  .removeClass('btn-add').addClass('btn-remove')
-                  .removeClass('btn-success').addClass('btn-danger')
-                  .html('<span class="glyphicon glyphicon-minus"></span>');
-                }).on('click', '.btn-remove', function(e)
-                {
-                  e.preventDefault();
-                  $(this).parents('.entry:first').remove();
-                  return false;
-                });
-              });
-            </script> -->
-            <!-- <div class="row" data-aos="fade-up" data-aos-delay="300">
+            
+            <div class="row" data-aos="fade-up" data-aos-delay="300">
               <p>Unggah hasil observasi</p>
             </div>
             <div class="content" data-aos="fade-up" data-aos-delay="300">
               <div class="col-md-10">
-                <div class="content table-responsive table-full-width"> -->
-                  <!-- <?php echo form_open_multipart('C_siswa/tugas');?> -->
-                  <!-- <input type="file" id="files" name="userfile" multiple="multiple" />&nbsp;
+                <div class="content table-responsive table-full-width">
+                  <input type="file" id="files" name="userfile" multiple="multiple" />&nbsp;
+                  <br>
+                  <input type="submit" value="Upload" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">
                 </div>
               </div>
-            </div> -->
+            </div>
             <!-- <div class="mb-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Tugas berhasil dikumpulkan.</div>
             </div> -->
-            <div data-aos="zoom-in">
+            <!-- <div data-aos="zoom-in">
               <br>
-              <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">Upload</button>     
-            </div>
+                <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">Upload</button>
+            </div> -->
             <!-- <div class="text-center" data-aos-delay="300">
               <button type="submit">Upload</button>
             </div> -->
