@@ -62,5 +62,42 @@ class C_guru extends CI_Controller
 		$data['datauser'] = $this->M_guru->selectjawabanTugas()->result();
 		$this->load->view('V_jawtugas', $data);
 	}
+
+	public function edit($id){
+		$where = array('id_siswa' => $id);
+		$this->load->Model('M_guru');
+		$data['siswa'] = $this->M_guru->edit_data($where, 'siswa')->result();
+		$this->load->view('V_editsiswa', $data);
+	}
+
+	public function update(){
+		$id = $this->input->post('id_siswa');
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$kelompok = $this->input->post('kelompok');
+
+		$data = array(
+			'nama' => $nama, 
+			'email' => $email,
+			'kelompok' => $kelompok
+		);
+
+		$where = array(
+			'id_siswa' => $id
+		);
+
+		$this->load->Model('M_guru');
+		$this->M_guru->update_data($where,$data,'siswa');
+		redirect('C_guru/tampil_siswa');
+	}
+
+	public function delete($id){
+		$where = array('id_siswa' => $id);
+		$this->load->Model('M_guru');
+		$this->M_guru->delete($where,'siswa');
+
+		//membuka kembali controller C_mahasiswa
+		redirect(site_url('C_guru/tampil_siswa'));
+	}
 }
 ?>

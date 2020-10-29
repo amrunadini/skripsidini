@@ -42,6 +42,21 @@ class M_guru extends CI_model
 
 		return $this->db->get();
 	}
+
+	function edit_data($where,$siswa){
+		return $this->db->get_where($siswa,$where);
+	}
+
+	function update_data($where,$data,$siswa){
+		// $this->db->set($data);
+		$this->db->where($where);
+		$this->db->update($siswa, $data);
+	}
+
+	function delete($where,$siswa){
+		$this->db->where($where);
+		$this->db->delete($siswa);
+	}
 }
 
 ?>

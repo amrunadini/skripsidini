@@ -56,46 +56,45 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Data Siswa</h2>
+          <h2>Edit Data Siswa</h2>
         </div>
-
-              <table id="example1" class="table table-bordered table-hover" border="1px">
-                <thead class="danger">
-                  <tr class="danger">
-                    <th style="text-align: center;">NAMA</th>
-                    <th style="text-align: center;">E-MAIL</th>
-                    <th style="text-align: center;">KELOMPOK</th>
-                    <th colspan="2" style="text-align: center;">AKSI</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                    foreach ($datauser as $key) { 
-                  ?>
-                  <tr>
-                    <th style="text-align: center;"><?php echo $key->nama; ?></th>
-                    <th style="text-align: center;"><?php echo $key->email; ?></th>
-                    <th style="text-align: center;"><?php echo $key->kelompok; ?></th>
-                    <th style="text-align: center;">
-                      <a href="<?php echo site_url('C_guru/edit/'.($key->id_siswa)); ?>">EDIT</a>
-                    </th>
-                    <th style="text-align: center;">
-                      <a href="<?php echo site_url('C_guru/delete/'.($key->id_siswa)); ?>">DELETE</a>
-                    </th>
-                  </tr>
-                  <?php
-                    }
-                  ?>
-                </tbody>
-              </table>
-              <div data-aos="zoom-in">
-              <br>
-              <a href="<?php echo base_url(); ?>index.php/C_guru/guru">Kembali</a>
-              </div>
-
+        
+        <?php
+            foreach ($siswa as $u) {
+        ?>
+        <form action="<?php echo base_url().'C_guru/update'; ?>" method="POST">
+          <table id="example1" class="table table-bordered table-hover" border="1px">
+            <tr>
+              <td>Nama</td>
+              <td>
+                <input type="hidden" name="id" value="<?php echo $u->id_siswa ?>">
+                <input type="text" name="nama" value="<?php echo $u->nama ?>">
+              </td>
+            </tr>
+            <tr>
+              <td>E-mail</td>
+              <td><input type="text" name="email" value="<?php echo $u->email ?>"></td>
+            </tr>
+            <tr>
+              <td>Kelompok</td>
+              <td><input type="text" name="kelompok" value="<?php echo $u->kelompok ?>"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="submit" value="Simpan"></td>
+            </tr>
+          </table>
+        </form>
+        <?php
+          }
+        ?>
+        <br>
+        <div data-aos="zoom-in">
+          <br>
+          <button style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;"><a href="<?php echo base_url(); ?>index.php/C_guru/tampil_siswa">Kembali</a></button>
+        </div>
       </div>
     </section><!-- End Pricing Section -->
-
 
   <main id="main">
   </main><!-- End #main -->
