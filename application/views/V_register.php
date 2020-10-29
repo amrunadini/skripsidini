@@ -1,59 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/home.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/vendor/animate/animate.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/util.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+    
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+                <?php
+                    $errors = $this->session->flashdata('errors');
+                    if(!empty($errors)){
+                ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php foreach($errors as $key=>$error){ ?>
+                            <?php echo "$error<br>"; ?>
+                                s<?php } ?>
+                        <div class="alert alert-danger text-center">
+                        </div>
+                    </div>
+                </div>
+                    <?php } ?>
+                <form method="POST" action="<?php echo site_url('C_login/proses_register'); ?>">
+                    <span class="login100-form-title p-b-33">
+                        Register
+                    </span>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" required="" name="nama" id="nama" placeholder="Nama">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
 
-    <title>Register</title>
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" required="" name="email" id="email" placeholder="Email">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
 
-    <link href="<?php echo base_url(); ?>assets/css/bootstrap-theme.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="col-lg-8 col-lg-offset-2">
-      <h1>Register Page</h1>
-      <p>Fill in the details to register on the website!</p>
+                    <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" required="" name="password" id="password" placeholder="Password">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
 
-      <?php if(isset($_SESSION['success'])){ ?>
-          <div class="alert alert-success"> <?php echo $_SESSION['success'];?></div>
-      <?php 
-      }?>
-      <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
-      <form action="" method="POST">
-        <div class="form-group">
-          <label for="name" class="label-default">Name:</label>
-          <input class="form-control" name="name" id="name" type="text">
+                    <div class="container-login100-form-btn m-t-20">
+                        <button class="login100-form-btn">
+                            Sign Up
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <div class="form-group">
-          <label for="email" class="label-default">Email:</label>
-          <input class="form-control" name="email" id="email" type="text">
-        </div>
-
-        <div class="form-group">
-          <label for="password" class="label-default">Password:</label>
-          <input class="form-control" name="password" id="password" type="password">
-        </div>
-
-        <div class="form-group">
-          <label for="password" class="label-default">Confirm Password:</label>
-          <input class="form-control" name="password2" id="password" type="password">
-        </div>
-
-        <div>
-          <button class="btn btn-primary" name="register">Register</button>
-        </div>
-      </form>
-        
     </div>
+    
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+    
+<!--===============================================================================================-->
+    <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+    <script src="<?php echo base_url(); ?>assets/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+    <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/popper.js"></script>
+    <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+    <script src="<?php echo base_url(); ?>assets/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+    <script src="<?php echo base_url(); ?>assets/vendor/daterangepicker/moment.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+    <script src="<?php echo base_url(); ?>assets/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+    <script src="<?php echo base_url(); ?>assets/js/mainn.js"></script>
+
+</body>
 </html>

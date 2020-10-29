@@ -43,30 +43,42 @@ class C_login extends CI_Controller
 			redirect('C_login');
 	}}
 
-	// public function register()
-	// {
-	// 	if (isset($_POST['register'])) {
-	// 		$this->form_validation->set_rules('name', 'Name', 'required');
-	// 		$this->form_validation->set_rules('email', 'Email', 'required');
-	// 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
-	// 		$this->form_validation->set_rules('password', 'Confirm Password', 'required|min_length[8]|matches[password]');
+	public function register()
+	{
+		$this->load->view('V_register');
+	}
 
-	// 		if ($this->form_validation->run() == TRUE) {
-	// 			echo 'Form Validated';
+	public function proses_register()
+	{
+		$this->load->library('form_validation');
+	    $this->load->library('session');
 
-	// 			$data = array(
-	// 				'name' => $_POST['name'],
-	// 				'email' => $_POST['email'],
-	// 				'password' => md5($_POST['password']),
-	// 			);	
-	// 			$this->db->insert('siswa', $data);
-
-	// 			$this->session->set_flashdata("success", "Your account has been registered. You can login now");
-	// 			redirect("C_login/register", "refresh");
-	// 		}
-	// 	}
-	// 	$this->load->view('V_register');
-	// }
+    	$this->form_validation->set_rules('nama', 'Nama', 'required');
+    	$this->form_validation->set_rules('email', 'Email', 'required');
+    	$this->form_validation->set_rules('password', 'Password', 'required');
+    
+	    if ($this->form_validation->run() == FALSE) {
+	        $errors = $this->form_validation->error_array();
+	        $this->session->set_flashdata('errors', $errors);
+	        $this->session->set_flashdata('input', $this->input->post());
+	        redirect('C_login/register');
+	    } else {
+	        $email = $this->input->post('email');
+	        $nama = $this->input->post('nama');
+	        $password = $this->input->post('password');
+	        // $pass = password_hash($password, PASSWORD_DEFAULT);
+	        $data = [
+	            'email' => $email,
+	            'nama' => $nama,
+	            'password' => $password
+	        ];
+	        $this->load->model('M_login');
+	        $insert = $this->M_login->register("siswa", $data);
+	        if($insert){
+	            echo '<script>alert("Sukses! Anda berhasil melakukan register. Silahkan login untuk mengakses data.");window.location.href="'.base_url('C_login/index').'";</script>';
+	        }
+	    }
+	}
 
 	public function logout(){
 		unset($_SESSION);

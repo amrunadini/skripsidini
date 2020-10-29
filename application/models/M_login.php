@@ -18,6 +18,11 @@ class M_login extends CI_Model
 		}
 	}
 
+	public function register($siswa, $data)
+	{
+    	return $this->db->insert($siswa, $data);
+	}
+
 	public function selectByUsername($email){
 		$this->db->select('*');
 		$this->db->from('siswa');
