@@ -87,21 +87,43 @@
                 <thead class="danger">
                   <tr>
                     <th style="text-align: center;">Materi</th>
+                    
+                    <!-- <tr style="text-align: center;"><?php echo $key->materi; ?></tr> -->
+                   
+                    
                     <th style="text-align: center;">Nilai</th>
                   </tr>
                 </thead>
                 <!-- <tbody>
                   <?php
-                    foreach ($datauser as $key) { 
+                    // foreach ($datauser as $key) { 
                   ?>
                   <tr>
                     <th style="text-align: center;"><?php echo $key->tanggal; ?></th>
                     <th style="text-align: center;"><?php echo $key->nilai; ?></th>
                   </tr>
                   <?php
-                    }
+                    // }
                   ?>
                 </tbody> -->
+
+                    <?php
+                    foreach ($materi as $key) { 
+                      $nilai = 0;
+                      foreach ($nilai_materi as $kiy) {
+                        if($kiy->id_materi == $key->id_materi){
+                          $nilai = $kiy->nilai;
+                        }
+                      }
+                    ?>
+                    <tr>
+                      <th style="text-align: center;"><?php echo $key->materi; ?></th>
+                      <th style="text-align: center;"><?php echo $nilai ?></th>
+                    </tr>
+                    <?php
+                    }
+                    // print_r($nilai_materi);
+                    ?>
               </table>
             </div>
           </div>

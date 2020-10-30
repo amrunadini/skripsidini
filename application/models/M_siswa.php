@@ -25,6 +25,10 @@
 			return $this->db->get();
 		}
 
+		function cari_nilai($where,$db){
+			return $this->db->get_where($db,$where);
+		}
+
 		function selectById($id){
 			$this->db->select('*');
 			$this->db->from('soal_latihan');
