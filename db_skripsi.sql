@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2020 at 05:59 AM
+-- Generation Time: Oct 30, 2020 at 02:41 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -56,7 +56,19 @@ INSERT INTO `jawaban_latihan` (`id_jawabanlatihan`, `id_siswa`, `id_soal`, `jawa
 (5, 0, 2, '0'),
 (6, 2, 2, '0'),
 (7, 2, 2, 'Atribut'),
-(8, 2, 3, 'Relasi');
+(8, 2, 3, 'Relasi'),
+(9, 6, 2, 'Atribut'),
+(10, 6, 3, 'Relasi'),
+(11, 6, 2, 'Atribut'),
+(12, 6, 1, 'Entitas Relationship Diagram'),
+(13, 6, 1, 'Entitas Relationship Diagram'),
+(14, 6, 1, 'Entitas Relationship Diagram'),
+(15, 6, 1, 'Entitas Relationship Diagram'),
+(16, 6, 2, 'Atribut'),
+(17, 6, 2, 'Atribut'),
+(18, 6, 4, 'Satu anggota suatu entitas bisa berhubungan dengan banyak anggota dalam entitas lain'),
+(19, 8, 1, 'Entity Relationship Diagram'),
+(20, 9, 2, 'Atribut');
 
 -- --------------------------------------------------------
 
@@ -68,6 +80,8 @@ CREATE TABLE `jawaban_tugas` (
   `id_jawabantugas` int(11) NOT NULL,
   `id_siswa` int(11) NOT NULL,
   `jawaban` varchar(255) NOT NULL,
+  `file_name` varchar(100) NOT NULL,
+  `file_size` varchar(100) NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -75,16 +89,43 @@ CREATE TABLE `jawaban_tugas` (
 -- Dumping data for table `jawaban_tugas`
 --
 
-INSERT INTO `jawaban_tugas` (`id_jawabantugas`, `id_siswa`, `jawaban`, `tanggal`) VALUES
-(1, 0, 'Test 123', '2020-09-07'),
-(2, 2, 'dini hehehe', '2020-10-10'),
-(3, 2, 'test 123', '2020-10-10'),
-(4, 2, 'test lagi\r\n', '2020-10-10'),
-(5, 2, 'test lagi\r\n', '2020-10-10'),
-(6, 2, 'test lagi lagi bismillah', '2020-10-10'),
-(7, 2, 'bismillah', '2020-10-10'),
-(8, 2, '', '2020-10-22'),
-(9, 2, 'hahaha', '2020-10-23');
+INSERT INTO `jawaban_tugas` (`id_jawabantugas`, `id_siswa`, `jawaban`, `file_name`, `file_size`, `tanggal`) VALUES
+(1, 0, 'Test 123', '', '', '2020-09-07'),
+(2, 2, 'dini hehehe', '', '', '2020-10-10'),
+(3, 2, 'test 123', '', '', '2020-10-10'),
+(4, 2, 'test lagi\r\n', '', '', '2020-10-10'),
+(5, 2, 'test lagi\r\n', '', '', '2020-10-10'),
+(6, 2, 'test lagi lagi bismillah', '', '', '2020-10-10'),
+(7, 2, 'bismillah', '', '', '2020-10-10'),
+(8, 2, '', '', '', '2020-10-22'),
+(9, 2, 'hahaha', '', '', '2020-10-23'),
+(10, 7, '', '', '', '2020-10-26'),
+(11, 7, 'test', '', '', '2020-10-26'),
+(12, 2, 'test', '', '', '2020-10-26'),
+(13, 2, 'test', '', '', '2020-10-26'),
+(14, 2, 'test 123', '', '', '2020-10-26'),
+(15, 2, 'dini', '', '', '2020-10-26'),
+(16, 0, '', 'Presensi_Nilai.xlsx', '14.29', '0000-00-00'),
+(17, 0, '', 'ABSENSI_(Landscape).docx', '18.3', '0000-00-00'),
+(18, 0, '', 'ABSEN_BERDASARKAN_NAMA.docx', '20.95', '0000-00-00'),
+(19, 2, 'test', '', '', '2020-10-26'),
+(20, 0, '', 'EJAAN_BAHASA_INDONESIA.docx', '120.27', '0000-00-00'),
+(21, 0, '', 'TUGAS_SKRIPSI.docx', '26.65', '0000-00-00'),
+(22, 6, 'bismillah bismillah', 'Angka_dan_Bilangan.docx', '23.07', '2020-10-27'),
+(23, 7, 'test ya', 'BAB_II_Dini_Bimillah.docx', '386.97', '2020-10-28'),
+(24, 3, 'siswa ', '11a.png', '1.59', '2020-10-29'),
+(25, 8, 'observ', '142-419-1-PB_(1).pdf', '982.94', '2020-10-29'),
+(26, 3, 'test', '11a.png', '1.59', '2020-10-29'),
+(27, 6, 'bismillah', '20c.png', '6.38', '2020-10-29'),
+(28, 6, 'bismillah', '11a.png', '1.59', '2020-10-29'),
+(29, 3, 'dini', '8__kemagnetan.ppt', '1591', '2020-10-29'),
+(30, 3, 'bismillah', '1__fisum_(silabus_sains).ppt', '185.5', '2020-10-29'),
+(31, 3, 'ayo ayo bisa', '9__fisika_atom_inti.ppt', '2915.5', '2020-10-29'),
+(32, 9, 'bismillah ya ti', 'UTS_Pendidikan_Pancasila_dan_Kewarganegaraan.docx', '14.42', '2020-10-29'),
+(33, 3, 'bismillah', '', '', '2020-10-29'),
+(34, 3, 'bisa', '', '', '2020-10-29'),
+(35, 3, 'lagi', '', '', '2020-10-29'),
+(36, 3, 'pasti bisa sekarang mah', '', '', '2020-10-29');
 
 -- --------------------------------------------------------
 
@@ -133,7 +174,19 @@ INSERT INTO `nilai_latihan` (`id_nilailatihan`, `id_materi`, `id_siswa`, `nilai`
 (5, 2, 0, 20, '2020-07-03'),
 (6, 2, 2, 0, '2020-10-10'),
 (7, 2, 2, 20, '2020-10-10'),
-(8, 3, 2, 20, '2020-10-22');
+(8, 3, 2, 20, '2020-10-22'),
+(9, 2, 6, 20, '2020-10-27'),
+(10, 3, 6, 20, '2020-10-27'),
+(11, 2, 6, 20, '2020-10-27'),
+(12, 1, 6, 0, '0000-00-00'),
+(13, 1, 6, 0, '0000-00-00'),
+(14, 1, 6, 0, '0000-00-00'),
+(15, 1, 6, 0, '0000-00-00'),
+(16, 2, 6, 0, '0000-00-00'),
+(17, 2, 6, 20, '2020-10-27'),
+(18, 4, 6, 20, '2020-10-27'),
+(19, 1, 8, 20, '2020-10-29'),
+(20, 2, 9, 20, '2020-10-29');
 
 -- --------------------------------------------------------
 
@@ -157,15 +210,22 @@ CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `kelompok` char(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `siswa`
 --
 
-INSERT INTO `siswa` (`id_siswa`, `nama`, `email`, `password`) VALUES
-(2, 'Dini', 'nuramruna@gmail.com', 'dini123');
+INSERT INTO `siswa` (`id_siswa`, `nama`, `email`, `password`, `kelompok`) VALUES
+(3, 'Dini', 'nuramruna@gmail.com', 'dini123', '1'),
+(4, 'ajang', 'ajang@gmail.com', '$2y$10$byNfkWhoy2mbbILikF71qudc226D1zfkkpJ/wyD1hJC8K1pd6cetS', ''),
+(5, 'lilis', 'lilis@gmail.com', '$2y$10$9ZQaqV5LdJ6fBwJrNEOCKOTlqG5SvJkEQ/NW71zwtkyypZ1s60xiG', ''),
+(6, 'wartaka', 'wartaka@gmail.com', 'wartaka123', ''),
+(7, 'zulfah', 'zulfah@gmail.com', 'zulfah123', ''),
+(8, 'ijul', 'ijul@gmail.com', 'ijul123', ''),
+(9, 'tia', 'tia@gmail.com', 'tia123', '');
 
 -- --------------------------------------------------------
 
@@ -278,13 +338,13 @@ ALTER TABLE `jawaban_evaluasi`
 -- AUTO_INCREMENT for table `jawaban_latihan`
 --
 ALTER TABLE `jawaban_latihan`
-  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `jawaban_tugas`
 --
 ALTER TABLE `jawaban_tugas`
-  MODIFY `id_jawabantugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_jawabantugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `materi`
@@ -296,7 +356,7 @@ ALTER TABLE `materi`
 -- AUTO_INCREMENT for table `nilai_latihan`
 --
 ALTER TABLE `nilai_latihan`
-  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `nilai_tugas`
@@ -308,7 +368,7 @@ ALTER TABLE `nilai_tugas`
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `soal_evaluasi`

@@ -92,7 +92,7 @@
 
         <br>
         <table id="example1" class="table table-bordered table-hover" border="1px">
-          <form action="<?php echo site_url('C_siswa/insertjawabantug')?>" enctype="multipart/form-data" method="POST">
+          <form action="<?php echo site_url('C_siswa/insertjawabantugas')?>" enctype="multipart/form-data" method="POST">
             <div class="row" data-aos="fade-up" data-aos-delay="300">
               <p>Masukkan hasil observasi dalam bentuk deskriptif</p>
             </div>

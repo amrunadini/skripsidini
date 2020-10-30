@@ -134,37 +134,41 @@ class C_siswa extends CI_Controller
         redirect(site_url('C_siswa/latihan'));
 	}
 
-	public function insertjawabantug(){
-        $data['upload_path']		= 'upload/';
-        $data['allowed_types']	= 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc';
-        $data['max_size'] 		= '5000';
-        $data['overwrite']  		= TRUE;
-        $data['file_ext_tolower']	= TRUE;
-		$data['remove_spaces']		= TRUE;
-		$data['mod_mime_fix']		= TRUE;
-		$data['detect_mime']		= TRUE;
-		$this->load->library('upload', $data);
+	public function insertjawabantugas(){
+		$config['upload_path']		= 'upload/';
+        $config['allowed_types']	= 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc';
+        $config['max_size'] 		= '5000';
+        $config['overwrite']  		= TRUE;
+        $config['file_ext_tolower']	= TRUE;
+		$config['remove_spaces']	= TRUE;
+		$config['mod_mime_fix']		= TRUE;
+		$config['detect_mime']		= TRUE;
+		$this->load->library('upload', $config);
     
        	if ( ! $this->upload->do_upload('userfile')){
             $error = array('error' => $this->upload->display_errors());
             redirect(site_url('C_siswa'));
         }
         else{
-        	$data = $this->upload->data();
 	        $tanggal = date("Y-m-d");
 	        $data['tanggal'] = $tanggal;
 	        $data['jawaban'] = $this->input->post('jawaban');
 	        $data['id_siswa'] = $this->session->userdata('id_siswa');
-        	$data = array(
+        	$data = $this->upload->data();
+        	$query = array(
         		'tanggal' => $data['tanggal'],
         		'jawaban' => $data['jawaban'],
         		'id_siswa' => $data['id_siswa'],
         		'file_name' => $data['file_name'],
         		'file_size' => $data['file_size']
         	);
-        }             
+        	$this->M_upload->insert($query);
+        	redirect(site_url('C_siswa'));
+        }
+                       
         $this->load->Model('M_siswa');
         $this->M_siswa->insertjwb($data);
-        redirect(site_url('C_siswa'));         
-    }
+        redirect(site_url('C_siswa'));        
+    }     
+    
 }
