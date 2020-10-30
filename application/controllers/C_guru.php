@@ -71,7 +71,7 @@ class C_guru extends CI_Controller
 	}
 
 	public function update(){
-		$id = $this->input->post('id_siswa');
+		$id = $this->input->post('id');
 		$nama = $this->input->post('nama');
 		$email = $this->input->post('email');
 		$kelompok = $this->input->post('kelompok');
