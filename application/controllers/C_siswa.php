@@ -121,6 +121,7 @@ class C_siswa extends CI_Controller
 	public function latihan(){
 		$this->load->Model('M_siswa');
 		$data['datauser'] = $this->M_siswa->selectMateri()->result();
+		$data['datamateri'] = $this->M_siswa->selectMateri()->result();
 		$this->load->view('V_latihan', $data);
 	}
 

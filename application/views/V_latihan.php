@@ -73,6 +73,15 @@
           <h2>Latihan</h2>
           <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p> -->
         </div>
+        <?php
+                foreach( $datamateri as $key){
+
+                
+            ?>
+            <div id="dom-target" style="display: none;"><?php echo $key->keterangan;?></div>
+            <?php
+              }
+            ?>
 
         <div class="row" data-aos="fade-up" data-aos-delay="300">
           <?php
@@ -81,7 +90,7 @@
               <div class="icon-box">
               <!-- <i class="ri-store-line" style="color: #ffbb2c;"></i> -->
                 <tr>
-                  <th><a href="<?php echo site_url('C_siswa/soal/'.$key->id_materi); ?>"><?php echo $key->materi; ?></a></th>
+                  <th><a id = "selectedhref" href="<?php echo site_url('C_siswa/soal/'.$key->id_materi); ?>" data-toggle="modal" data-target="#exampleModal"><?php echo $key->materi; ?></a></th>
                 </tr>
               </div>
             </div>
@@ -123,6 +132,26 @@
     </div>
   </footer><!-- End Footer -->
 
+  <!-- modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Mohon kerjakan materi yang bersangkutan terlebih dahulu
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
@@ -139,7 +168,20 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
-
+  <script >
+  const targetmateeri = document.querySelectorAll('#dom-target')
+  const targethref = document.querySelectorAll('#selectedhref')
+  let keterangan = 'belum'
+  console.log(targethref)
+  for (let i = 0; i < targetmateeri.length-1; i++) {
+    if(targetmateeri[i].innerHTML == 'sudah'){
+      targethref[i].setAttribute("data-toggle","none");
+      
+    }
+    // console.log(keterangan)
+  }
+  
+  </script>
 </body>
 
 </html>
