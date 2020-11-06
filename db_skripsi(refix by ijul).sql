@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2020 at 12:28 PM
+-- Generation Time: Nov 06, 2020 at 05:31 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -96,7 +96,17 @@ INSERT INTO `jawaban_latihan` (`id_jawabanlatihan`, `id_siswa`, `id_soal`, `jawa
 (33, 12, 7, 'Objek yang hanya memiliki satu nilai di dalamnya'),
 (34, 12, 8, 'Id_penumpang, harga, jumlah'),
 (35, 12, 9, '1, 3, dan 4'),
-(36, 12, 10, 'Kode tugas, Nama tugas');
+(36, 12, 10, 'Kode tugas, Nama tugas'),
+(37, 11, 1, 'Persegi\r\n'),
+(38, 11, 2, 'Entitas kuat'),
+(39, 11, 3, 'Dokter'),
+(40, 11, 4, 'Tidak memiliki primary key dan selalu bergantung pada entitas lain'),
+(41, 11, 5, 'Menentukan dan melengkapi karakteristik'),
+(42, 11, 1, 'Dua persegi'),
+(43, 11, 2, 'Entitas kuat'),
+(44, 11, 3, 'Siswa'),
+(45, 11, 4, 'Memiliki primary key dan selalu bergantung pada entitas lain'),
+(46, 11, 5, 'Tandai sebagai objek');
 
 -- --------------------------------------------------------
 
@@ -169,19 +179,18 @@ INSERT INTO `jawaban_tugas` (`id_jawabantugas`, `id_siswa`, `id_tugas`, `jawaban
 
 CREATE TABLE `materi` (
   `id_materi` int(11) NOT NULL,
-  `materi` varchar(50) NOT NULL,
-  `keterangan` varchar(6) NOT NULL
+  `materi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `materi`
 --
 
-INSERT INTO `materi` (`id_materi`, `materi`, `keterangan`) VALUES
-(1, 'Entitas', 'sudah'),
-(2, 'Atribut', 'belum'),
-(3, 'Relasi', 'sudah'),
-(4, 'Kardinalitas', 'belum');
+INSERT INTO `materi` (`id_materi`, `materi`) VALUES
+(1, 'Entitas'),
+(2, 'Atribut'),
+(3, 'Relasi'),
+(4, 'Kardinalitas');
 
 -- --------------------------------------------------------
 
@@ -246,7 +255,9 @@ INSERT INTO `nilai_latihan` (`id_nilailatihan`, `id_materi`, `id_siswa`, `nilai`
 (23, 1, 3, 40, '2020-11-02'),
 (24, 2, 3, 20, '2020-11-02'),
 (25, 2, 12, 20, '2020-11-05'),
-(26, 2, 12, 20, '2020-11-05');
+(26, 2, 12, 20, '2020-11-05'),
+(27, 1, 11, 20, '2020-11-06'),
+(28, 1, 11, 40, '2020-11-06');
 
 -- --------------------------------------------------------
 
@@ -349,6 +360,28 @@ INSERT INTO `soal_latihan` (`id_soal`, `id_materi`, `soal`, `pil1`, `pil2`, `pil
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `status_materi`
+--
+
+CREATE TABLE `status_materi` (
+  `id` int(11) NOT NULL,
+  `id_siswa` int(11) NOT NULL,
+  `id_materi` int(11) NOT NULL,
+  `keterangan` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `status_materi`
+--
+
+INSERT INTO `status_materi` (`id`, `id_siswa`, `id_materi`, `keterangan`) VALUES
+(5, 11, 3, 'sudah'),
+(6, 11, 1, 'sudah'),
+(7, 11, 2, 'sudah');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tugas`
 --
 
@@ -430,6 +463,12 @@ ALTER TABLE `soal_latihan`
   ADD PRIMARY KEY (`id_soal`);
 
 --
+-- Indexes for table `status_materi`
+--
+ALTER TABLE `status_materi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tugas`
 --
 ALTER TABLE `tugas`
@@ -449,7 +488,7 @@ ALTER TABLE `jawaban_evaluasi`
 -- AUTO_INCREMENT for table `jawaban_latihan`
 --
 ALTER TABLE `jawaban_latihan`
-  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `jawaban_tugas`
@@ -473,7 +512,7 @@ ALTER TABLE `nilai_evaluasi`
 -- AUTO_INCREMENT for table `nilai_latihan`
 --
 ALTER TABLE `nilai_latihan`
-  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `nilai_tugas`
@@ -498,6 +537,12 @@ ALTER TABLE `soal_evaluasi`
 --
 ALTER TABLE `soal_latihan`
   MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `status_materi`
+--
+ALTER TABLE `status_materi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tugas`

@@ -102,7 +102,14 @@
 			$this->db->from('nilai_latihan');
 			$this->db->where('id_materi', $id);
 			return $this->db->get();
-		   }
+		}
+
+		public function selectmateristatus($where){
+			$this->db->select('*');
+			$this->db->from('status_materi');
+			$this->db->where($where);
+			return $this->db->get();
+		}
 
 		function jawabsoal($idsiswa,$idsoal,$jawaban){
 			$this->db->query("insert into jawaban_latihan values (null,'$idsiswa','$idsoal','$jawaban')");
@@ -115,7 +122,9 @@
 		function insertjwb($data){
 			$this->db->insert('jawaban_tugas', $data);
 		}
-
+		function insert_status_materi($data){
+			$this->db->insert('status_materi', $data);
+		}
 		function inserteval($data){
 			$this->db->insert('jawaban_evaluasi', $data);
 		}

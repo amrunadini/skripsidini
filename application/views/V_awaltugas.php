@@ -50,7 +50,13 @@
 
     </div>
   </header><!-- End Header -->
-
+           <?php
+                foreach( $datauser as $key){
+            ?>
+            <div id="dom-target" style="display: none;"><?php echo $key->keterangan;?></div>
+            <?php
+              }
+            ?>
   <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
       <div class="container">
@@ -81,7 +87,7 @@
                   ?>
                   <tr>
                     <th><?php echo $key->id_tugas; ?></th>
-                    <th><a id="custom-link-tugas" href="<?php echo site_url('index.php/C_siswa/tampil_tugas1/'.($key->id_tugas)); ?>" data-toggle="modal" data-target=".bd-example-modal-sm"><?php echo $key->nama_tugas; ?></a></th>
+                    <th><a id="custom-link-tugas" href="<?php echo site_url('index.php/C_siswa/tampil_tugas1/'.($key->id_tugas)); ?>" data-toggle="modal" data-target="exampleModal"><?php echo $key->nama_tugas; ?></a></th>
                     <th><?php echo $info ?></th>
                   </tr>
             
@@ -148,13 +154,40 @@
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 
 
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
-      ...
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Mohon kerjakan seluruh materi dan latihan terlebih dahulu
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
+
+<script >
+  const targetmateeri = document.querySelectorAll('#dom-target')
+  const targethref = document.querySelector('#selectedhref')
+  let keterangan = 'sudah'
+  for (let i = 0; i < targetmateeri.length-1; i++) {
+    if(targetmateeri[i].innerHTML.search('belum') != -1){
+      keterangan = 'belum'
+    }
+    // console.log(keterangan)
+  }
+  if(keterangan === 'sudah'){
+    targethref.setAttribute("data-toggle","none");
+  }
+  
+  </script>
 </body>
 
 </html>

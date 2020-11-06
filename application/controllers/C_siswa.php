@@ -30,51 +30,94 @@ class C_siswa extends CI_Controller
 		$this->load->view('V_materi', $data);
 	}
 
-	public function entitas(){
+	public function entitas($id){
+		$this->load->Model('M_siswa');
+		$where = array('id_materi' => 1,'id_siswa' => $this->session->userdata('id_siswa'));
+		$data['datastatus'] = $this->M_siswa->selectmateristatus($where)->result();
+		if( !($data['datastatus'])){
+			$query = array(
+				'id_siswa' => $this->session->userdata('id_siswa'),
+				'id_materi' => $id,
+				'keterangan' => 'belum'
+			);
+			$this->M_siswa->insert_status_materi($query);
+		}
 		$this->load->view('V_entitas');
 	}
 	public function entitas1(){	
 		$this->load->Model('M_siswa');
 		$data['keterangan'] = 'sudah';
-		$where = array('id_materi' => 1);
-		$this->M_siswa->update_data_materi_siswa($where,$data,'materi');
+		$where = array('id_materi' => 1,'id_siswa' => $this->session->userdata('id_siswa'));
+		$this->M_siswa->update_data_materi_siswa($where,$data,'status_materi');
 		$this->load->view('V_entitas1');
 	}
 
-	public function atribut(){
+	public function atribut($id){
+		$this->load->Model('M_siswa');
+		$where = array('id_materi' => 2,'id_siswa' => $this->session->userdata('id_siswa'));
+		$data['datastatus'] = $this->M_siswa->selectmateristatus($where)->result();
+		if( !($data['datastatus'])){
+			$query = array(
+				'id_siswa' => $this->session->userdata('id_siswa'),
+				'id_materi' => $id,
+				'keterangan' => 'belum'
+			);
+			$this->M_siswa->insert_status_materi($query);
+		}
 		$this->load->view('V_atribut');
 	}
 
 	public function atribut1(){
 		$this->load->Model('M_siswa');
-		$where = array('id_materi' => 2);
 		$data['keterangan'] = 'sudah';
-		$this->M_siswa->update_data_materi_siswa($where,$data,'materi');
+		$where = array('id_materi' => 2,'id_siswa' => $this->session->userdata('id_siswa'));
+		$this->M_siswa->update_data_materi_siswa($where,$data,'status_materi');
 		$this->load->view('V_atribut1');
 	}
 
-	public function relasi(){
+	public function relasi($id){
+		$this->load->Model('M_siswa');
+		$where = array('id_materi' => 3,'id_siswa' => $this->session->userdata('id_siswa'));
+		$data['datastatus'] = $this->M_siswa->selectmateristatus($where)->result();
+		if( !($data['datastatus'])){
+			$query = array(
+				'id_siswa' => $this->session->userdata('id_siswa'),
+				'id_materi' => $id,
+				'keterangan' => 'belum'
+			);
+			$this->M_siswa->insert_status_materi($query);
+		}
 		$this->load->view('V_relasi');
 	}
 
 	public function relasi1(){
 		$this->load->Model('M_siswa');
 		$data['keterangan'] = 'sudah';
-		$where = array('id_materi' => 3);
-		$this->M_siswa->update_data_materi_siswa($where,$data,'materi');
+		$where = array('id_materi' => 3,'id_siswa' => $this->session->userdata('id_siswa'));
+		$this->M_siswa->update_data_materi_siswa($where,$data,'status_materi');
 		$this->load->view('V_relasi1');
 	}
 
-	public function kardinalitas(){
-
+	public function kardinalitas($id){
+		$this->load->Model('M_siswa');
+		$where = array('id_materi' => 4,'id_siswa' => $this->session->userdata('id_siswa'));
+		$data['datastatus'] = $this->M_siswa->selectmateristatus($where)->result();
+		if( !($data['datastatus'])){
+			$query = array(
+				'id_siswa' => $this->session->userdata('id_siswa'),
+				'id_materi' => $id,
+				'keterangan' => 'belum'
+			);
+			$this->M_siswa->insert_status_materi($query);
+		}
 		$this->load->view('V_kardinalitas');
 	}
 
 	public function kardinalitas1(){
 		$this->load->Model('M_siswa');
 		$data['keterangan'] = 'sudah';
-		$where = array('id_materi' => 4);
-		$this->M_siswa->update_data_materi_siswa($where,$data,'materi');
+		$where = array('id_materi' => 4,'id_siswa' => $this->session->userdata('id_siswa'));
+		$this->M_siswa->update_data_materi_siswa($where,$data,'status_materi');
 		$this->load->view('V_kardinalitas1');
 	}
 
@@ -95,6 +138,8 @@ class C_siswa extends CI_Controller
 		$data['datauser'] = $this->M_siswa->selectTugas()->result();
 		$data['datatugas'] = $this->M_siswa->selectAllTugas()->result();
 		$data['id'] = $this->session->userdata('id_siswa');
+
+		$where = array('id_materi' => 1);
 		$this->load->view('V_awaltugas', $data);
 	}
 
