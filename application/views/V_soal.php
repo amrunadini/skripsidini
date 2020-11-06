@@ -58,7 +58,7 @@
                       ?>
 
                       <tr>
-                        <th><?php echo $value['soal']; ?></th>
+                        <th style = 'background-color : #ccc'><?php echo $value['soal']; ?></th>
                       </tr>
 
                       <tr>

@@ -81,9 +81,10 @@
                   ?>
                   <tr>
                     <th><?php echo $key->id_tugas; ?></th>
-                    <th><a href="<?php echo site_url('index.php/C_siswa/tampil_tugas1/'.($key->id_tugas)); ?>" ><?php echo $key->nama_tugas; ?></a></th>
+                    <th><a id="custom-link-tugas" href="<?php echo site_url('index.php/C_siswa/tampil_tugas1/'.($key->id_tugas)); ?>" data-toggle="modal" data-target=".bd-example-modal-sm"><?php echo $key->nama_tugas; ?></a></th>
                     <th><?php echo $info ?></th>
                   </tr>
+            
                   <?php
                       
                     }
@@ -146,6 +147,14 @@
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
 </body>
 
 </html>

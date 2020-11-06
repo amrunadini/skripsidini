@@ -97,11 +97,21 @@
               <!-- <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> -->
             </div>
           </div>
+          
+            <?php
+                foreach( $datauser as $key){
 
+                
+            ?>
+            <div id="dom-target" style="display: none;"><?php echo $key->keterangan;?></div>
+            <?php
+              }
+            ?>
+            
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="<?php echo base_url(); ?>index.php/C_siswa/kardinalitas">Kardinalitas</a></h4>
+              <h4  class="title"><a id = "selectedhref" href="<?php echo base_url(); ?>index.php/C_siswa/kardinalitas" data-toggle="modal" data-target="#exampleModal">Kardinalitas</a></h4>
               <!-- <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> -->
             </div>
           </div>
@@ -141,6 +151,26 @@
       </div>
     </div>
   </footer><!-- End Footer -->
+  
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Mohon kerjakan Entitas, Atribut, dan Relasi terlebih dahulu
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
@@ -158,7 +188,21 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
-
+  <script >
+  const targetmateeri = document.querySelectorAll('#dom-target')
+  const targethref = document.querySelector('#selectedhref')
+  let keterangan = 'sudah'
+  for (let i = 0; i < targetmateeri.length-1; i++) {
+    if(targetmateeri[i].innerHTML.search('belum') != -1){
+      keterangan = 'belum'
+    }
+    // console.log(keterangan)
+  }
+  if(keterangan === 'sudah'){
+    targethref.setAttribute("data-toggle","none");
+  }
+  
+  </script>
 </body>
 
 </html>

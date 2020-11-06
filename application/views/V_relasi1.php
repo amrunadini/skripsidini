@@ -74,11 +74,11 @@
       	<br>
       	<br>
         <div class="section-title">
-        	<h4 style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom1"];?></h4>
-    		<h4 style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom2"];?></h4>
-    		<h4 style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom3"];?></h4>
-    		<h4 style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom4"];?></h4>
-    		<h4 style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom5"];?></h4>
+        	<h4 id="color-change" style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom1"];?></h4>
+    		<h4 id="color-change" style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom2"];?></h4>
+    		<h4 id="color-change" style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom3"];?></h4>
+    		<h4 id="color-change" style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom4"];?></h4>
+    		<h4 id="color-change" style="font-size: 20px; color: #3180BE"><?php echo $_POST["kolom5"];?></h4>
         </div>
 
         <div class="row">
@@ -146,7 +146,7 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
-
+  <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 </body>
 
 </html>
