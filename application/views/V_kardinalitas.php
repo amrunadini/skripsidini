@@ -60,7 +60,7 @@
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0" >
             <form action="<?php echo base_url();?>index.php/C_siswa/kardinalitas1" method="post">
               <div class="box" data-aos="zoom-in" data-aos-delay="100"style = "height: 100%">
-              <h3>Drop Here</h3>
+                <h3>Drop Here</h3>
                 <div id="target-container" class="box list m-2" style = "background-color: #ccc; height: 8rem">1</div>
                 <div id="target-container" class="box list m-2" style = "background-color: #ccc; height: 8rem">2</div>
                 <div id="target-container" class="box list m-2" style = "background-color: #ccc; height: 8rem">3</div>
@@ -88,11 +88,11 @@
           </div>
         </div>
 
-        </div>
-
         <div data-aos="zoom-in">
           <br>
-          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;"><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Kembali</a></button>     
+          <button type="submit" value="submit" id="btn-submit-custom" class="btn btn-primary m-1" style="width: 80px; height: 40px; border: none; border-radius: 8px;  display:none;">Submit</a></button>   
+          </form>  
+          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_siswa"><b>Kembali</b></a></button> 
         </div>
 
       </div>
@@ -144,6 +144,7 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+  <script src="<?php echo base_url(); ?>assets/js/apsdnd.js"></script>
 
 </body>
 

@@ -74,7 +74,7 @@
                   ?>
                   <tr>
                     <th style="text-align: center;"><?php echo $key->nama; ?></th>
-                    <th style="text-align: center;"><?php echo $key->email; ?></th>
+                    <th style="text-align: center;"><?php echo $key->username; ?></th>
                     <th style="text-align: center;"><?php echo $key->kelompok; ?></th>
                     <th style="text-align: center;">
                       <a href="<?php echo site_url('C_guru/edit/'.($key->id_siswa)); ?>">EDIT</a>

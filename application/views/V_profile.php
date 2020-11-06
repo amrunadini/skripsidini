@@ -54,7 +54,7 @@
           <!-- <li><a href="<?php echo base_url(); ?>index.php/C_siswa/home">Beranda</a></li> -->
           <li><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Materi</a></li>
           <li><a href="<?php echo base_url(); ?>index.php/C_siswa/latihan">Latihan</a></li>
-          <li><a href="<?php echo base_url(); ?>index.php/C_siswa/tugas">Tugas</a></li>
+          <li><a href="<?php echo base_url(); ?>index.php/C_siswa/tampil_tugas">Tugas</a></li>
           <li><a href="<?php echo base_url(); ?>index.php/C_siswa/evaluasi">Evaluasi</a></li>
           <li class="active"><a href="<?php echo base_url(); ?>index.php/C_profil">Profil</a></li>
         </ul>
