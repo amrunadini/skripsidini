@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2020 at 05:31 PM
+-- Generation Time: Nov 06, 2020 at 06:37 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -53,60 +53,101 @@ CREATE TABLE `jawaban_latihan` (
   `id_jawabanlatihan` int(11) NOT NULL,
   `id_siswa` int(11) NOT NULL,
   `id_soal` int(11) NOT NULL,
-  `jawaban` varchar(255) NOT NULL
+  `jawaban` varchar(255) NOT NULL,
+  `id_materi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `jawaban_latihan`
 --
 
-INSERT INTO `jawaban_latihan` (`id_jawabanlatihan`, `id_siswa`, `id_soal`, `jawaban`) VALUES
-(1, 0, 1, '0'),
-(2, 0, 1, '0'),
-(3, 0, 1, '0'),
-(4, 0, 2, '0'),
-(5, 0, 2, '0'),
-(6, 2, 2, '0'),
-(7, 2, 2, 'Atribut'),
-(8, 2, 3, 'Relasi'),
-(9, 6, 2, 'Atribut'),
-(10, 6, 3, 'Relasi'),
-(11, 6, 2, 'Atribut'),
-(12, 6, 1, 'Entitas Relationship Diagram'),
-(13, 6, 1, 'Entitas Relationship Diagram'),
-(14, 6, 1, 'Entitas Relationship Diagram'),
-(15, 6, 1, 'Entitas Relationship Diagram'),
-(16, 6, 2, 'Atribut'),
-(17, 6, 2, 'Atribut'),
-(18, 6, 4, 'Satu anggota suatu entitas bisa berhubungan dengan banyak anggota dalam entitas lain'),
-(19, 8, 1, 'Entity Relationship Diagram'),
-(20, 9, 2, 'Atribut'),
-(21, 3, 1, 'Entity Relationship Diagram'),
-(22, 3, 1, 'Entity Redundancy Diagram'),
-(23, 3, 5, 'hahaha'),
-(24, 3, 1, 'Entity Relationship Diagram'),
-(25, 3, 5, 'hahaha'),
-(26, 3, 2, 'Atribut'),
-(27, 12, 6, 'Atribut'),
-(28, 12, 7, 'Objek yang memiliki banyak nilai'),
-(29, 12, 8, 'Id_kereta, tujuan, id_kereta'),
-(30, 12, 9, '1, 2, dan 3'),
-(31, 12, 10, 'Kode Guru, Tugas, dan Pegawai'),
-(32, 12, 6, 'Entitas\r\n'),
-(33, 12, 7, 'Objek yang hanya memiliki satu nilai di dalamnya'),
-(34, 12, 8, 'Id_penumpang, harga, jumlah'),
-(35, 12, 9, '1, 3, dan 4'),
-(36, 12, 10, 'Kode tugas, Nama tugas'),
-(37, 11, 1, 'Persegi\r\n'),
-(38, 11, 2, 'Entitas kuat'),
-(39, 11, 3, 'Dokter'),
-(40, 11, 4, 'Tidak memiliki primary key dan selalu bergantung pada entitas lain'),
-(41, 11, 5, 'Menentukan dan melengkapi karakteristik'),
-(42, 11, 1, 'Dua persegi'),
-(43, 11, 2, 'Entitas kuat'),
-(44, 11, 3, 'Siswa'),
-(45, 11, 4, 'Memiliki primary key dan selalu bergantung pada entitas lain'),
-(46, 11, 5, 'Tandai sebagai objek');
+INSERT INTO `jawaban_latihan` (`id_jawabanlatihan`, `id_siswa`, `id_soal`, `jawaban`, `id_materi`) VALUES
+(1, 0, 1, '0', 0),
+(2, 0, 1, '0', 0),
+(3, 0, 1, '0', 0),
+(4, 0, 2, '0', 0),
+(5, 0, 2, '0', 0),
+(6, 2, 2, '0', 0),
+(7, 2, 2, 'Atribut', 0),
+(8, 2, 3, 'Relasi', 0),
+(9, 6, 2, 'Atribut', 0),
+(10, 6, 3, 'Relasi', 0),
+(11, 6, 2, 'Atribut', 0),
+(12, 6, 1, 'Entitas Relationship Diagram', 0),
+(13, 6, 1, 'Entitas Relationship Diagram', 0),
+(14, 6, 1, 'Entitas Relationship Diagram', 0),
+(15, 6, 1, 'Entitas Relationship Diagram', 0),
+(16, 6, 2, 'Atribut', 0),
+(17, 6, 2, 'Atribut', 0),
+(18, 6, 4, 'Satu anggota suatu entitas bisa berhubungan dengan banyak anggota dalam entitas lain', 0),
+(19, 8, 1, 'Entity Relationship Diagram', 0),
+(20, 9, 2, 'Atribut', 0),
+(21, 3, 1, 'Entity Relationship Diagram', 0),
+(22, 3, 1, 'Entity Redundancy Diagram', 0),
+(23, 3, 5, 'hahaha', 0),
+(24, 3, 1, 'Entity Relationship Diagram', 0),
+(25, 3, 5, 'hahaha', 0),
+(26, 3, 2, 'Atribut', 0),
+(27, 12, 6, 'Atribut', 0),
+(28, 12, 7, 'Objek yang memiliki banyak nilai', 0),
+(29, 12, 8, 'Id_kereta, tujuan, id_kereta', 0),
+(30, 12, 9, '1, 2, dan 3', 0),
+(31, 12, 10, 'Kode Guru, Tugas, dan Pegawai', 0),
+(32, 12, 6, 'Entitas\r\n', 0),
+(33, 12, 7, 'Objek yang hanya memiliki satu nilai di dalamnya', 0),
+(34, 12, 8, 'Id_penumpang, harga, jumlah', 0),
+(35, 12, 9, '1, 3, dan 4', 0),
+(36, 12, 10, 'Kode tugas, Nama tugas', 0),
+(37, 11, 1, 'Persegi\r\n', 0),
+(38, 11, 2, 'Entitas kuat', 0),
+(39, 11, 3, 'Dokter', 0),
+(40, 11, 4, 'Tidak memiliki primary key dan selalu bergantung pada entitas lain', 0),
+(41, 11, 5, 'Menentukan dan melengkapi karakteristik', 0),
+(42, 11, 1, 'Dua persegi', 0),
+(43, 11, 2, 'Entitas kuat', 0),
+(44, 11, 3, 'Siswa', 0),
+(45, 11, 4, 'Memiliki primary key dan selalu bergantung pada entitas lain', 0),
+(46, 11, 5, 'Tandai sebagai objek', 0),
+(47, 11, 1, 'Persegi\r\n', 0),
+(48, 11, 2, 'Entitas kuat', 0),
+(49, 11, 3, 'Dokter', 0),
+(50, 11, 4, 'Tidak memiliki primary key dan tidak bergantung pada entitas lain', 0),
+(51, 11, 5, 'Yakinkan bahwa objek memiliki karakteristik atau atribut', 0),
+(52, 11, 11, 'Hubungan di antara sejumlah entitas yang berasal dari himpunan entitas yang berbeda', 3),
+(53, 11, 12, 'Ternary', 3),
+(54, 11, 13, 'Hubungan yang terjadi dengan dirinya sendiri', 3),
+(55, 11, 14, 'Unary, Binary, Ternary', 3),
+(56, 11, 15, 'Unary', 3),
+(57, 11, 11, 'Hubungan di antara sejumlah entitas yang berasal dari himpunan entitas yang berbeda', 3),
+(58, 11, 12, 'Ternary', 3),
+(59, 11, 13, 'Hubungan yang terjadi dengan dirinya sendiri', 3),
+(60, 11, 14, 'Unary, Binary, Ternary', 3),
+(61, 11, 15, 'Unary', 3),
+(62, 11, 6, 'Entitas\r\n', 2),
+(63, 11, 7, 'Objek yang memiliki banyak nilai', 2),
+(64, 11, 8, 'Id_penumpang, harga, jumlah', 2),
+(65, 11, 9, '1, 2, dan 5', 2),
+(66, 11, 10, 'Kode tugas, Nama tugas', 2),
+(67, 11, 16, 'Suatu diagram dalam bentuk gambar atau simbol yang mengidentifikasikan tipe dari entitas di dalam suatu sistem yang diuraikan dalam data dengan atributnya, dan menjelaskan hubungan atau relasi diantara entitas tersebut', 4),
+(68, 11, 17, 'Satu anggota suatu entitas bisa berhubungan dengan banyak anggota dalam entitas lain', 4),
+(69, 11, 18, 'One to many\r\n', 4),
+(70, 11, 19, 'Binary	', 4),
+(71, 11, 20, '1:N', 4),
+(72, 11, 16, 'Suatu diagram dalam bentuk gambar atau simbol yang mengidentifikasikan tipe dari entitas di dalam suatu sistem yang diuraikan dalam data dengan atributnya, dan menjelaskan hubungan atau relasi diantara entitas tersebut', 4),
+(73, 11, 17, 'Satu anggota suatu entitas bisa berhubungan dengan banyak anggota dalam entitas lain', 4),
+(74, 11, 18, 'One to many\r\n', 4),
+(75, 11, 19, 'Binary	', 4),
+(76, 11, 20, '1:N', 4),
+(77, 11, 16, 'Suatu diagram dalam bentuk gambar atau simbol yang mengidentifikasikan tipe dari entitas di dalam suatu sistem yang diuraikan dalam data dengan atributnya, dan menjelaskan hubungan atau relasi diantara entitas tersebut', 4),
+(78, 11, 17, 'Satu anggota suatu entitas bisa berhubungan dengan banyak anggota dalam entitas lain', 4),
+(79, 11, 18, 'One to many\r\n', 4),
+(80, 11, 19, 'Binary	', 4),
+(81, 11, 20, '1:N', 4),
+(87, 11, 16, 'Individu yang mewakili sesuatu yang nyata dan dapat dibedakan dari satu dengan yang lainnya', 4),
+(88, 11, 17, 'Satu anggota suatu entitas bisa berhubungan dengan banyak anggota dalam entitas lain', 4),
+(89, 11, 18, 'One to many\r\n', 4),
+(90, 11, 19, 'Binary	', 4),
+(91, 11, 20, '1:N', 4);
 
 -- --------------------------------------------------------
 
@@ -257,7 +298,20 @@ INSERT INTO `nilai_latihan` (`id_nilailatihan`, `id_materi`, `id_siswa`, `nilai`
 (25, 2, 12, 20, '2020-11-05'),
 (26, 2, 12, 20, '2020-11-05'),
 (27, 1, 11, 20, '2020-11-06'),
-(28, 1, 11, 40, '2020-11-06');
+(28, 1, 11, 40, '2020-11-06'),
+(29, 1, 11, 0, '2020-11-06'),
+(30, 0, 11, 0, '2020-11-06'),
+(31, 0, 11, 0, '2020-11-06'),
+(32, 0, 11, 0, '2020-11-06'),
+(33, 0, 11, 0, '2020-11-06'),
+(34, 3, 11, 60, '2020-11-06'),
+(35, 3, 11, 60, '2020-11-06'),
+(36, 2, 11, 20, '2020-11-06'),
+(37, 4, 11, 40, '2020-11-06'),
+(38, 4, 11, 40, '2020-11-06'),
+(39, 4, 11, 40, '2020-11-06'),
+(40, 1, 11, 0, '2020-11-06'),
+(41, 4, 11, 40, '2020-11-06');
 
 -- --------------------------------------------------------
 
@@ -377,7 +431,8 @@ CREATE TABLE `status_materi` (
 INSERT INTO `status_materi` (`id`, `id_siswa`, `id_materi`, `keterangan`) VALUES
 (5, 11, 3, 'sudah'),
 (6, 11, 1, 'sudah'),
-(7, 11, 2, 'sudah');
+(7, 11, 2, 'sudah'),
+(8, 11, 4, 'sudah');
 
 -- --------------------------------------------------------
 
@@ -488,7 +543,7 @@ ALTER TABLE `jawaban_evaluasi`
 -- AUTO_INCREMENT for table `jawaban_latihan`
 --
 ALTER TABLE `jawaban_latihan`
-  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `jawaban_tugas`
@@ -512,7 +567,7 @@ ALTER TABLE `nilai_evaluasi`
 -- AUTO_INCREMENT for table `nilai_latihan`
 --
 ALTER TABLE `nilai_latihan`
-  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `nilai_tugas`
@@ -542,7 +597,7 @@ ALTER TABLE `soal_latihan`
 -- AUTO_INCREMENT for table `status_materi`
 --
 ALTER TABLE `status_materi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tugas`
