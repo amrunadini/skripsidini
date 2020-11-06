@@ -1,5 +1,4 @@
 const list_jawaban = document.querySelectorAll('#color-change')
-const list_jawaban = document.querySelectorAll('#custom-link-tugas')
 
 for (let i = 0; i < list_jawaban.length; i++) {
 // console.log(list_jawaban[i].innerHTML)

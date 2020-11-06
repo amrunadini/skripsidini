@@ -55,7 +55,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0" >
-            <form action="<?php echo base_url();?>index.php/C_siswa/entitas1" method="post">
+            <form action="<?php echo base_url();?>index.php/C_siswa/relasi1" method="post">
               <div class="box" data-aos="zoom-in" data-aos-delay="100"style = "height: 100%">
               <h3>Drop Here</h3>
                 <div id="target-container" class="box list m-2" style = "background-color: #ccc; height: 5rem">

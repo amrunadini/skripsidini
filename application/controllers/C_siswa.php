@@ -33,7 +33,11 @@ class C_siswa extends CI_Controller
 	public function entitas(){
 		$this->load->view('V_entitas');
 	}
-	public function entitas1(){
+	public function entitas1(){	
+		$this->load->Model('M_siswa');
+		$data['keterangan'] = 'sudah';
+		$where = array('id_materi' => 1);
+		$this->M_siswa->update_data_materi_siswa($where,$data,'materi');
 		$this->load->view('V_entitas1');
 	}
 
@@ -42,6 +46,10 @@ class C_siswa extends CI_Controller
 	}
 
 	public function atribut1(){
+		$this->load->Model('M_siswa');
+		$where = array('id_materi' => 2);
+		$data['keterangan'] = 'sudah';
+		$this->M_siswa->update_data_materi_siswa($where,$data,'materi');
 		$this->load->view('V_atribut1');
 	}
 
@@ -50,14 +58,23 @@ class C_siswa extends CI_Controller
 	}
 
 	public function relasi1(){
+		$this->load->Model('M_siswa');
+		$data['keterangan'] = 'sudah';
+		$where = array('id_materi' => 3);
+		$this->M_siswa->update_data_materi_siswa($where,$data,'materi');
 		$this->load->view('V_relasi1');
 	}
 
 	public function kardinalitas(){
+
 		$this->load->view('V_kardinalitas');
 	}
 
 	public function kardinalitas1(){
+		$this->load->Model('M_siswa');
+		$data['keterangan'] = 'sudah';
+		$where = array('id_materi' => 4);
+		$this->M_siswa->update_data_materi_siswa($where,$data,'materi');
 		$this->load->view('V_kardinalitas1');
 	}
 

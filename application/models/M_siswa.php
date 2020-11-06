@@ -25,6 +25,12 @@
 			return $this->db->get();
 		}
 
+		function update_data_materi_siswa($where,$data,$siswa){
+
+			$this->db->where($where);
+			$this->db->update($siswa, $data);
+		}
+
 		function selectMateri1($id){
 			$this->db->select('*');
 			$this->db->from('materi');
