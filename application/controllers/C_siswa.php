@@ -175,7 +175,9 @@ class C_siswa extends CI_Controller
 		$this->load->Model('M_siswa');
 		$id = $this->input->post('id_materi');
         $idsiswa =  $this->session->userdata('id_siswa');
-        $data['soal'] = $this->M_siswa->selectById($id)->result();
+				$data['soal'] = $this->M_siswa->selectById($id)->result();
+				$id = $this->input->post('id_materi');
+				// echo $id;
         $score=0;
         echo "<pre>";
         print_r($data);
@@ -183,9 +185,9 @@ class C_siswa extends CI_Controller
         $tanggal = date("Y-m-d");
         foreach ($data['soal'] as $key) {
         	echo "$key->id_soal";
-        	$jawaban = $this->input->post($key->id_soal);
+					$jawaban = $this->input->post($key->id_soal);
         	echo "$jawaban <br>";
-        	$this->M_siswa->jawabsoal($idsiswa,$key->id_soal,$jawaban);
+        	$this->M_siswa->jawabsoal($idsiswa,$key->id_soal,$id,$jawaban);
         	if ($key->kunci==$jawaban) {
         		echo "Benar <br>";
         		$score = $score + 20;

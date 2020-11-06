@@ -68,6 +68,7 @@
                         <th><input type="radio" name="<?php echo $value['id_soal']; ?>" value="<?php echo $value['pil4']; ?>" required><?php echo "D. ",$value['pil4']; ?></th>
                         <th><input type="radio" name="<?php echo $value['id_soal']; ?>" value="<?php echo $value['pil5']; ?>" required><?php echo "E. ",$value['pil5']; ?></th>
                       </tr>
+                      <input display = "none" type="hidden" name="id_materi" value="<?php echo $id_materi; ?>"?>
                       <?php
                           }
                       ?>
