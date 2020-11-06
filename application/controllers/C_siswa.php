@@ -137,9 +137,12 @@ class C_siswa extends CI_Controller
 		$this->load->Model('M_siswa');
 		$data['datauser'] = $this->M_siswa->selectTugas()->result();
 		$data['datatugas'] = $this->M_siswa->selectAllTugas()->result();
+		$datasiswa = $this->session->userdata('id_siswa');
+		$where1 = array('id_siswa' => $datasiswa);
+		$data['jawabantugas'] = $this->M_siswa->selectjawabanlatihan($where1)->result();
 		$data['id'] = $this->session->userdata('id_siswa');
-
-		$where = array('id_materi' => 1);
+		// print_r($data['jawabantugas']);
+		// $where = array('id_materi' => 1);
 		$this->load->view('V_awaltugas', $data);
 	}
 

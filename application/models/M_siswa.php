@@ -88,7 +88,13 @@
 
 			return $this->db->get();
 		}
-
+		
+		function selectjawabanlatihan($id){
+			$this->db->select('*');
+			$this->db->from('jawaban_latihan');
+			$this->db->where($id);
+			return $this->db->get();
+		}
 		function selectByIdSoal($id){
 			$this->db->select('*');
 			$this->db->from('soal_latihan');

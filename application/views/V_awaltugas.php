@@ -51,12 +51,26 @@
     </div>
   </header><!-- End Header -->
            <?php
-                foreach( $datauser as $key){
-            ?>
-            <div id="dom-target" style="display: none;"><?php echo $key->keterangan;?></div>
-            <?php
+          $latihan1 = 0;
+          $latihan2 = 0;
+          $latihan3 = 0;
+          $latihan4 = 0;
+                foreach( $jawabantugas as $key){
+                if($key->id_materi == 1){
+                 $latihan1++;
+                }elseif($key->id_materi == 2){
+                  $latihan2++;
+                }elseif($key->id_materi == 3){
+                  $latihan3++;
+                }elseif($key->id_materi == 4){
+                  $latihan4++;
+                }
               }
             ?>
+            <div id="dom-target" style="display: none;"><?php echo $latihan1;?></div>
+            <div id="dom-target" style="display: none;"><?php echo $latihan2;?></div>
+            <div id="dom-target" style="display: none;"><?php echo $latihan3;?></div>
+            <div id="dom-target" style="display: none;"><?php echo $latihan4;?></div>
   <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
       <div class="container">
@@ -87,7 +101,7 @@
                   ?>
                   <tr>
                     <th><?php echo $key->id_tugas; ?></th>
-                    <th><a id="custom-link-tugas" href="<?php echo site_url('index.php/C_siswa/tampil_tugas1/'.($key->id_tugas)); ?>" data-toggle="modal" data-target="exampleModal"><?php echo $key->nama_tugas; ?></a></th>
+                    <th><a data-toggle="modal" data-target="#exampleModal" id="custom-link-tugas" href="<?php echo site_url('index.php/C_siswa/tampil_tugas1/'.($key->id_tugas)); ?>" ><?php echo $key->nama_tugas; ?></a></th>
                     <th><?php echo $info ?></th>
                   </tr>
             
@@ -164,7 +178,7 @@
         </button>
       </div>
       <div class="modal-body">
-      Mohon kerjakan seluruh materi dan latihan terlebih dahulu
+      Mohon kerjakan materi yang bersangkutan terlebih dahulu
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -175,17 +189,17 @@
 
 <script >
   const targetmateeri = document.querySelectorAll('#dom-target')
-  const targethref = document.querySelector('#selectedhref')
-  let keterangan = 'sudah'
-  for (let i = 0; i < targetmateeri.length-1; i++) {
-    if(targetmateeri[i].innerHTML.search('belum') != -1){
-      keterangan = 'belum'
+  const targethref = document.querySelector('#custom-link-tugas')
+  let keterangan = 0
+  for (let i = 0; i < targetmateeri.length; i++) {
+    if(targetmateeri[i].innerHTML != 0){
+      keterangan++
     }
-    // console.log(keterangan)
   }
-  if(keterangan === 'sudah'){
+  if(keterangan === 4){
     targethref.setAttribute("data-toggle","none");
   }
+  console.log(keterangan)
   
   </script>
 </body>
