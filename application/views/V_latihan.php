@@ -173,7 +173,8 @@
   const targethref = document.querySelectorAll('#selectedhref')
   let keterangan = 'belum'
   console.log(targethref)
-  for (let i = 0; i < targetmateeri.length-1; i++) {
+  for (let i = 0; i < targetmateeri.length; i++) {
+    console.log(targetmateeri[i])
     if(targetmateeri[i].innerHTML == 'sudah'){
       targethref[i].setAttribute("data-toggle","none");
       
