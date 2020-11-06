@@ -64,6 +64,7 @@
               <tr class="danger">
                 <th>ID Siswa</th>
                 <th>Jawaban</th>
+                <th>File Tugas</th>
                 <th>Tanggal</th>
               </tr>
               
@@ -75,6 +76,7 @@
               <tr>
                 <th><?php echo $key->id_siswa; ?></th>
                 <th><?php echo $key->jawaban; ?></th>
+                <th><a href="<?php echo base_url('upload/'.$key->file_name)?>"><?php echo $key->file_name; ?></th>
                 <th><?php echo $key->tanggal; ?></th>
               </tr>
               <?php
@@ -86,7 +88,7 @@
 
         <div data-aos="zoom-in">
           <br>
-          <a href="<?php echo base_url(); ?>index.php/C_guru/guru">Kembali</a>
+          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_guru"><b>Kembali</b></a></button>
         </div>
 
       </div>

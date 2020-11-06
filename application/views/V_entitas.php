@@ -79,16 +79,16 @@
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Drag from Here</h3>
               <div id="source-container" class="list">
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e1.png"> <input id="jawaban" type="hidden" value="entitas1"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e2.png"> <input id="jawaban" type="hidden" value="entitas2"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e3.png"> <input id="jawaban" type="hidden" value="entitas3"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e4.png"> <input id="jawaban" type="hidden" value="entitas4"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e5.png"> <input id="jawaban" type="hidden" value="entitas5"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e6.png"> <input id="jawaban" type="hidden" value="bukanentitas"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e7.png"><input id="jawaban" type="hidden" value="bukanentitas"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e8.png"><input id="jawaban" type="hidden" value="bukanentitas"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e9.png"><input id="jawaban" type="hidden" value="bukanentitas"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e10.png"><input id="jawaban" type="hidden" value="bukanentitas"></div>
+              <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e1.png"> <input id="jawaban" type="hidden" value="Jumlah SKS bukan merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e2.png"> <input id="jawaban" type="hidden" value="Kelas merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e3.png"> <input id="jawaban" type="hidden" value="NISN bukan merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e4.png"> <input id="jawaban" type="hidden" value="Membuat bukan merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e5.png"> <input id="jawaban" type="hidden" value="Mata Pelajaran merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e6.png"> <input id="jawaban" type="hidden" value="Alamat bukan merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e7.png"><input id="jawaban" type="hidden" value="Jurusan merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e8.png"><input id="jawaban" type="hidden" value="Guru merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e9.png"><input id="jawaban" type="hidden" value="Nilai bukan merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/e10.png"><input id="jawaban" type="hidden" value="Siswa merupakan Entitas dari Sekolah"></div>
               </div>
             </div>
           </div>
@@ -97,9 +97,9 @@
 
         <div data-aos="zoom-in">
           <br>
-          <button type="back" class="btn btn-secondary" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;"><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Kembali</a></button> 
           <button type="submit" value="submit" id="btn-submit-custom" class="btn btn-primary m-1" style="width: 80px; height: 40px; border: none; border-radius: 8px;  display:none;">Submit</a></button>   
           </form>  
+          <button type="back" class="btn btn-secondary" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;"><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Kembali</a></button> 
         </div>
 
       </div>

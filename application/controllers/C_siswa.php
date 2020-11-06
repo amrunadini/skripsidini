@@ -16,24 +16,11 @@ class C_siswa extends CI_Controller
 		}
 	}
 	public function index(){
-		// if ($_SESSION['user_logged'] == FALSE) {
-			
-		// 	$this->session->set_flashdata("error", "Please login first");
-		// 	redirect("C_login/getlogin");
-		// }
-		// $this->load->model('M_siswa');
-		// $data['datauser']=$this->M_siswa->
 		$data['nama'] = $this->session->userdata('nama');
+		$data['id'] = $this->session->userdata('id_siswa');
 		$this->load->view('V_siswa',$data);
 	}
 	public function siswa(){
-		// if ($_SESSION['user_logged'] == FALSE) {
-			
-		// 	$this->session->set_flashdata("error", "Please login first");
-		// 	redirect("C_login/getlogin");
-		// }
-		// $this->load->model('M_siswa');
-		// $data['datauser']=$this->M_siswa->
 		$this->load->view('V_siswa');
 	}
 
@@ -43,47 +30,63 @@ class C_siswa extends CI_Controller
 		$this->load->view('V_materi', $data);
 	}
 
-	// public function pilihmateri($id)
-	// {
-	// 	$this->load->model('M_siswa');
-	// 	$data['datauser'] = $this->M_siswa->selectById($id)->result();
-	// 	$data['id_materi'] = $id;
-	// 	$this->load->view('V_konten', $data);
-	// }
-
 	public function entitas(){
 		$this->load->view('V_entitas');
 	}
 	public function entitas1(){
-		echo $_POST["kolom1"];
-		echo "<br>";
-		echo $_POST["kolom2"];
-		echo "<br>";
-		echo $_POST["kolom3"];
-		echo "<br>";
-		echo $_POST["kolom4"];
-		echo "<br>";
-		echo $_POST["kolom5"];
+		$this->load->view('V_entitas1');
 	}
 
 	public function atribut(){
 		$this->load->view('V_atribut');
 	}
 
+	public function atribut1(){
+		$this->load->view('V_atribut1');
+	}
+
 	public function relasi(){
 		$this->load->view('V_relasi');
+	}
+
+	public function relasi1(){
+		$this->load->view('V_relasi1');
 	}
 
 	public function kardinalitas(){
 		$this->load->view('V_kardinalitas');
 	}
 
-	public function tugas(){
-		$this->load->view('V_tugas');
+	public function kardinalitas1(){
+		$this->load->view('V_kardinalitas1');
 	}
 
 	public function evaluasi(){
 		$this->load->view('V_evaluasi');
+	}
+
+	public function evaluasi1(){
+		$this->load->view('V_evaluasi1');
+	}
+
+	public function tugas(){
+		$this->load->view('V_tugas');
+	}
+
+	public function tampil_tugas(){
+		$this->load->Model('M_siswa');
+		$data['datauser'] = $this->M_siswa->selectTugas()->result();
+		$data['datatugas'] = $this->M_siswa->selectAllTugas()->result();
+		$data['id'] = $this->session->userdata('id_siswa');
+		$this->load->view('V_awaltugas', $data);
+	}
+
+	public function tampil_tugas1($id){
+		$this->load->Model('M_siswa');
+		$data['datatugas'] = $this->M_siswa->selectByIdTugas($id)->result();
+		// echo $id;
+		// print_r($data['datatugas']);
+		$this->load->view('V_tugas',$data);
 	}
 
 	public function profile(){
@@ -91,17 +94,17 @@ class C_siswa extends CI_Controller
 		$this->load->view('V_profile');
 	}
 
-    public function latihan(){
-		$this->load->Model('M_siswa');
-		$data['datauser'] = $this->M_siswa->selectMateri()->result();
-		$this->load->view('V_latihan', $data);
-	}
-
     public function soal($id){
 		$this->load->model('M_siswa');
 		$data['datauser'] = $this->M_siswa->selectByIdSoal($id)->result_array();
 		$data['id_materi'] = $id;
 		$this->load->view('V_soal', $data);
+	}
+
+	public function latihan(){
+		$this->load->Model('M_siswa');
+		$data['datauser'] = $this->M_siswa->selectMateri()->result();
+		$this->load->view('V_latihan', $data);
 	}
 
 	public function insertJawabanLat(){
@@ -169,6 +172,22 @@ class C_siswa extends CI_Controller
         $this->load->Model('M_siswa');
         $this->M_siswa->insertjwb($data);
         redirect(site_url('C_siswa'));        
-    }     
+	}
+	
+	public function insertjawabaneval(){
+        $data['id_jawabaneval'] = $this->input->post('id');
+        $data['id_siswa'] = $this->session->userdata('id_siswa');
+        $data['entitas'] = $this->input->post('entitas');
+        $data['atribut'] = $this->input->post('atribut');
+        $data['relasi'] = $this->input->post('relasi');
+        $data['kardinalitas'] = $this->input->post('kardinalitas');
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+        //memasukan data yang sudah diinput di form V_input ke database
+        $this->load->Model('M_siswa');
+        $this->M_siswa->inserteval($data);
+        redirect(site_url('C_siswa'));
+    }
     
 }

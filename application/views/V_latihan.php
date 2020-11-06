@@ -81,7 +81,7 @@
               <div class="icon-box">
               <!-- <i class="ri-store-line" style="color: #ffbb2c;"></i> -->
                 <tr>
-                  <th><a href="<?php echo site_url('C_siswa/soal/'.$key->id_materi); ?>"><?php echo $key->materi; ?></a></th>
+                  <th><b><a href="<?php echo site_url('C_siswa/soal/'.$key->id_materi); ?>"><?php echo $key->materi; ?><b></a></th>
                 </tr>
               </div>
             </div>

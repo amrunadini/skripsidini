@@ -80,16 +80,17 @@
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Drag from Here</h3>
               <div id="source-container" class="list">
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r1.png"> <input id="jawaban" type="hidden" value="relasi1"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r2.png"> <input id="jawaban" type="hidden" value="relasi2"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r3.png"> <input id="jawaban" type="hidden" value="relasi3"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r4.png"> <input id="jawaban" type="hidden" value="relasi4"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r5.png"> <input id="jawaban" type="hidden" value="relasi5"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r6.png"> <input id="jawaban" type="hidden" value="bukanrelasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r7.png"> <input id="jawaban" type="hidden" value="bukanrelasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r8.png"> <input id="jawaban" type="hidden" value="bukanrelasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r9.png"> <input id="jawaban" type="hidden" value="bukanrelasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r10.png"> <input id="jawaban" type="hidden" value="bukanrelasi"></div>
+              <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r1.png"> <input id="jawaban" type="hidden" value="Mengontrak bukan merupakan Relasi yang terjadi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r2.png"> <input id="jawaban" type="hidden" value="Mengembalikan merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r3.png"> <input id="jawaban" type="hidden" value="Tanggal Pinjam bukan merupakan Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r4.png"> <input id="jawaban" type="hidden" value="Meminjam merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r5.png"> <input id="jawaban" type="hidden" value="Mendata merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r6.png"> <input id="jawaban" type="hidden" value="Status Peminjaman bukan merupakan Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r7.png"><input id="jawaban" type="hidden" value="Membayar merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r8.png"><input id="jawaban" type="hidden" value="Membaca merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r9.png"><input id="jawaban" type="hidden" value="Kode Buku bukan merupakan Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r10.png"><input id="jawaban" type="hidden" value="Membeli bukan merupakan Relasi yang terjadi"></div>
+              </div>
               </div>
             </div>
           </div>
@@ -98,9 +99,9 @@
 
         <div data-aos="zoom-in">
           <br>
-          <button type="back" class="btn btn-secondary" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;"><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Kembali</a></button> 
           <button type="submit" value="submit" id="btn-submit-custom" class="btn btn-primary m-1" style="width: 80px; height: 40px; border: none; border-radius: 8px;  display:none;">Submit</a></button>   
-          </form>  
+          </form>
+          <button type="back" class="btn btn-secondary" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;"><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Kembali</a></button>   
         </div>
 
       </div>

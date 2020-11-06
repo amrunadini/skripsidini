@@ -77,7 +77,8 @@
             <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
               <img src="/skripsidini/assets/img/user.png" alt="" class="img-fluid" style="width: 200px; height: 200px; margin: 70px;">
               <h2><?php echo $nama; ?></h2>
-              <ul><?php echo $email; ?></ul>
+              <ul><?php echo $username; ?></ul>
+              <ul>Kelompok <?php echo $kelompok; ?></ul>
             </div>
           </div>
 
@@ -86,27 +87,12 @@
               <table id="example1" class="table table-bordered table-hover" border="1px">
                 <thead class="danger">
                   <tr>
-                    <th style="text-align: center;">Materi</th>
-                    
-                    <!-- <tr style="text-align: center;"><?php echo $key->materi; ?></tr> -->
-                   
-                    
-                    <th style="text-align: center;">Nilai</th>
+                  <th style="text-align: center;">Materi</th>
+                  <th style="text-align: center;">Nilai</th>
+                  <th style="text-align: center;">Histori Nilai</th>
                   </tr>
                 </thead>
-                <!-- <tbody>
-                  <?php
-                    // foreach ($datauser as $key) { 
-                  ?>
-                  <tr>
-                    <th style="text-align: center;"><?php echo $key->tanggal; ?></th>
-                    <th style="text-align: center;"><?php echo $key->nilai; ?></th>
-                  </tr>
-                  <?php
-                    // }
-                  ?>
-                </tbody> -->
-
+                <tbody>
                     <?php
                     foreach ($materi as $key) { 
                       $nilai = 0;
@@ -119,11 +105,15 @@
                     <tr>
                       <th style="text-align: center;"><?php echo $key->materi; ?></th>
                       <th style="text-align: center;"><?php echo $nilai ?></th>
+                      <th style="text-align: center;">
+                        <a href="<?php echo site_url('C_profil/histori_nilai/'.($key->id_materi)); ?>">LIHAT NILAI</a>
+                      </th>
                     </tr>
                     <?php
                     }
                     // print_r($nilai_materi);
                     ?>
+                </tbody>
               </table>
             </div>
           </div>

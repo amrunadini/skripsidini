@@ -25,7 +25,22 @@
 			return $this->db->get();
 		}
 
+		function selectMateri1($id){
+			$this->db->select('*');
+			$this->db->from('materi');
+			$this->db->where('id_materi',$id);
+
+			return $this->db->get();
+		}
+
 		function cari_nilai($where,$db){
+			return $this->db->get_where($db,$where);
+		}
+
+		function cari_tanggal($where,$db){
+			// $this->db->select('*');
+			// $this->db->from('nilai_latihan');
+			// $this->db->where('id_materi',$id);
 			return $this->db->get_where($db,$where);
 		}
 
@@ -37,6 +52,37 @@
 			return $this->db->get();
 		}
 
+		function selectByIdTugas($id){
+			$this->db->select('*');
+			$this->db->from('tugas');
+			$this->db->where('id_tugas',$id);
+			
+			return $this->db->get();
+		}
+
+		function selectAllTugas(){
+			$this->db->select('*');
+			$this->db->from('jawaban_tugas');
+
+			return $this->db->get();
+		}
+
+		function selectTugas(){
+			$this->db->select('*');
+			$this->db->from('tugas');
+
+			return $this->db->get();
+		}
+
+		function selectjawabanTugas(){
+			$this->db->select('*');
+			$this->db->from('jawaban_tugas');
+			$idsiswa =  $this->session->userdata('id_siswa');
+			$this->db->where('id_siswa',$idsiswa);
+
+			return $this->db->get();
+		}
+
 		function selectByIdSoal($id){
 			$this->db->select('*');
 			$this->db->from('soal_latihan');
@@ -44,6 +90,13 @@
 			
 			return $this->db->get();
 		}
+
+		public function selectByIdNilai($id){
+			$this->db->select('*');
+			$this->db->from('nilai_latihan');
+			$this->db->where('id_materi', $id);
+			return $this->db->get();
+		   }
 
 		function jawabsoal($idsiswa,$idsoal,$jawaban){
 			$this->db->query("insert into jawaban_latihan values (null,'$idsiswa','$idsoal','$jawaban')");
@@ -55,6 +108,10 @@
 
 		function insertjwb($data){
 			$this->db->insert('jawaban_tugas', $data);
+		}
+
+		function inserteval($data){
+			$this->db->insert('jawaban_evaluasi', $data);
 		}
 
 	}

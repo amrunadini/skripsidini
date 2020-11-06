@@ -80,16 +80,16 @@
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Drag from Here</h3>
               <div id="source-container" class="list">
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a1.png"> <input id="jawaban" type="hidden" value="atribut1"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a2.png"> <input id="jawaban" type="hidden" value="atribut2"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a3.png"> <input id="jawaban" type="hidden" value="atribut3"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a4.png"> <input id="jawaban" type="hidden" value="atribut4"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a5.png"> <input id="jawaban" type="hidden" value="atribut5"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a6.png"> <input id="jawaban" type="hidden" value="bukanatribut"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a7.png"> <input id="jawaban" type="hidden" value="bukanatribut"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a8.png"> <input id="jawaban" type="hidden" value="bukanatribut"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a9.png"> <input id="jawaban" type="hidden" value="bukanatribut"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a10.png"> <input id="jawaban" type="hidden" value="bukanatribut"></div>
+              <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a1.png"> <input id="jawaban" type="hidden" value="Nama Siswa merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a2.png"> <input id="jawaban" type="hidden" value="Nama Guru bukan merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a3.png"> <input id="jawaban" type="hidden" value="Tempat, tanggal, lahir merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a4.png"> <input id="jawaban" type="hidden" value="Mata Pelajaran bukan merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a5.png"> <input id="jawaban" type="hidden" value="Mempelajari bukan merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a6.png"> <input id="jawaban" type="hidden" value="Jenis Kelamin merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a7.png"><input id="jawaban" type="hidden" value="Memiliki bukan merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a8.png"><input id="jawaban" type="hidden" value="Agama merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a9.png"><input id="jawaban" type="hidden" value="NISN merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a10.png"><input id="jawaban" type="hidden" value="Nilai bukan merupakan Atribut Siswa"></div>
               </div>
             </div>
           </div>
@@ -98,9 +98,9 @@
 
         <div data-aos="zoom-in">
           <br>
-          <button type="back" class="btn btn-secondary" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;"><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Kembali</a></button> 
           <button type="submit" value="submit" id="btn-submit-custom" class="btn btn-primary m-1" style="width: 80px; height: 40px; border: none; border-radius: 8px;  display:none;">Submit</a></button>   
           </form>  
+          <button type="back" class="btn btn-secondary" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;"><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Kembali</a></button> 
         </div>
 
       </div>

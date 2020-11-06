@@ -49,24 +49,44 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
-              <img src="/skripsidini/assets/img/supermarket.png" class="img-fluid" alt="" data-aos="zoom-in">
-              <p style="font-size: 11px;"><a href='https://pngtree.com/so/vector'>vector png from pngtree.com</a></p>
+              <<img src="/skripsidini/assets/img/kardinalitas1.png" class="img-fluid" alt="" data-aos="zoom-in">
+              <br>
+              <img src="/skripsidini/assets/img/kardinalitas2.png" class="img-fluid" alt="" data-aos="zoom-in">
+              <br>
+              <img src="/skripsidini/assets/img/kardinalitas3.png" class="img-fluid" alt="" data-aos="zoom-in">
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 mt-4 mt-md-0" >
+            <form action="<?php echo base_url();?>index.php/C_siswa/kardinalitas1" method="post">
+              <div class="box" data-aos="zoom-in" data-aos-delay="100"style = "height: 100%">
               <h3>Drop Here</h3>
-              
-            </div>
+                <div id="target-container" class="box list m-2" style = "background-color: #ccc; height: 8rem">1</div>
+                <div id="target-container" class="box list m-2" style = "background-color: #ccc; height: 8rem">2</div>
+                <div id="target-container" class="box list m-2" style = "background-color: #ccc; height: 8rem">3</div>
+              </div>
           </div>
-
+          
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Drag from Here</h3>
-              
+              <div id="source-container" class="list">
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka1.png"> <input id="jawaban" type="hidden" value="One to One bukan merupakan kardinalitas dari Supplier menyuplai Barang"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka2.png"> <input id="jawaban" type="hidden" value="One to One bukan merupakan kardinalitas dari Kasir melayani Pembeli"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka3.png"> <input id="jawaban" type="hidden" value="One to One bukan merupakan kardinalitas dari Pembeli membeli Barang"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka4.png"> <input id="jawaban" type="hidden" value="One to Many merupakan kardinalitas dari Supplier menyuplai Barang"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka5.png"> <input id="jawaban" type="hidden" value="One to Many bukan merupakan kardinalitas dari Kasir melayani Pembeli"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka6.png"> <input id="jawaban" type="hidden" value="One to Many merupakan kardinalitas dari Pembeli membeli Barang"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka7.png"><input id="jawaban" type="hidden" value="Many to One bukan merupakan kardinalitas dari Supplier menyuplai Barang"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka8.png"><input id="jawaban" type="hidden" value="Many to One bukan merupakan kardinalitas dari Kasir melayani Pembeli"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka9.png"><input id="jawaban" type="hidden" value="Many to One bukan merupakan kardinalitas dari Pembeli membeli Barang"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka10.png"><input id="jawaban" type="hidden" value="Many to Many bukan merupakan kardinalitas dari Supplier menyuplai Barang"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka11.png"><input id="jawaban" type="hidden" value="Many to Many merupakan kardinalitas dari Kasir melayani Pembeli"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/kardinalitas/ka12.png"><input id="jawaban" type="hidden" value="Many to Many bukan merupakan kardinalitas dari Pembeli membeli Barang"></div>
+              </div>
             </div>
           </div>
+        </div>
 
         </div>
 

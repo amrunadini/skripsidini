@@ -72,8 +72,8 @@
               </td>
             </tr>
             <tr>
-              <td>E-mail</td>
-              <td><input type="text" name="email" value="<?php echo $u->email ?>"></td>
+              <td>Username</td>
+              <td><input type="text" name="username" value="<?php echo $u->username ?>"></td>
             </tr>
             <tr>
               <td>Kelompok</td>

@@ -48,89 +48,70 @@
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li><a href="<?php echo base_url(); ?>index.php/C_siswa">Beranda</a></li>
-          <!-- <li><a href="<?php echo base_url(); ?>index.php/C_siswa/home">Beranda</a></li> -->
-          <li><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Materi</a></li>
-          <li><a href="<?php echo base_url(); ?>index.php/C_siswa/latihan">Latihan</a></li>
-          <li><a href="<?php echo base_url(); ?>index.php/C_siswa/tampil_tugas">Tugas</a></li>
-          <li class="active"><a href="<?php echo base_url(); ?>index.php/C_siswa/evaluasi">Evaluasi</a></li>
-          <li><a href="<?php echo base_url(); ?>index.php/C_profil">Profil</a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-
     </div>
   </header><!-- End Header -->
 
-    <!-- ======= Pricing Section ======= -->
+  <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
       <div class="container">
 
         <div class="section-title">
-          <br>
-          <h2>Evaluasi</h2>
+          <h2>Data Tugas</h2>
         </div>
 
-        <br>
-        <div class="row" data-aos="fade-up" data-aos-delay="300">
-          <p><b>Perhatikan contoh kasus di bawah ini!</b></p>
-        </div>
-        <div class="col-lg-20 col-md-50">
-          <div class="box" data-aos="zoom-in-right" data-aos-delay="200" style="text-align: justify;">
-            <p>Pada suatu hari Budi dan keluarganya akan pergi menonton sebuah film di Bioskop. Pada saat sampai di dalam bioskop, Ibu Budi bersama dengan Adik Budi mengantri untuk membeli tiket. Selagi mengantri, Ibu Budi dan Adik Budi melihat jadwal penayangan film yang tersedia di layar. Film yang akan ditonton oleh Budi dan keluarga dapat ditayangkan di beberapa studio. Setiap film memiliki kategori umur yang berbeda-beda. Ibu Budi memilih kategori film yang sesuai dengan umur Budi dan adiknya. Setelah memilih film, jadwal penayangan, dan tempat duduk, Ibu Budi membayar sejumlah uang kepada petugas loket sesuai dengan faktur yang tersedia di layar komputer. Setelah membayar sejumlah uang, Ibu Budi mendapatkan tiket bioskop untuk film yang akan ditonton. Di dalam tiket yang sudah tercetak terdapat studio penayangan, judul film yang akan ditonton, hari dan tanggal, jam penayangan, baris dan nomor kursi yang akan diduduki, serta harga per-satu tiket.</p>
-          </div>
-        </div>
-        <div class="row" data-aos="fade-up" data-aos-delay="300">
-          <p><b>Tentukanlah masing-masing entitas, atribut, relasi, serta kardinalitas dari contoh kasus di atas!</b></p>
-        </div>
-        
         <table class="table">
-          <form action="<?php echo site_url('C_siswa/insertjawabaneval'); ?>" method="POST">
-            <tr>
-              <th> Entitas </th>
-              <td>
-                <textarea class="form-control" name="entitas" rows="5" data-rule="required" placeholder="Masukkan entitas"></textarea>
-                  <div class="validate"></div>
-              </td>
-            </tr>
-            <tr>
-              <th> Atribut </th>
-              <td>
-                <textarea class="form-control" name="atribut" rows="5" data-rule="required" placeholder="Masukkan atribut"></textarea>
-                  <div class="validate"></div>
-              </td>
-            </tr>
-            <tr>
-              <th> Relasi (Sebutkan entitasnya) </th>
-              <td>
-               <textarea class="form-control" name="relasi" rows="5" data-rule="required" placeholder="Masukkan relasi"></textarea>
-                  <div class="validate"></div>
-              </td>
-            </tr>
-            <tr>
-              <th> Kardinalitas (Sebutkan entitasnya) </th>
-              <td>
-                <textarea class="form-control" name="kardinalitas" rows="5" data-rule="required" placeholder="Masukkan kardinalitas"></textarea>
-                  <div class="validate"></div>
-              </td>
-            </tr>
-          </table>
-          <br>
-          <center>
-            <input type="submit" class="btn btn-danger" value="Submit">
-          </form>
+          <form action="<?php echo site_url('C_guru/insertnilaievaluasi'); ?>" method="POST">
 
+          <tr> 
+          <th> ID SISWA </th> 
+          <td> <input type="text" name="id" placeholder="ID SISWA"> </td> </tr> 
+          <tr> 
+          <th> Nilai </th>
+          <td> <input type="text" name="nilai" placeholder="NILAI"> </td> </tr>
+
+        </table> <br>
+        <center>
+         <input type="submit" class="btn btn-danger" value="Simpan"> 
+         </form>
+         <br>
+         <br>
+          <table id="example1" class="table table-bordered table-hover" border="1px">
+            <thead class="danger">
+              <tr class="danger">
+                <th>ID Siswa</th>
+                <th>Entitas</th>
+                <th>Atribut</th>
+                <th>Relasi</th>
+                <th>Kardinalitas</th>
+              </tr>
+              
+            </thead>
+            <tbody>
+              <?php
+                foreach ($datauser as $key) { 
+              ?>
+              <tr>
+                <th><?php echo $key->id_siswa; ?></th>
+                <th><?php echo $key->entitas; ?></th>
+                <th><?php echo $key->atribut; ?></th>
+                <th><?php echo $key->relasi; ?></th>
+                <th><?php echo $key->kardinalitas; ?></th>
+              </tr>
+              <?php
+                }
+              ?>
+            </tbody>
+            
+          </table>
 
         <div data-aos="zoom-in">
           <br>
-          <button type="submit" value="submit" id="btn-submit-custom" class="btn btn-primary m-1" style="width: 80px; height: 40px; border: none; border-radius: 8px;  display:none;">Submit</a></button>   
-          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_siswa"><b>Kembali</b></a></button> 
-          </form>  
+          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_guru"><b>Kembali</b></a></button>
         </div>
 
       </div>
     </section><!-- End Pricing Section -->
+
 
   <main id="main">
   </main><!-- End #main -->
@@ -179,7 +160,6 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/apsdnd.js"></script>
 
 </body>
 

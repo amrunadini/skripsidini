@@ -25,13 +25,37 @@ class M_guru extends CI_model
 		return $this->db->get();
 	}
 
-	function insertSoal($data){
-		$this->db->insert('soal_latihan', $data);
-	}
-
 	function selectNilaiLat(){
 		$this->db->select('*');
 		$this->db->from('nilai_latihan');
+
+		return $this->db->get();
+	}
+
+	function selectMateri(){
+		$this->db->select('*');
+		$this->db->from('materi');
+
+		return $this->db->get();
+	}
+
+	function selectTampilNilaiTugas(){
+		$this->db->select('*');
+		$this->db->from('nilai_tugas');
+
+		return $this->db->get();
+	}
+
+	function selectNilaiEval(){
+		$this->db->select('*');
+		$this->db->from('nilai_evaluasi');
+
+		return $this->db->get();
+	}
+
+	function selectListTugas(){
+		$this->db->select('*');
+		$this->db->from('tugas');
 
 		return $this->db->get();
 	}
@@ -41,6 +65,29 @@ class M_guru extends CI_model
 		$this->db->from('jawaban_tugas');
 
 		return $this->db->get();
+	}
+
+	function selectjawabanEvaluasi(){
+		$this->db->select('*');
+		$this->db->from('jawaban_evaluasi');
+
+		return $this->db->get();
+	}
+
+	function insertSoal($data){
+		$this->db->insert('soal_latihan', $data);
+	}
+
+	function insertTugas($data){
+		$this->db->insert('tugas', $data);
+	}
+
+	function insertjawabanT($data){
+		$this->db->insert('nilai_tugas', $data);
+	}
+
+	function insertnilaiEval($data){
+		$this->db->insert('nilai_evaluasi', $data);
 	}
 
 	function edit_data($where,$siswa){
@@ -56,6 +103,17 @@ class M_guru extends CI_model
 	function delete($where,$siswa){
 		$this->db->where($where);
 		$this->db->delete($siswa);
+	}
+
+	function update_tugas($where,$data,$tugas){
+		// $this->db->set($data);
+		$this->db->where($where);
+		$this->db->update($tugas, $data);
+	}
+
+	function delete_tugas($where,$tugas){
+		$this->db->where($where);
+		$this->db->delete($tugas);
 	}
 }
 
