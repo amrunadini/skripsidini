@@ -66,6 +66,14 @@
 			return $this->db->get();
 		}
 
+		function selectByIdEvaluasi($id){
+			$this->db->select('*');
+			$this->db->from('evaluasi');
+			$this->db->where('id_eval',$id);
+			
+			return $this->db->get();
+		}
+
 		function selectAllTugas(){
 			$this->db->select('*');
 			$this->db->from('jawaban_tugas');
@@ -76,6 +84,20 @@
 		function selectTugas(){
 			$this->db->select('*');
 			$this->db->from('tugas');
+
+			return $this->db->get();
+		}
+
+		function selectEval(){
+			$this->db->select('*');
+			$this->db->from('evaluasi');
+
+			return $this->db->get();
+		}
+
+		function selectAllEval(){
+			$this->db->select('*');
+			$this->db->from('jawaban_evaluasi');
 
 			return $this->db->get();
 		}
@@ -95,6 +117,14 @@
 			$this->db->where($id);
 			return $this->db->get();
 		}
+
+		function selectjawabaneval($id){
+			$this->db->select('*');
+			$this->db->from('jawaban_evaluasi');
+			$this->db->where($id);
+			return $this->db->get();
+		}
+
 		function selectByIdSoal($id){
 			$this->db->select('*');
 			$this->db->from('soal_latihan');

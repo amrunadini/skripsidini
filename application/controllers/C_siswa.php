@@ -122,15 +122,22 @@ class C_siswa extends CI_Controller
 	}
 
 	public function evaluasi(){
+		$this->load->Model('M_siswa');
+		$data['datatugas'] = $this->M_siswa->selectByIdEvaluasi($id)->result();
 		$this->load->view('V_evaluasi');
 	}
 
-	public function evaluasi1(){
-		$this->load->view('V_evaluasi1');
-	}
-
-	public function tugas(){
-		$this->load->view('V_tugas');
+	public function tampil_evaluasi(){
+		$this->load->Model('M_siswa');
+		$data['datauser'] = $this->M_siswa->selectEval()->result();
+		$data['datatugas'] = $this->M_siswa->selectAllEval()->result();
+		$datasiswa = $this->session->userdata('id_siswa');
+		$where1 = array('id_siswa' => $datasiswa);
+		$data['jawabaneval'] = $this->M_siswa->selectjawabaneval($where1)->result();
+		$data['id'] = $this->session->userdata('id_siswa');
+		// print_r($data['jawabantugas']);
+		// $where = array('id_materi' => 1);
+		$this->load->view('V_awalevaluasi', $data);
 	}
 
 	public function tampil_tugas(){

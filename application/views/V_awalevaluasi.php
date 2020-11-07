@@ -48,89 +48,76 @@
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li><a href="<?php echo base_url(); ?>index.php/C_siswa">Beranda</a></li>
-          <!-- <li><a href="<?php echo base_url(); ?>index.php/C_siswa/home">Beranda</a></li> -->
-          <li><a href="<?php echo base_url(); ?>index.php/C_siswa/materi">Materi</a></li>
-          <li><a href="<?php echo base_url(); ?>index.php/C_siswa/latihan">Latihan</a></li>
-          <li><a href="<?php echo base_url(); ?>index.php/C_siswa/tampil_tugas">Tugas</a></li>
-          <li class="active"><a href="<?php echo base_url(); ?>index.php/C_siswa/tampil_evaluasi">Evaluasi</a></li>
-          <li><a href="<?php echo base_url(); ?>index.php/C_profil">Profil</a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-
     </div>
   </header><!-- End Header -->
-
-    <!-- ======= Pricing Section ======= -->
+           <!-- <?php
+          $latihan1 = 0;
+          $latihan2 = 0;
+          $latihan3 = 0;
+          $latihan4 = 0;
+                foreach( $jawabaneval as $key){
+                if($key->id_materi == 1){
+                 $latihan1++;
+                }elseif($key->id_materi == 2){
+                  $latihan2++;
+                }elseif($key->id_materi == 3){
+                  $latihan3++;
+                }elseif($key->id_materi == 4){
+                  $latihan4++;
+                }
+              }
+            ?>
+            <div id="dom-target" style="display: none;"><?php echo $latihan1;?></div>
+            <div id="dom-target" style="display: none;"><?php echo $latihan2;?></div>
+            <div id="dom-target" style="display: none;"><?php echo $latihan3;?></div>
+            <div id="dom-target" style="display: none;"><?php echo $latihan4;?></div> -->
+  <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
       <div class="container">
 
         <div class="section-title">
-          <br>
-          <h2>Evaluasi</h2>
+          <h2>LIST TUGAS</h2>
         </div>
 
-        <br>
-        <div class="row" data-aos="fade-up" data-aos-delay="300">
-          <p><b>Perhatikan contoh kasus di bawah ini!</b></p>
-        </div>
-        <div class="col-lg-20 col-md-50">
-          <div class="box" data-aos="zoom-in-right" data-aos-delay="200" style="text-align: justify;">
-            <p>Pada suatu hari Budi dan keluarganya akan pergi menonton sebuah film di Bioskop. Pada saat sampai di dalam bioskop, Ibu Budi bersama dengan Adik Budi mengantri untuk membeli tiket. Selagi mengantri, Ibu Budi dan Adik Budi melihat jadwal penayangan film yang tersedia di layar. Film yang akan ditonton oleh Budi dan keluarga dapat ditayangkan di beberapa studio. Setiap film memiliki kategori umur yang berbeda-beda. Ibu Budi memilih kategori film yang sesuai dengan umur Budi dan adiknya. Setelah memilih film, jadwal penayangan, dan tempat duduk, Ibu Budi membayar sejumlah uang kepada petugas loket sesuai dengan faktur yang tersedia di layar komputer. Setelah membayar sejumlah uang, Ibu Budi mendapatkan tiket bioskop untuk film yang akan ditonton. Di dalam tiket yang sudah tercetak terdapat studio penayangan, judul film yang akan ditonton, hari dan tanggal, jam penayangan, baris dan nomor kursi yang akan diduduki, serta harga per-satu tiket.</p>
-          </div>
-        </div>
-        <div class="row" data-aos="fade-up" data-aos-delay="300">
-          <p><b>Tentukanlah masing-masing entitas, atribut, relasi, serta kardinalitas dari contoh kasus di atas!</b></p>
-        </div>
-        
-        <table class="table">
-          <form action="<?php echo site_url('C_siswa/insertjawabaneval'); ?>" method="POST">
-            <tr>
-              <th> Entitas </th>
-              <td>
-                <textarea class="form-control" name="entitas" rows="5" data-rule="required" placeholder="Masukkan entitas"></textarea>
-                  <div class="validate"></div>
-              </td>
-            </tr>
-            <tr>
-              <th> Atribut </th>
-              <td>
-                <textarea class="form-control" name="atribut" rows="5" data-rule="required" placeholder="Masukkan atribut"></textarea>
-                  <div class="validate"></div>
-              </td>
-            </tr>
-            <tr>
-              <th> Relasi (Sebutkan entitasnya) </th>
-              <td>
-               <textarea class="form-control" name="relasi" rows="5" data-rule="required" placeholder="Masukkan relasi"></textarea>
-                  <div class="validate"></div>
-              </td>
-            </tr>
-            <tr>
-              <th> Kardinalitas (Sebutkan entitasnya) </th>
-              <td>
-                <textarea class="form-control" name="kardinalitas" rows="5" data-rule="required" placeholder="Masukkan kardinalitas"></textarea>
-                  <div class="validate"></div>
-              </td>
-            </tr>
-          </table>
-          <br>
-          <center>
-            <input type="submit" class="btn btn-danger" value="Submit">
-          </form>
+              <table id="example1" class="table table-bordered table-hover" border="1px">
+                <thead class="danger">
+                  <tr class="danger">
+                    <th style="text-align: center;">NO</th>
+                    <th style="text-align: center;">EVALUASI</th>
+                    <th style="text-align: center;">KETERANGAN</th>
+                  </tr>
+                </thead>
+                <tbody style="text-align: center;">
+                  <?php
+                  foreach ($datauser as $key) {
+                  // $idpass = $key->id_tugas;
+                    $info = 'Belum Mengerjakan';
 
-
-        <div data-aos="zoom-in">
-          <br>
-          <button type="submit" value="submit" id="btn-submit-custom" class="btn btn-primary m-1" style="width: 80px; height: 40px; border: none; border-radius: 8px;  display:none;">Submit</a></button>   
-          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_siswa"><b>Kembali</b></a></button> 
-          </form>  
-        </div>
-
+                    foreach ($datatugas as $kiy ) {
+                      if($key->id_eval == $kiy->id_eval && $kiy->id_siswa == $id){
+                        $info ='Sudah Mengerjakan';
+                      }
+                    }
+                  ?>
+                  <tr>
+                    <th><?php echo $key->id_eval; ?></th>
+                    <th><a data-toggle="modal" data-target="#exampleModal" id="custom-link-tugas" href="<?php echo site_url('index.php/C_siswa/evaluasi/'.($key->id_eval)); ?>" ><?php echo $key->nama_eval; ?></a></th>
+                    <th><?php echo $info ?></th>
+                  </tr>
+            
+                  <?php
+                      
+                    }
+                  ?>
+                </tbody>
+              </table>
+              <div data-aos="zoom-in" >
+                <br>
+                <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_siswa"><b>Kembali</b></a></button>
+              </div> 
       </div>
     </section><!-- End Pricing Section -->
+
 
   <main id="main">
   </main><!-- End #main -->
@@ -179,8 +166,42 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
-  <script src="<?php echo base_url(); ?>assets/js/apsdnd.js"></script>
 
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Mohon kerjakan materi yang bersangkutan terlebih dahulu
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script >
+  const targetmateeri = document.querySelectorAll('#dom-target')
+  const targethref = document.querySelector('#custom-link-tugas')
+  let keterangan = 0
+  for (let i = 0; i < targetmateeri.length; i++) {
+    if(targetmateeri[i].innerHTML != 0){
+      keterangan++
+    }
+  }
+  if(keterangan === 4){
+    targethref.setAttribute("data-toggle","none");
+  }
+  console.log(keterangan)
+  
+  </script>
 </body>
 
 </html>
