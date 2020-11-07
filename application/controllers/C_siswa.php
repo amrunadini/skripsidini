@@ -229,25 +229,30 @@ class C_siswa extends CI_Controller
             redirect(site_url('C_siswa'));
         }
         else{
+			$data = $this->upload->data();
 	        $tanggal = date("Y-m-d");
 	        $data['tanggal'] = $tanggal;
-	        $data['jawaban'] = $this->input->post('jawaban');
+	        $data['entitas'] = $this->input->post('entitas');
+	      	$data['atribut'] = $this->input->post('atribut');
+	    	$data['relasi'] = $this->input->post('relasi');
+			$data['kardinalitas'] = $this->input->post('kardinalitas');
+			$data['id_tugas'] = $this->input->post('idtugas');
 	        $data['id_siswa'] = $this->session->userdata('id_siswa');
-        	$data = $this->upload->data();
         	$query = array(
         		'tanggal' => $data['tanggal'],
-        		'jawaban' => $data['jawaban'],
-        		'id_siswa' => $data['id_siswa'],
+        		'entitas' => $data['entitas'],
+        		'atribut' => $data['atribut'],
+        		'relasi' => $data['relasi'],
+        		'kardinalitas' => $data['kardinalitas'],
+				'id_siswa' => $data['id_siswa'],
+				'id_tugas' => $data['id_tugas'],
         		'file_name' => $data['file_name'],
         		'file_size' => $data['file_size']
-        	);
-        	$this->M_upload->insert($query);
-        	redirect(site_url('C_siswa'));
-        }
-                       
-        $this->load->Model('M_siswa');
-        $this->M_siswa->insertjwb($data);
-        redirect(site_url('C_siswa'));        
+			);
+			$this->load->Model('M_siswa');
+        	$this->M_siswa->insertjwb($data);
+        	redirect(site_url('C_siswa')); 
+        }       
 	}
 	
 	public function insertjawabaneval(){

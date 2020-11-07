@@ -86,52 +86,79 @@
 
         <div class="section-title" data-aos="fade-up">
           <br>
-          <h2>Tugas</h2>
-          <!-- <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fug</p> -->
+          <?php foreach ($datatugas as $key) {
+            $id = $key->id_tugas;
+            ?>
+            <h2><?php echo $key->nama_tugas ?></h2>
+            <h3>Deskripsi Tugas</h3>
+            <p><?php echo $key->des_tugas ?></p>
+          <?php 
+            }
+          ?>
+        </div>
+        <br>
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+          <p>Tema Kelompok: </p>
         </div>
 
-        <br>
         <table id="example1" class="table table-bordered table-hover" border="1px">
           <form action="<?php echo site_url('C_siswa/insertjawabantugas')?>" enctype="multipart/form-data" method="POST">
             <div class="row" data-aos="fade-up" data-aos-delay="300">
-              <p>Masukkan hasil observasi dalam bentuk deskriptif</p>
+              <p>Masukkan hasil observasi sesuai dengan kategori</p>
             </div>
             <div class="col-lg-20 col-md-30" data-aos="fade-up" data-aos-delay="300">
-                <div class="form-group">
-                    <textarea class="form-control" name="jawaban" rows="5" data-rule="required" data-msg="Anda belum memasukkan hasil observasi" placeholder="Masukkan hasil observasi"></textarea>
+              <tr>
+                <th> Entitas (contoh: Guru, Siswa)</th>
+                <td>
+                  <textarea class="form-control" name="entitas" rows="5" data-rule="required" placeholder="Masukkan entitas"></textarea>
                   <div class="validate"></div>
-                </div>
+                </td>
+              </tr>
+              <tr>
+                <th> Atribut (contoh: id_siswa, nama)</th>
+                <td>
+                  <textarea class="form-control" name="atribut" rows="5" data-rule="required" placeholder="Masukkan atribut"></textarea>
+                    <div class="validate"></div>
+                </td>
+              </tr>
+              <tr>
+                <th> Relasi (contoh: Guru mengajar Siswa) </th>
+                <td>
+                 <textarea class="form-control" name="relasi" rows="5" data-rule="required" placeholder="Masukkan relasi"></textarea>
+                    <div class="validate"></div>
+                </td>
+              </tr>
+              <tr>
+                <th> Kardinalitas (Banyak Guru mengajar Banyak Siswa) </th>
+                <td>
+                  <textarea class="form-control" name="kardinalitas" rows="5" data-rule="required" placeholder="Masukkan kardinalitas"></textarea>
+                    <div class="validate"></div>
+                </td>
+              </tr>
             </div>
-            
-            <div class="row" data-aos="fade-up" data-aos-delay="300">
-              <p>Unggah hasil observasi</p>
-            </div>
-            <div class="content" data-aos="fade-up" data-aos-delay="300">
-              <div class="col-md-10">
-                <div class="content table-responsive table-full-width">
-                  <input type="file" id="files" name="userfile" multiple="multiple" />&nbsp;
-                  <br>
-                  <input type="submit" value="Upload" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">
-                </div>
+        </table>
+
+        <table id="example1" class="table table-bordered table-hover" border="1px">  
+          <div class="row" data-aos="fade-up" data-aos-delay="300">
+            <p>Unggah hasil observasi</p>
+          </div>
+          <div class="content" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-md-10">
+              <div class="content table-responsive table-full-width">
+                <input type="file" id="files" name="userfile" multiple="multiple" />&nbsp;
+                <input type="hidden" id="files" name="idtugas" value="<?php echo $id ?>" />&nbsp;
+                <br>
+                <input type="submit" value="Upload" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">
               </div>
             </div>
-            <!-- <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Tugas berhasil dikumpulkan.</div>
-            </div> -->
-            <!-- <div data-aos="zoom-in">
-              <br>
-                <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">Upload</button>
-            </div> -->
-            <!-- <div class="text-center" data-aos-delay="300">
-              <button type="submit">Upload</button>
-            </div> -->
           </div>
-
+        </div>
           </form>
-          
         </table>
+        <div data-aos="zoom-in">
+          <br>
+          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">Upload</button>
+        </div>
     </section><!-- End Services Section -->
 
   <main id="main">

@@ -78,38 +78,38 @@
         </div>
         <div class="col-lg-20 col-md-50">
           <div class="box" data-aos="zoom-in-right" data-aos-delay="200" style="text-align: justify;">
-            <p>Pada suatu hari Budi dan keluarganya akan pergi menonton sebuah film di Bioskop. Pada saat sampai di dalam bioskop, Ibu Budi bersama dengan Adik Budi mengantri untuk membeli tiket. Selagi mengantri, Ibu Budi dan Adik Budi melihat jadwal penayangan film yang tersedia di layar. Film yang akan ditonton oleh Budi dan keluarga dapat ditayangkan di beberapa studio. Setiap film memiliki kategori umur yang berbeda-beda. Ibu Budi memilih kategori film yang sesuai dengan umur Budi dan adiknya. Setelah memilih film, jadwal penayangan, dan tempat duduk, Ibu Budi membayar sejumlah uang kepada petugas loket sesuai dengan faktur yang tersedia di layar komputer. Setelah membayar sejumlah uang, Ibu Budi mendapatkan tiket bioskop untuk film yang akan ditonton. Di dalam tiket yang sudah tercetak terdapat studio penayangan, judul film yang akan ditonton, hari dan tanggal, jam penayangan, baris dan nomor kursi yang akan diduduki, serta harga per-satu tiket.</p>
+            <p>Pada suatu hari Budi dan keluarganya akan pergi menonton sebuah film di Bioskop. Pada saat sampai di dalam bioskop, Ibu Budi bersama dengan Adik Budi mengantri untuk membeli tiket. Selagi mengantri, Ibu Budi dan Adik Budi melihat jadwal penayangan film yang tersedia di layar. Film yang akan ditonton oleh Budi dan keluarga dapat ditayangkan di beberapa studio. Setiap film memiliki kategori umur yang berbeda-beda. Ibu Budi memilih kategori film yang sesuai dengan umur Budi dan adiknya. Setelah memilih film, jadwal penayangan, dan tempat duduk, Ibu Budi membayar sejumlah uang kepada petugas loket sesuai dengan faktur yang tersedia di layar komputer. Setelah membayar sejumlah uang, Ibu Budi mendapatkan tiket bioskop untuk film yang akan ditonton. Di dalam tiket yang sudah tercetak terdapat studio penayangan, judul film yang akan ditonton, hari dan tanggal, jam penayangan, baris dan nomor kursi yang akan diduduki, serta harga per-satu tiket. Jika seseorang hendak membuat sistem di dalam bioskop maka desain ERD seperti apakah yang dibutuhkan?</p>
           </div>
         </div>
         <div class="row" data-aos="fade-up" data-aos-delay="300">
-          <p><b>Tentukanlah masing-masing entitas, atribut, relasi, serta kardinalitas dari contoh kasus di atas!</b></p>
+          <p><b>Kira-kira, entitas, atribut, relasi, dan kardinalitas apa saja yang dibutuhkan? </b></p>
         </div>
         
         <table class="table">
           <form action="<?php echo site_url('C_siswa/insertjawabaneval'); ?>" method="POST">
             <tr>
-              <th> Entitas </th>
+              <th> Entitas (contoh: Guru, Siswa)</th>
               <td>
                 <textarea class="form-control" name="entitas" rows="5" data-rule="required" placeholder="Masukkan entitas"></textarea>
                   <div class="validate"></div>
               </td>
             </tr>
             <tr>
-              <th> Atribut </th>
+              <th> Atribut (contoh: id_siswa, nama)</th>
               <td>
                 <textarea class="form-control" name="atribut" rows="5" data-rule="required" placeholder="Masukkan atribut"></textarea>
                   <div class="validate"></div>
               </td>
             </tr>
             <tr>
-              <th> Relasi (Sebutkan entitasnya) </th>
+              <th> Relasi (contoh: Guru mengajar Siswa) </th>
               <td>
                <textarea class="form-control" name="relasi" rows="5" data-rule="required" placeholder="Masukkan relasi"></textarea>
                   <div class="validate"></div>
               </td>
             </tr>
             <tr>
-              <th> Kardinalitas (Sebutkan entitasnya) </th>
+              <th> Kardinalitas (Banyak Guru mengajar Banyak Siswa) </th>
               <td>
                 <textarea class="form-control" name="kardinalitas" rows="5" data-rule="required" placeholder="Masukkan kardinalitas"></textarea>
                   <div class="validate"></div>
