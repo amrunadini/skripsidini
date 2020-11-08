@@ -102,34 +102,34 @@
         </div>
 
         <table id="example1" class="table table-bordered table-hover" border="1px">
-          <form action="<?php echo site_url('C_siswa/insertjawabantugas')?>" enctype="multipart/form-data" method="POST">
+          <form action="<?php echo site_url('C_siswa/insertjawabantug')?>" enctype="multipart/form-data" method="POST">
             <div class="row" data-aos="fade-up" data-aos-delay="300">
               <p>Masukkan hasil observasi sesuai dengan kategori</p>
             </div>
             <div class="col-lg-20 col-md-30" data-aos="fade-up" data-aos-delay="300">
               <tr>
-                <th> Entitas (contoh: Guru, Siswa)</th>
+                <th> Entitas </th>
                 <td>
                   <textarea class="form-control" name="entitas" rows="5" data-rule="required" placeholder="Masukkan entitas"></textarea>
                   <div class="validate"></div>
                 </td>
               </tr>
               <tr>
-                <th> Atribut (contoh: id_siswa, nama)</th>
+                <th> Atribut </th>
                 <td>
                   <textarea class="form-control" name="atribut" rows="5" data-rule="required" placeholder="Masukkan atribut"></textarea>
                     <div class="validate"></div>
                 </td>
               </tr>
               <tr>
-                <th> Relasi (contoh: Guru mengajar Siswa) </th>
+                <th> Relasi (Sebutkan entitasnya) </th>
                 <td>
                  <textarea class="form-control" name="relasi" rows="5" data-rule="required" placeholder="Masukkan relasi"></textarea>
                     <div class="validate"></div>
                 </td>
               </tr>
               <tr>
-                <th> Kardinalitas (Banyak Guru mengajar Banyak Siswa) </th>
+                <th> Kardinalitas (Sebutkan entitasnya) </th>
                 <td>
                   <textarea class="form-control" name="kardinalitas" rows="5" data-rule="required" placeholder="Masukkan kardinalitas"></textarea>
                     <div class="validate"></div>
@@ -137,27 +137,28 @@
               </tr>
             </div>
         </table>
-
-        <table id="example1" class="table table-bordered table-hover" border="1px">  
-          <div class="row" data-aos="fade-up" data-aos-delay="300">
-            <p>Unggah hasil observasi</p>
-          </div>
-          <div class="content" data-aos="fade-up" data-aos-delay="300">
-            <div class="col-md-10">
-              <div class="content table-responsive table-full-width">
-                <input type="file" id="files" name="userfile" multiple="multiple" />&nbsp;
-                <input type="hidden" id="files" name="idtugas" value="<?php echo $id ?>" />&nbsp;
-                <br>
-                <input type="submit" value="Upload" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">
+        
+            <table id="example1" class="table table-bordered table-hover" border="1px">
+            <div class="row" data-aos="fade-up" data-aos-delay="300">
+              <p>Unggah hasil observasi</p>
+            </div>
+            <div class="content" data-aos="fade-up" data-aos-delay="300">
+              <div class="col-md-10">
+                <div class="content table-responsive table-full-width">
+                  <input type="file" id="files" name="userfile" multiple="multiple" />&nbsp;
+                  <input type="hidden" id="files" name="idtugas" value="<?php echo $id ?>" />&nbsp;
+                  <br>
+                  <input type="submit" value="Upload" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">
+                </div>
               </div>
             </div>
           </div>
-        </div>
           </form>
         </table>
+
         <div data-aos="zoom-in">
           <br>
-          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">Upload</button>
+          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_siswa"><b>Kembali</b></a></button>      
         </div>
     </section><!-- End Services Section -->
 
