@@ -102,6 +102,13 @@
 			return $this->db->get();
 		}
 
+		function selectAllKelompok(){
+			$this->db->select('*');
+			$this->db->from('kelompok');
+
+			return $this->db->get();
+		}
+
 		function selectjawabanTugas(){
 			$this->db->select('*');
 			$this->db->from('jawaban_tugas');

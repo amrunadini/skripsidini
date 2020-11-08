@@ -158,6 +158,8 @@ class C_siswa extends CI_Controller
 	public function tampil_tugas1($id){
 		$this->load->Model('M_siswa');
 		$data['datatugas'] = $this->M_siswa->selectByIdTugas($id)->result();
+		$data['datauser'] = $this->M_siswa->selectAllKelompok()->result();
+		$data['id'] = $this->session->userdata('id_kelompok');
 		// echo $id;
 		// print_r($data['datatugas']);
 		$this->load->view('V_tugas',$data);

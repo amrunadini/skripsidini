@@ -92,6 +92,12 @@
             <h2><?php echo $key->nama_tugas ?></h2>
             <h3>Deskripsi Tugas</h3>
             <p><?php echo $key->des_tugas ?></p>
+            <?php 
+                foreach ($datauser as $kiy) {
+                  if($key->id_tugas == $kiy->id_tugas && $kiy->id_kelompok == $id){
+                  $id = $kiy->id_kelompok;
+                }
+              ?>
           <?php 
             }
           ?>
@@ -100,6 +106,13 @@
         <div class="row" data-aos="fade-up" data-aos-delay="300">
           <p>Tema Kelompok: </p>
         </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="300">
+          <p><b>Link Rujukan  : </b></p>
+        </div>
+        <?php
+          }
+        ?>
+        <br>
 
         <table id="example1" class="table table-bordered table-hover" border="1px">
           <form action="<?php echo site_url('C_siswa/insertjawabantug')?>" enctype="multipart/form-data" method="POST">
