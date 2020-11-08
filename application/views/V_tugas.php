@@ -94,24 +94,23 @@
             <p><?php echo $key->des_tugas ?></p>
             <?php 
                 foreach ($datauser as $kiy) {
-                  if($key->id_tugas == $kiy->id_tugas && $kiy->id_kelompok == $id){
-                  $id = $kiy->id_kelompok;
+                  if($key->id_kelompok == $kiy->id_kelompok){
+                  $id_kelompok = $kiy->id_kelompok;
+                  $tema = $kiy->tema;
+                  $link = $kiy->link;
+                  }
                 }
-              ?>
-          <?php 
-            }
-          ?>
+          }
+        ?>
         </div>
         <br>
         <div class="row" data-aos="fade-up" data-aos-delay="300">
-          <p>Tema Kelompok: </p>
+          <p>Tema Kelompok: <?php echo $tema;?></p>
         </div>
         <div class="row" data-aos="fade-up" data-aos-delay="300">
-          <p><b>Link Rujukan  : </b></p>
+          <p><b>Link Rujukan  : <?php echo $link;?></p></b></p>
         </div>
-        <?php
-          }
-        ?>
+       
         <br>
 
         <table id="example1" class="table table-bordered table-hover" border="1px">
@@ -160,6 +159,7 @@
                 <div class="content table-responsive table-full-width">
                   <input type="file" id="files" name="userfile" multiple="multiple" />&nbsp;
                   <input type="hidden" id="files" name="idtugas" value="<?php echo $id ?>" />&nbsp;
+                  <input type="hidden" name="id_kelompok" value="<?php echo $id_kelompok ?>" />&nbsp;
                   <br>
                   <input type="submit" value="Upload" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">
                 </div>

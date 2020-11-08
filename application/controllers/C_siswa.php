@@ -149,20 +149,47 @@ class C_siswa extends CI_Controller
 		$datasiswa = $this->session->userdata('id_siswa');
 		$where1 = array('id_siswa' => $datasiswa);
 		$data['jawabantugas'] = $this->M_siswa->selectjawabanlatihan($where1)->result();
+		$where = array('id_siswa' => $datasiswa);
+		$data['idkelompok'] = $this->M_siswa->cariidkelompok($where)->result();
 		$data['id'] = $this->session->userdata('id_siswa');
 		// print_r($data['jawabantugas']);
 		// $where = array('id_materi' => 1);
 		$this->load->view('V_awaltugas', $data);
 	}
 
-	public function tampil_tugas1($id){
+	public function tampil_tugas1($idkel,$idtugas){
 		$this->load->Model('M_siswa');
-		$data['datatugas'] = $this->M_siswa->selectByIdTugas($id)->result();
-		$data['datauser'] = $this->M_siswa->selectAllKelompok()->result();
-		$data['id'] = $this->session->userdata('id_kelompok');
-		// echo $id;
-		// print_r($data['datatugas']);
-		$this->load->view('V_tugas',$data);
+		$where = array('id_siswa' => $this->session->userdata('id_siswa'),'id_kelompok' => $idkel,'id_kelompok' => $idkel);
+		$result = $this->M_siswa->selectjawabantugasbyid($where)->result();
+		if (count($result) > 0) {
+			$this->load->Model('M_siswa');
+		$data['datauser'] = $this->M_siswa->selectTugas()->result();
+		$data['datatugas'] = $this->M_siswa->selectAllTugas()->result();
+		$datasiswa = $this->session->userdata('id_siswa');
+		$where1 = array('id_siswa' => $datasiswa);
+		$data['jawabantugas'] = $this->M_siswa->selectjawabanlatihan($where1)->result();
+		$where = array('id_siswa' => $datasiswa);
+		$data['idkelompok'] = $this->M_siswa->cariidkelompok($where)->result();
+		$data['id'] = $this->session->userdata('id_siswa');
+		// print_r($data['jawabantugas']);
+		// $where = array('id_materi' => 1);
+		$this->load->view('V_awaltugas', $data);
+		} else {
+			$data['datatugas'] = $this->M_siswa->selectByIdTugas($idtugas)->result();
+			$data['datauser'] = $this->M_siswa->selectAllKelompok()->result();
+		 	$data['id'] = $idkel;
+			$this->load->view('V_tugas',$data);
+			// print_r($data['datatugas']);
+			// echo "<br>";
+			// print_r($data['datauser']);
+		}
+
+		// $data['datatugas'] = $this->M_siswa->selectByIdTugas($id)->result();
+		// $data['datauser'] = $this->M_siswa->selectAllKelompok()->result();
+		// $data['id'] = $this->session->userdata('id_kelompok');
+		// // echo $id;
+		// // print_r($data['datatugas']);
+		// $this->load->view('V_tugas',$data);
 	}
 
 	public function profile(){
@@ -250,8 +277,8 @@ class C_siswa extends CI_Controller
         		'relasi' => $data['relasi'],
         		'kardinalitas' => $data['kardinalitas'],
         		'id_siswa' => $data['id_siswa'],
-				'id_tugas' => $data['id_tugas'],
-				'id_kelompok' => $data['id_kelompok'],
+						'id_tugas' => $data['id_tugas'],
+						'id_kelompok' => $data['id_kelompok'],
         		'file_name' => $data['file_name'],
         		'file_size' => $data['file_size']
         	);

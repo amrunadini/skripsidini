@@ -105,7 +105,12 @@
 		function selectAllKelompok(){
 			$this->db->select('*');
 			$this->db->from('kelompok');
-
+			return $this->db->get();
+		}
+		function selectjawabantugasbyid($param){
+			$this->db->select('*');
+			$this->db->from('jawaban_tugas');
+			$this->db->where($param);
 			return $this->db->get();
 		}
 
@@ -128,6 +133,13 @@
 		function selectjawabaneval($id){
 			$this->db->select('*');
 			$this->db->from('jawaban_evaluasi');
+			$this->db->where($id);
+			return $this->db->get();
+		}
+
+		function cariidkelompok($id){
+			$this->db->select('*');
+			$this->db->from('siswa');
 			$this->db->where($id);
 			return $this->db->get();
 		}

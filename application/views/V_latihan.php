@@ -74,7 +74,7 @@
           <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p> -->
         </div>
         <?php
-                foreach( $datamateri as $key){
+            foreach( $datamateri as $key){
             if($key->id_materi == 1){
             ?>
               <script>let statusId1 = "<?php echo $key->keterangan;?>"  </script>

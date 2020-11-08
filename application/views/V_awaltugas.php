@@ -89,6 +89,9 @@
                 </thead>
                 <tbody style="text-align: center;">
                   <?php
+                  foreach ($idkelompok as $key) {
+                  $idkel = $key->kelompok;
+                  }
                   foreach ($datauser as $key) {
                   // $idpass = $key->id_tugas;
                     $info = 'Belum Mengerjakan';
@@ -98,15 +101,19 @@
                         $info ='Sudah Mengerjakan';
                       }
                     }
+
+                    if($idkel == $key->id_kelompok){
+
+                    
                   ?>
                   <tr>
                     <th><?php echo $key->id_tugas; ?></th>
-                    <th><a data-toggle="modal" data-target="#exampleModal" id="custom-link-tugas" href="<?php echo site_url('index.php/C_siswa/tampil_tugas1/'.($key->id_tugas)); ?>" ><?php echo $key->nama_tugas; ?></a></th>
+                    <th><a data-toggle="modal" data-target="#exampleModal" id="custom-link-tugas" href="<?php echo site_url('index.php/C_siswa/tampil_tugas1/'.($idkel).'/'.($key->id_tugas)); ?>" ><?php echo $key->nama_tugas; ?></a></th>
                     <th><?php echo $info ?></th>
                   </tr>
             
                   <?php
-                      
+                      }
                     }
                   ?>
                 </tbody>
