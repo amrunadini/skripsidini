@@ -37,7 +37,9 @@
 </head>
 
 <body>
-
+<script>
+let status = 0;
+</script>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
@@ -51,6 +53,7 @@
     </div>
   </header><!-- End Header -->
            <!-- <?php
+           echo $statustugas;
           $latihan1 = 0;
           $latihan2 = 0;
           $latihan3 = 0;
@@ -76,7 +79,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>LIST TUGAS</h2>
+          <h2>LIST EVALUASi</h2>
         </div>
 
               <table id="example1" class="table table-bordered table-hover" border="1px">
@@ -116,6 +119,14 @@
                 <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_siswa"><b>Kembali</b></a></button>
               </div> 
       </div>
+      <?php if($statustugas == 'sudah'){
+      ?>
+      <script>
+      status = 1;
+      </script>
+      <?php
+
+      }  ?>
     </section><!-- End Pricing Section -->
 
 
@@ -191,15 +202,11 @@
   const targetmateeri = document.querySelectorAll('#dom-target')
   const targethref = document.querySelector('#custom-link-tugas')
   let keterangan = 0
-  for (let i = 0; i < targetmateeri.length; i++) {
-    if(targetmateeri[i].innerHTML != 0){
-      keterangan++
-    }
-  }
-  if(keterangan === 4){
+  
+  if(status === 1){
     targethref.setAttribute("data-toggle","none");
   }
-  console.log(keterangan)
+  console.log(status)
   
   </script>
 </body>

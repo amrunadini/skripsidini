@@ -137,7 +137,19 @@ class C_siswa extends CI_Controller
 		$where1 = array('id_siswa' => $datasiswa);
 		$data['jawabaneval'] = $this->M_siswa->selectjawabaneval($where1)->result();
 		$data['id'] = $this->session->userdata('id_siswa');
-		// print_r($data['jawabantugas']);
+		$idpass = $data['id'];
+		$idkel = $this->M_siswa->selectkelompok($idpass)->result();
+		// print_r($idkel);
+		// echo $idkel[0]->kelompok;
+		
+		$result = $this->M_siswa->selectjawabantugasbyid1($idkel[0]->kelompok)->result();
+		if (count($result) > 0) {
+			$data['statustugas'] = 'sudah';
+		}else{
+			$data['statustugas'] = 'belum';
+		}
+
+		// print_r($result);
 		// $where = array('id_materi' => 1);
 		$this->load->view('V_awalevaluasi', $data);
 	}

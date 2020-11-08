@@ -114,6 +114,13 @@
 			return $this->db->get();
 		}
 
+		function selectjawabantugasbyid1($id){
+			$this->db->select('*');
+			$this->db->from('jawaban_tugas');
+			$this->db->where('id_kelompok',$id);
+			return $this->db->get();
+		}
+
 		function selectjawabanTugas(){
 			$this->db->select('*');
 			$this->db->from('jawaban_tugas');
@@ -127,6 +134,13 @@
 			$this->db->select('*');
 			$this->db->from('jawaban_latihan');
 			$this->db->where($id);
+			return $this->db->get();
+		}
+
+		function selectkelompok($id){
+			$this->db->select('kelompok');
+			$this->db->from('siswa');
+			$this->db->where('id_siswa',$id);
 			return $this->db->get();
 		}
 
