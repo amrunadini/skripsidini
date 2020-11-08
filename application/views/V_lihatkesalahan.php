@@ -64,13 +64,39 @@
                   <tr class="danger">
                     <th style="text-align: center;">NO</th>
                     <th style="text-align: center;">SOAL</th>
+                    <th style="text-align: center;">Jawaban</th>
+                    <th style="text-align: center;">Kunci</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th style="text-align: center;"></th>
-                    <th style="text-align: center;"></th>
+                <?php
+                // print_r($datasoal);
+                foreach ($datasoal as $kuy) {  
+                    // echo $key->no_soal;
+                  
+                    foreach ($jawaban as $jawab) {
+                      if($kuy->no_soal == $jawab->id_soal){
+                        $jawabansoall = $jawab->jawaban;
+                      }
+                    }
+                  ?>
+                  <tr
+                  <?php 
+                  if($jawabansoall != $kuy->kunci){
+                    ?>
+                  class = "bg-danger"
+                    <?php
+                  }
+                  ?>
+                  >
+                    <th style="text-align: center;"><?php echo $kuy->no_soal?></th>
+                    <th style="text-align: center;"><?php echo $kuy->soal?></th>
+                    <th style="text-align: center;"><?php echo $jawabansoall?></th>
+                    <th style="text-align: center;"><?php echo $kuy->kunci?></th>
                   </tr>
+                  <?php
+                  }
+                 ?>
                 </tbody>
               </table>
               <div data-aos="zoom-in">

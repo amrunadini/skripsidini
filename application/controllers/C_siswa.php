@@ -242,6 +242,8 @@ class C_siswa extends CI_Controller
 
 	public function insertJawabanLat(){
 		$this->load->Model('M_siswa');
+		$waktu = date("h:i:sa");
+		$tanggal = date("Y/m/d");
 		$id = $this->input->post('id_materi');
         $idsiswa =  $this->session->userdata('id_siswa');
 				$data['soal'] = $this->M_siswa->selectById($id)->result();
@@ -256,7 +258,7 @@ class C_siswa extends CI_Controller
         	echo "$key->id_soal";
 					$jawaban = $this->input->post($key->id_soal);
         	echo "$jawaban <br>";
-        	$this->M_siswa->jawabsoal($idsiswa,$key->id_soal,$id,$jawaban);
+        	$this->M_siswa->jawabsoal($idsiswa,$key->id_soal,$id,$jawaban,$waktu,$tanggal);
         	if ($key->kunci==$jawaban) {
         		echo "Benar <br>";
         		$score = $score + 20;
@@ -264,8 +266,9 @@ class C_siswa extends CI_Controller
         		echo "Salah";
         	}
 
-        }echo "Scorenya = $score";
-         $this->M_siswa->nilaisoal($id,$idsiswa,$score,$tanggal);
+				}echo "Scorenya = $score";
+				
+         $this->M_siswa->nilaisoal($id,$idsiswa,$score,$waktu,$tanggal);
         // echo "<pre>";
         // echo "$jawaban";
         // echo "</pre>";   

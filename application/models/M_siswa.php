@@ -39,6 +39,28 @@
 			return $this->db->get();
 		}
 
+		function selectjawaban($id){
+			$this->db->select('*');
+			$this->db->from('jawaban_latihan');
+			$this->db->where($id);
+
+			return $this->db->get();
+		}
+		function selectJawabanSoalEval($param){
+			$this->db->select('*');
+			$this->db->from('jawaban_latihan');
+			$this->db->where($param);
+
+			return $this->db->get();
+		}
+		function selectJawabanSoallatBenar($param){
+			$this->db->select('*');
+			$this->db->from('soal_latihan');
+			$this->db->where($param);
+
+			return $this->db->get();
+		}
+
 		function cari_nilai($where,$db){
 			return $this->db->get_where($db,$where);
 		}
@@ -187,12 +209,12 @@
 			return $this->db->get();
 		}
 
-		function jawabsoal($idsiswa,$idsoal,$jawaban,$idmateri){
-			$this->db->query("insert into jawaban_latihan values (null,'$idsiswa','$idsoal','$idmateri','$jawaban',null)");
+		function jawabsoal($idsiswa,$idsoal,$jawaban,$idmateri,$waktu,$tanggal){
+			$this->db->query("insert into jawaban_latihan values (null,'$idsiswa','$idsoal','$idmateri','$jawaban','$waktu','$tanggal')");
 		}
 
-		function nilaisoal($idmateri,$idsiswa,$nilai,$tanggal){
-			$this->db->query("insert into nilai_latihan values (null,'$idmateri','$idsiswa','$nilai','$tanggal')");
+		function nilaisoal($idmateri,$idsiswa,$nilai,$waktu,$tanggal){
+			$this->db->query("insert into nilai_latihan values (null,'$idmateri','$idsiswa','$nilai','$waktu','$tanggal')");
 		}
 
 		function insertjwb($data){

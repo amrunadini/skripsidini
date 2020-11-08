@@ -69,18 +69,32 @@
                 </thead>
                 <tbody>
                   <?php
+                  $jumlahpercobaan = 0;
+                  $temp = 0;
+                  foreach ($jawaban as $key) { 
+                    if($temp == 0){
+                      $temp = $key->waktu;
+                      $jumlahpercobaan++;
+                    }
+                    else if($temp != $key->waktu){
+                      $temp = $key->waktu;
+                      $jumlahpercobaan++;
+                    }
+                  }
                     foreach ($materi as $key) { 
                       $nilai = 0;
                       foreach ($nilai_materi as $kiy) {
                         if($kiy->id_materi == $key->id_materi){
+                          $idmateri = $key->id_materi;
                           $nilai = $kiy->nilai;
                           $tanggal = $kiy->tanggal;
+                          $waktu = $kiy->waktu;
                         ?>
                   <tr>
                     <th style="text-align: center;"><?php echo $nilai ?></th>
                     <th style="text-align: center;"><?php echo $tanggal; ?></th>
                     <th style="text-align: center;">
-                      <a href="<?php echo site_url('C_profil/kesalahan_jawab/'); ?>">LIHAT SOAL</a>
+                      <a href="<?php echo site_url('index.php/C_profil/kesalahan_jawab/'.($waktu).'/'.($tanggal).'/'.($idmateri)); ?>">LIHAT SOAL</a>
                     </th>
                     <?php
                         }
@@ -89,6 +103,8 @@
                   </tr>
                   <?php
                     }
+
+                    // echo $jumlahpercobaan;
                   ?>
                 </tbody>
               </table>
