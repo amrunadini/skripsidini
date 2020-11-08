@@ -32,6 +32,10 @@ class C_profil extends CI_Controller
 		$this->load->view('V_historinilai',$data);
 	}
 
+	public function kesalahan_jawab(){
+		$this->load->view('V_lihatkesalahan');
+	}
+
 	public function t_nilailat()
 	{
 		$this->load->Model('M_siswa');

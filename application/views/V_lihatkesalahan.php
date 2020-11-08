@@ -56,40 +56,21 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>HISTORI NILAI</h2>
+          <h2>KESALAHAN MENJAWAB SOAL</h2>
         </div>
 
               <table id="example1" class="table table-bordered table-hover" border="1px">
                 <thead class="danger">
                   <tr class="danger">
-                    <th style="text-align: center;">NILAI</th>
-                    <th style="text-align: center;">TANGGAL</th>
-                    <th style="text-align: center;">KESALAHAN</th>
+                    <th style="text-align: center;">NO</th>
+                    <th style="text-align: center;">SOAL</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php
-                    foreach ($materi as $key) { 
-                      $nilai = 0;
-                      foreach ($nilai_materi as $kiy) {
-                        if($kiy->id_materi == $key->id_materi){
-                          $nilai = $kiy->nilai;
-                          $tanggal = $kiy->tanggal;
-                        ?>
                   <tr>
-                    <th style="text-align: center;"><?php echo $nilai ?></th>
-                    <th style="text-align: center;"><?php echo $tanggal; ?></th>
-                    <th style="text-align: center;">
-                      <a href="<?php echo site_url('C_profil/kesalahan_jawab/'); ?>">LIHAT SOAL</a>
-                    </th>
-                    <?php
-                        }
-                      }
-                  ?>
+                    <th style="text-align: center;"></th>
+                    <th style="text-align: center;"></th>
                   </tr>
-                  <?php
-                    }
-                  ?>
                 </tbody>
               </table>
               <div data-aos="zoom-in">

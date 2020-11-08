@@ -238,7 +238,8 @@ class C_siswa extends CI_Controller
 	        $data['atribut'] = $this->input->post('atribut');
 	        $data['relasi'] = $this->input->post('relasi');
 	        $data['kardinalitas'] = $this->input->post('kardinalitas');
-	        $data['id_tugas'] = $this->input->post('idtugas');
+			$data['id_tugas'] = $this->input->post('idtugas');
+			$data['id_kelompok'] = $this->input->post('id_kelompok');
 	        $data['id_siswa'] = $this->session->userdata('id_siswa');
         	$data = array(
         		'tanggal' => $data['tanggal'],
@@ -247,7 +248,8 @@ class C_siswa extends CI_Controller
         		'relasi' => $data['relasi'],
         		'kardinalitas' => $data['kardinalitas'],
         		'id_siswa' => $data['id_siswa'],
-        		'id_tugas' => $data['id_tugas'],
+				'id_tugas' => $data['id_tugas'],
+				'id_kelompok' => $data['id_kelompok'],
         		'file_name' => $data['file_name'],
         		'file_size' => $data['file_size']
         	);
