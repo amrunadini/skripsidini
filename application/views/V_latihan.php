@@ -75,10 +75,39 @@
         </div>
         <?php
                 foreach( $datamateri as $key){
-
-                
+            if($key->id_materi == 1){
             ?>
-            <div id="dom-target" style="display: none;"><?php echo $key->keterangan;?></div>
+              <script>let statusId1 = "<?php echo $key->keterangan;?>"  </script>
+            <?php
+            }
+            ?>
+
+            <?php 
+            if($key->id_materi == 2){
+            ?>
+              <script>let statusId2 = "<?php echo $key->keterangan;?>"  </script>
+            <?php
+            }
+            ?>
+            
+            <?php 
+            if($key->id_materi == 3){
+            ?>
+              <script>let statusId3 = "<?php echo $key->keterangan;?>"  </script>
+            <?php
+            }
+            ?>
+
+            <?php 
+            if($key->id_materi == 4){
+            ?>
+              <script>let statusId4 = "<?php echo $key->keterangan;?>"  </script>
+            <?php
+            }
+            ?>
+
+
+
             <?php
               }
             ?>
@@ -90,7 +119,7 @@
               <div class="icon-box">
               <!-- <i class="ri-store-line" style="color: #ffbb2c;"></i> -->
                 <tr>
-                  <th><a id = "selectedhref" href="<?php echo site_url('C_siswa/soal/'.$key->id_materi); ?>" data-toggle="modal" data-target="#exampleModal"><?php echo $key->materi; ?></a></th>
+                  <th><a id = "a<?php echo $key->id_materi; ?>" href="<?php echo site_url('C_siswa/soal/'.$key->id_materi); ?>" data-toggle="modal" data-target="#exampleModal"><?php echo $key->materi; ?></a></th>
                 </tr>
               </div>
             </div>
@@ -169,19 +198,27 @@
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
   <script >
-  const targetmateeri = document.querySelectorAll('#dom-target')
-  const targethref = document.querySelectorAll('#selectedhref')
-  let keterangan = 'belum'
-  console.log(targethref)
-  for (let i = 0; i < targetmateeri.length; i++) {
-    console.log(targetmateeri[i])
-    if(targetmateeri[i].innerHTML == 'sudah'){
-      targethref[i].setAttribute("data-toggle","none");
-      
+
+  const targethref1 = document.querySelector('#a1')
+  const targethref2 = document.querySelector('#a2')
+  const targethref3 = document.querySelector('#a3')
+  const targethref4 = document.querySelector('#a4')
+    if(statusId1 == 'sudah'){
+      targethref1.setAttribute("data-toggle","none");
+      // console.log('masuk')
+    }
+    if(statusId2 == 'sudah'){
+      // console.log('masuk')
+      targethref2.setAttribute("data-toggle","none");
+    }
+    if(statusId3 == 'sudah'){
+      // console.log('masuk3')
+      targethref3.setAttribute("data-toggle","none");
+    }
+    if(statusId4 == 'sudah'){
+      targethref4.setAttribute("data-toggle","none");
     }
     // console.log(keterangan)
-  }
-  
   </script>
 </body>
 
