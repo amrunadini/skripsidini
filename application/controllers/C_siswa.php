@@ -27,6 +27,8 @@ class C_siswa extends CI_Controller
 	public function materi(){
 		$this->load->Model('M_siswa');
 		$data['datauser'] = $this->M_siswa->selectMateri()->result();
+		$where = array('id_siswa' => $this->session->userdata('id_siswa'));
+		$data['datamateri'] = $this->M_siswa->selectMateristatus($where)->result();
 		$this->load->view('V_materi', $data);
 	}
 

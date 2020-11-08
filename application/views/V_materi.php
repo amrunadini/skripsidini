@@ -98,12 +98,41 @@
             </div>
           </div>
           
-            <?php
-                foreach( $datauser as $key){
-
-                
+          <?php
+            foreach( $datamateri as $key){
+            if($key->id_materi == 1){
             ?>
-            <div id="dom-target" style="display: none;"><?php echo $key->keterangan;?></div>
+              <script>let statusId1 = "<?php echo $key->keterangan;?>"  </script>
+            <?php
+            }
+            ?>
+
+            <?php 
+            if($key->id_materi == 2){
+            ?>
+              <script>let statusId2 = "<?php echo $key->keterangan;?>"  </script>
+            <?php
+            }
+            ?>
+            
+            <?php 
+            if($key->id_materi == 3){
+            ?>
+              <script>let statusId3 = "<?php echo $key->keterangan;?>"  </script>
+            <?php
+            }
+            ?>
+
+            <?php 
+            if($key->id_materi == 4){
+            ?>
+              <script>let statusId4 = "<?php echo $key->keterangan;?>"  </script>
+            <?php
+            }
+            ?>
+
+
+
             <?php
               }
             ?>
@@ -111,7 +140,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4  class="title"><a id = "selectedhref" href="<?php echo base_url(); ?>index.php/C_siswa/kardinalitas/4" data-toggle="modal" data-target="#exampleModal">Kardinalitas</a></h4>
+              <h4  class="title"><a id = "materi4" href="<?php echo base_url(); ?>index.php/C_siswa/kardinalitas/4" data-toggle="modal" data-target="#exampleModal">Kardinalitas</a></h4>
               <!-- <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> -->
             </div>
           </div>
@@ -189,19 +218,14 @@
   <!-- Template Main JS File -->
   <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
   <script >
-  const targetmateeri = document.querySelectorAll('#dom-target')
-  const targethref = document.querySelector('#selectedhref')
-  let keterangan = 'sudah'
-  for (let i = 0; i < targetmateeri.length-1; i++) {
-    if(targetmateeri[i].innerHTML.search('belum') != -1){
-      keterangan = 'belum'
-    }
-    // console.log(keterangan)
-  }
-  if(keterangan === 'sudah'){
-    targethref.setAttribute("data-toggle","none");
-  }
-  
+  const targethref1 = document.querySelector('#materi4')
+    if(statusId1 == 'sudah' && statusId2 == 'sudah' && statusId3 == 'sudah'){
+    targethref1.setAttribute("data-toggle","none");
+    console.log('masuk')
+    } 
+    console.log(statusId1)
+    console.log(statusId2)
+    console.log(statusId3)
   </script>
 </body>
 
