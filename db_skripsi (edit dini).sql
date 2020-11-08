@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2020 at 02:24 PM
+-- Generation Time: Nov 08, 2020 at 09:04 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -167,7 +167,27 @@ INSERT INTO `jawaban_latihan` (`id_jawabanlatihan`, `id_siswa`, `id_soal`, `jawa
 (88, 11, 17, 'Satu anggota suatu entitas bisa berhubungan dengan banyak anggota dalam entitas lain', 4, '2020-11-07 13:24:28'),
 (89, 11, 18, 'One to many\r\n', 4, '2020-11-07 13:24:28'),
 (90, 11, 19, 'Binary	', 4, '2020-11-07 13:24:28'),
-(91, 11, 20, '1:N', 4, '2020-11-07 13:24:28');
+(91, 11, 20, '1:N', 4, '2020-11-07 13:24:28'),
+(92, 11, 1, 'Dua persegi', 1, '2020-11-08 07:21:01'),
+(93, 11, 2, 'Entitas kuat', 1, '2020-11-08 07:21:01'),
+(94, 11, 3, 'Dokter', 1, '2020-11-08 07:21:01'),
+(95, 11, 4, 'Memiliki primary key dan selalu bergantung pada entitas lain', 1, '2020-11-08 07:21:01'),
+(96, 11, 5, 'Tandai sebagai objek', 1, '2020-11-08 07:21:01'),
+(97, 11, 6, 'Entitas\r\n', 2, '2020-11-08 07:21:15'),
+(98, 11, 7, 'Objek yang hanya memiliki satu nilai di dalamnya', 2, '2020-11-08 07:21:15'),
+(99, 11, 8, 'Id_penumpang, nama, dan no_telepon', 2, '2020-11-08 07:21:15'),
+(100, 11, 9, '1, 2, dan 3', 2, '2020-11-08 07:21:15'),
+(101, 11, 10, 'Kode guru, Kode Pegawai, dan Tugas', 2, '2020-11-08 07:21:15'),
+(102, 11, 11, 'Individu yang mewakili sesuatu yang nyata dan dapat dibedakan dari satu dengan yang lainnya', 3, '2020-11-08 07:22:04'),
+(103, 11, 12, 'Ternary', 3, '2020-11-08 07:22:04'),
+(104, 11, 13, 'Hubungan entitas dengan beberapa entitas lain', 3, '2020-11-08 07:22:04'),
+(105, 11, 14, 'Unary, Binary, Sixnary', 3, '2020-11-08 07:22:04'),
+(106, 11, 15, 'N-ary	', 3, '2020-11-08 07:22:04'),
+(107, 11, 16, 'Hubungan antara sejumlah entitas yang berasal dari himpunan itu sendiri atau dengan himpunan entitas yang berbeda', 4, '2020-11-08 07:22:22'),
+(108, 11, 17, 'Satu anggota berhubungan dengan anggota pada entitas yang sama', 4, '2020-11-08 07:22:22'),
+(109, 11, 18, 'Many to one', 4, '2020-11-08 07:22:22'),
+(110, 11, 19, 'Binary	', 4, '2020-11-08 07:22:22'),
+(111, 11, 20, '1:N', 4, '2020-11-08 07:22:22');
 
 -- --------------------------------------------------------
 
@@ -178,6 +198,7 @@ INSERT INTO `jawaban_latihan` (`id_jawabanlatihan`, `id_siswa`, `id_soal`, `jawa
 CREATE TABLE `jawaban_tugas` (
   `id_jawabantugas` int(11) NOT NULL,
   `id_siswa` int(11) NOT NULL,
+  `id_kelompok` int(11) NOT NULL,
   `id_tugas` int(11) NOT NULL,
   `entitas` varchar(100) NOT NULL,
   `atribut` varchar(100) NOT NULL,
@@ -185,56 +206,82 @@ CREATE TABLE `jawaban_tugas` (
   `kardinalitas` varchar(100) NOT NULL,
   `file_name` varchar(100) NOT NULL,
   `file_size` varchar(100) NOT NULL,
-  `tanggal` date NOT NULL
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `jawaban_tugas`
 --
 
-INSERT INTO `jawaban_tugas` (`id_jawabantugas`, `id_siswa`, `id_tugas`, `entitas`, `atribut`, `relasi`, `kardinalitas`, `file_name`, `file_size`, `tanggal`) VALUES
-(1, 0, 0, 'Test 123', '', '', '', '', '', '2020-09-07'),
-(2, 2, 0, 'dini hehehe', '', '', '', '', '', '2020-10-10'),
-(3, 2, 0, 'test 123', '', '', '', '', '', '2020-10-10'),
-(4, 2, 0, 'test lagi\r\n', '', '', '', '', '', '2020-10-10'),
-(5, 2, 0, 'test lagi\r\n', '', '', '', '', '', '2020-10-10'),
-(6, 2, 0, 'test lagi lagi bismillah', '', '', '', '', '', '2020-10-10'),
-(7, 2, 0, 'bismillah', '', '', '', '', '', '2020-10-10'),
-(8, 2, 0, '', '', '', '', '', '', '2020-10-22'),
-(9, 2, 0, 'hahaha', '', '', '', '', '', '2020-10-23'),
-(10, 7, 0, '', '', '', '', '', '', '2020-10-26'),
-(11, 7, 0, 'test', '', '', '', '', '', '2020-10-26'),
-(12, 2, 0, 'test', '', '', '', '', '', '2020-10-26'),
-(13, 2, 0, 'test', '', '', '', '', '', '2020-10-26'),
-(14, 2, 0, 'test 123', '', '', '', '', '', '2020-10-26'),
-(15, 2, 0, 'dini', '', '', '', '', '', '2020-10-26'),
-(16, 0, 0, '', '', '', '', 'Presensi_Nilai.xlsx', '14.29', '0000-00-00'),
-(17, 0, 0, '', '', '', '', 'ABSENSI_(Landscape).docx', '18.3', '0000-00-00'),
-(18, 0, 0, '', '', '', '', 'ABSEN_BERDASARKAN_NAMA.docx', '20.95', '0000-00-00'),
-(19, 2, 0, 'test', '', '', '', '', '', '2020-10-26'),
-(20, 0, 0, '', '', '', '', 'EJAAN_BAHASA_INDONESIA.docx', '120.27', '0000-00-00'),
-(21, 0, 0, '', '', '', '', 'TUGAS_SKRIPSI.docx', '26.65', '0000-00-00'),
-(22, 6, 0, 'bismillah bismillah', '', '', '', 'Angka_dan_Bilangan.docx', '23.07', '2020-10-27'),
-(23, 7, 0, 'test ya', '', '', '', 'BAB_II_Dini_Bimillah.docx', '386.97', '2020-10-28'),
-(24, 3, 0, 'siswa ', '', '', '', '11a.png', '1.59', '2020-10-29'),
-(25, 8, 0, 'observ', '', '', '', '142-419-1-PB_(1).pdf', '982.94', '2020-10-29'),
-(26, 3, 0, 'test', '', '', '', '11a.png', '1.59', '2020-10-29'),
-(27, 6, 0, 'bismillah', '', '', '', '20c.png', '6.38', '2020-10-29'),
-(28, 6, 0, 'bismillah', '', '', '', '11a.png', '1.59', '2020-10-29'),
-(29, 3, 0, 'dini', '', '', '', '8__kemagnetan.ppt', '1591', '2020-10-29'),
-(30, 3, 0, 'bismillah', '', '', '', '1__fisum_(silabus_sains).ppt', '185.5', '2020-10-29'),
-(31, 3, 0, 'ayo ayo bisa', '', '', '', '9__fisika_atom_inti.ppt', '2915.5', '2020-10-29'),
-(32, 9, 0, 'bismillah ya ti', '', '', '', 'UTS_Pendidikan_Pancasila_dan_Kewarganegaraan.docx', '14.42', '2020-10-29'),
-(33, 3, 0, 'bismillah', '', '', '', '', '', '2020-10-29'),
-(34, 3, 0, 'bisa', '', '', '', '', '', '2020-10-29'),
-(35, 3, 0, 'lagi', '', '', '', '', '', '2020-10-29'),
-(36, 3, 0, 'pasti bisa sekarang mah', '', '', '', '', '', '2020-10-29'),
-(37, 10, 0, 'test 123', '', '', '', '', '', '2020-10-30'),
-(38, 10, 0, 'bismillah', '', '', '', 'PENELITIAN_MASALAH_BELAJAR_PADA_MAHASISWA.docx', '321.77', '2020-10-30'),
-(39, 3, 0, 'yeay', '', '', '', 'Wawancara_BK.docx', '14.42', '2020-10-30'),
-(40, 3, 0, 'coba lagi', '', '', '', 'Soal_fisika_catlin.docx', '17.65', '2020-10-31'),
-(43, 3, 1, 'bismillah', '', '', '', '3_1_dan_4_1_RPP_Logika_dan_Algoritma_sah.docx', '41.07', '2020-10-31'),
-(44, 11, 1, 'test', 'test', 'test', 'test', 'Tambahan.docx', '11.25', '2020-11-07');
+INSERT INTO `jawaban_tugas` (`id_jawabantugas`, `id_siswa`, `id_kelompok`, `id_tugas`, `entitas`, `atribut`, `relasi`, `kardinalitas`, `file_name`, `file_size`, `tanggal`) VALUES
+(1, 0, 0, 0, 'Test 123', '', '', '', '', '', '2020-09-06 17:00:00'),
+(2, 2, 0, 0, 'dini hehehe', '', '', '', '', '', '2020-10-09 17:00:00'),
+(3, 2, 0, 0, 'test 123', '', '', '', '', '', '2020-10-09 17:00:00'),
+(4, 2, 0, 0, 'test lagi\r\n', '', '', '', '', '', '2020-10-09 17:00:00'),
+(5, 2, 0, 0, 'test lagi\r\n', '', '', '', '', '', '2020-10-09 17:00:00'),
+(6, 2, 0, 0, 'test lagi lagi bismillah', '', '', '', '', '', '2020-10-09 17:00:00'),
+(7, 2, 0, 0, 'bismillah', '', '', '', '', '', '2020-10-09 17:00:00'),
+(8, 2, 0, 0, '', '', '', '', '', '', '2020-10-21 17:00:00'),
+(9, 2, 0, 0, 'hahaha', '', '', '', '', '', '2020-10-22 17:00:00'),
+(10, 7, 0, 0, '', '', '', '', '', '', '2020-10-25 17:00:00'),
+(11, 7, 0, 0, 'test', '', '', '', '', '', '2020-10-25 17:00:00'),
+(12, 2, 0, 0, 'test', '', '', '', '', '', '2020-10-25 17:00:00'),
+(13, 2, 0, 0, 'test', '', '', '', '', '', '2020-10-25 17:00:00'),
+(14, 2, 0, 0, 'test 123', '', '', '', '', '', '2020-10-25 17:00:00'),
+(15, 2, 0, 0, 'dini', '', '', '', '', '', '2020-10-25 17:00:00'),
+(16, 0, 0, 0, '', '', '', '', 'Presensi_Nilai.xlsx', '14.29', '0000-00-00 00:00:00'),
+(17, 0, 0, 0, '', '', '', '', 'ABSENSI_(Landscape).docx', '18.3', '0000-00-00 00:00:00'),
+(18, 0, 0, 0, '', '', '', '', 'ABSEN_BERDASARKAN_NAMA.docx', '20.95', '0000-00-00 00:00:00'),
+(19, 2, 0, 0, 'test', '', '', '', '', '', '2020-10-25 17:00:00'),
+(20, 0, 0, 0, '', '', '', '', 'EJAAN_BAHASA_INDONESIA.docx', '120.27', '0000-00-00 00:00:00'),
+(21, 0, 0, 0, '', '', '', '', 'TUGAS_SKRIPSI.docx', '26.65', '0000-00-00 00:00:00'),
+(22, 6, 0, 0, 'bismillah bismillah', '', '', '', 'Angka_dan_Bilangan.docx', '23.07', '2020-10-26 17:00:00'),
+(23, 7, 0, 0, 'test ya', '', '', '', 'BAB_II_Dini_Bimillah.docx', '386.97', '2020-10-27 17:00:00'),
+(24, 3, 0, 0, 'siswa ', '', '', '', '11a.png', '1.59', '2020-10-28 17:00:00'),
+(25, 8, 0, 0, 'observ', '', '', '', '142-419-1-PB_(1).pdf', '982.94', '2020-10-28 17:00:00'),
+(26, 3, 0, 0, 'test', '', '', '', '11a.png', '1.59', '2020-10-28 17:00:00'),
+(27, 6, 0, 0, 'bismillah', '', '', '', '20c.png', '6.38', '2020-10-28 17:00:00'),
+(28, 6, 0, 0, 'bismillah', '', '', '', '11a.png', '1.59', '2020-10-28 17:00:00'),
+(29, 3, 0, 0, 'dini', '', '', '', '8__kemagnetan.ppt', '1591', '2020-10-28 17:00:00'),
+(30, 3, 0, 0, 'bismillah', '', '', '', '1__fisum_(silabus_sains).ppt', '185.5', '2020-10-28 17:00:00'),
+(31, 3, 0, 0, 'ayo ayo bisa', '', '', '', '9__fisika_atom_inti.ppt', '2915.5', '2020-10-28 17:00:00'),
+(32, 9, 0, 0, 'bismillah ya ti', '', '', '', 'UTS_Pendidikan_Pancasila_dan_Kewarganegaraan.docx', '14.42', '2020-10-28 17:00:00'),
+(33, 3, 0, 0, 'bismillah', '', '', '', '', '', '2020-10-28 17:00:00'),
+(34, 3, 0, 0, 'bisa', '', '', '', '', '', '2020-10-28 17:00:00'),
+(35, 3, 0, 0, 'lagi', '', '', '', '', '', '2020-10-28 17:00:00'),
+(36, 3, 0, 0, 'pasti bisa sekarang mah', '', '', '', '', '', '2020-10-28 17:00:00'),
+(37, 10, 0, 0, 'test 123', '', '', '', '', '', '2020-10-29 17:00:00'),
+(38, 10, 0, 0, 'bismillah', '', '', '', 'PENELITIAN_MASALAH_BELAJAR_PADA_MAHASISWA.docx', '321.77', '2020-10-29 17:00:00'),
+(39, 3, 0, 0, 'yeay', '', '', '', 'Wawancara_BK.docx', '14.42', '2020-10-29 17:00:00'),
+(40, 3, 0, 0, 'coba lagi', '', '', '', 'Soal_fisika_catlin.docx', '17.65', '2020-10-30 17:00:00'),
+(43, 3, 0, 1, 'bismillah', '', '', '', '3_1_dan_4_1_RPP_Logika_dan_Algoritma_sah.docx', '41.07', '2020-10-30 17:00:00'),
+(44, 11, 0, 1, 'test', 'test', 'test', 'test', 'Tambahan.docx', '11.25', '2020-11-06 17:00:00'),
+(45, 11, 0, 1, 'test coba', 'lagi', 'lagi', 'lagi', 'Tambahan.docx', '11.25', '2020-11-07 17:00:00'),
+(46, 11, 0, 1, 'bismillah coba', 'lagi ya', 'lagi', 'ya', 'Ar,_Kr,_Xe.docx', '20.18', '2020-11-07 17:00:00'),
+(47, 11, 0, 1, 'bismillah', 'test', 'bisa', 'bismillah', 'SC_100139228_HW_JAN15.pdf', '27.15', '2020-11-07 17:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kelompok`
+--
+
+CREATE TABLE `kelompok` (
+  `id_kelompok` int(11) NOT NULL,
+  `no_kelompok` int(11) NOT NULL,
+  `tema` varchar(100) NOT NULL,
+  `link` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kelompok`
+--
+
+INSERT INTO `kelompok` (`id_kelompok`, `no_kelompok`, `tema`, `link`) VALUES
+(1, 1, 'Buku Sekolah Digital', 'https://bukusekolahdigital.com/data/2013/'),
+(2, 2, 'Toko Mainan Anak', 'http://www.mainananakonline.com/home.html'),
+(3, 3, 'Cat Tembok', 'https://cdn-test.dulux.co.id/id'),
+(4, 4, 'Toko Sepatu', 'http://adorableprojects.com/index.php');
 
 -- --------------------------------------------------------
 
@@ -335,7 +382,11 @@ INSERT INTO `nilai_latihan` (`id_nilailatihan`, `id_materi`, `id_siswa`, `nilai`
 (38, 4, 11, 40, '2020-11-06'),
 (39, 4, 11, 40, '2020-11-06'),
 (40, 1, 11, 0, '2020-11-06'),
-(41, 4, 11, 40, '2020-11-06');
+(41, 4, 11, 40, '2020-11-06'),
+(42, 1, 11, 20, '2020-11-08'),
+(43, 2, 11, 20, '2020-11-08'),
+(44, 3, 11, 0, '2020-11-08'),
+(45, 4, 11, 20, '2020-11-08');
 
 -- --------------------------------------------------------
 
@@ -453,7 +504,7 @@ CREATE TABLE `status_materi` (
 --
 
 INSERT INTO `status_materi` (`id`, `id_siswa`, `id_materi`, `keterangan`) VALUES
-(5, 11, 3, 'belum'),
+(5, 11, 3, 'sudah'),
 (6, 11, 1, 'sudah'),
 (7, 11, 2, 'sudah'),
 (8, 11, 4, 'sudah');
@@ -504,6 +555,12 @@ ALTER TABLE `jawaban_latihan`
 --
 ALTER TABLE `jawaban_tugas`
   ADD PRIMARY KEY (`id_jawabantugas`);
+
+--
+-- Indexes for table `kelompok`
+--
+ALTER TABLE `kelompok`
+  ADD PRIMARY KEY (`id_kelompok`);
 
 --
 -- Indexes for table `materi`
@@ -579,13 +636,19 @@ ALTER TABLE `jawaban_evaluasi`
 -- AUTO_INCREMENT for table `jawaban_latihan`
 --
 ALTER TABLE `jawaban_latihan`
-  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `jawaban_tugas`
 --
 ALTER TABLE `jawaban_tugas`
-  MODIFY `id_jawabantugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_jawabantugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `kelompok`
+--
+ALTER TABLE `kelompok`
+  MODIFY `id_kelompok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `materi`
@@ -603,7 +666,7 @@ ALTER TABLE `nilai_evaluasi`
 -- AUTO_INCREMENT for table `nilai_latihan`
 --
 ALTER TABLE `nilai_latihan`
-  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `nilai_tugas`
