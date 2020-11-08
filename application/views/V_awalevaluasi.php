@@ -39,6 +39,7 @@
 <body>
 <script>
 let status = 0;
+let statuseval = 0;
 </script>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
@@ -92,6 +93,7 @@ let status = 0;
                 </thead>
                 <tbody style="text-align: center;">
                   <?php
+                  $no = 1;
                   foreach ($datauser as $key) {
                   // $idpass = $key->id_tugas;
                     $info = 'Belum Mengerjakan';
@@ -103,7 +105,7 @@ let status = 0;
                     }
                   ?>
                   <tr>
-                    <th><?php echo $key->id_eval; ?></th>
+                    <th><?php echo $no; $no++;?></th>
                     <th><a data-toggle="modal" data-target="#exampleModal" id="custom-link-tugas" href="<?php echo site_url('index.php/C_siswa/evaluasi/'.($key->id_eval)); ?>" ><?php echo $key->nama_eval; ?></a></th>
                     <th><?php echo $info ?></th>
                   </tr>
@@ -123,6 +125,15 @@ let status = 0;
       ?>
       <script>
       status = 1;
+      </script>
+      <?php
+
+      }  ?>
+      
+      <?php if($statuseval == 'sudah'){
+      ?>
+      <script>
+      statuseval = 1;
       </script>
       <?php
 
@@ -197,6 +208,24 @@ let status = 0;
     </div>
   </div>
 </div>
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Anda sudah mengerjakan Evaluasi
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script >
   const targetmateeri = document.querySelectorAll('#dom-target')
@@ -205,6 +234,9 @@ let status = 0;
   
   if(status === 1){
     targethref.setAttribute("data-toggle","none");
+  }
+  if(statuseval === 1){
+    targethref.setAttribute("data-toggle","modal");targethref.setAttribute("data-target","#exampleModal2" );
   }
   console.log(status)
   

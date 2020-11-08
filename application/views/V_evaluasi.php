@@ -118,6 +118,7 @@
           </table>
           <br>
           <center>
+          <input type="hidden" name="ideval" value="<?php echo $ideval; ?>">
             <input type="submit" class="btn btn-danger" value="Submit">
           </form>
 

@@ -123,10 +123,19 @@ class C_siswa extends CI_Controller
 		$this->load->view('V_kardinalitas1');
 	}
 
-	public function evaluasi(){
+	public function evaluasi($id){
 		$this->load->Model('M_siswa');
 		$data['datatugas'] = $this->M_siswa->selectByIdEvaluasi($id)->result();
-		$this->load->view('V_evaluasi');
+		$where1 = array('id_siswa' => $this->session->userdata('id_siswa'));
+		$result = $this->M_siswa->selectjawabaneval($where1)->result();
+		$data['ideval'] = $id;
+		if(count($result) > 0) {
+			echo tampil_evaluasi();
+		}else{
+			$this->load->view('V_evaluasi',$data);
+		}
+
+		
 	}
 
 	public function tampil_evaluasi(){
@@ -147,6 +156,13 @@ class C_siswa extends CI_Controller
 			$data['statustugas'] = 'sudah';
 		}else{
 			$data['statustugas'] = 'belum';
+		}
+
+		$result2 = $this->M_siswa->selectjawabanevalbyid1($this->session->userdata('id_siswa'))->result();
+		if (count($result2) > 0) {
+			$data['statuseval'] = 'sudah';
+		}else{
+			$data['statuseval'] = 'belum';
 		}
 
 		// print_r($result);
@@ -302,14 +318,16 @@ class C_siswa extends CI_Controller
 	
 	public function insertjawabaneval(){
         $data['id_jawabaneval'] = $this->input->post('id');
-        $data['id_siswa'] = $this->session->userdata('id_siswa');
+				$data['id_siswa'] = $this->session->userdata('id_siswa');
+				$data['id_eval'] = $this->input->post('ideval');
         $data['entitas'] = $this->input->post('entitas');
         $data['atribut'] = $this->input->post('atribut');
         $data['relasi'] = $this->input->post('relasi');
         $data['kardinalitas'] = $this->input->post('kardinalitas');
         echo "<pre>";
-        print_r($data);
-        echo "</pre>";
+        // // print_r($data);
+				// echo "ss";
+				// echo $data['id_eval'];
         //memasukan data yang sudah diinput di form V_input ke database
         $this->load->Model('M_siswa');
         $this->M_siswa->inserteval($data);
