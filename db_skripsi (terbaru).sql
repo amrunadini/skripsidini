@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2020 at 09:04 AM
+-- Generation Time: Nov 08, 2020 at 01:02 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -187,7 +187,12 @@ INSERT INTO `jawaban_latihan` (`id_jawabanlatihan`, `id_siswa`, `id_soal`, `jawa
 (108, 11, 17, 'Satu anggota berhubungan dengan anggota pada entitas yang sama', 4, '2020-11-08 07:22:22'),
 (109, 11, 18, 'Many to one', 4, '2020-11-08 07:22:22'),
 (110, 11, 19, 'Binary	', 4, '2020-11-08 07:22:22'),
-(111, 11, 20, '1:N', 4, '2020-11-08 07:22:22');
+(111, 11, 20, '1:N', 4, '2020-11-08 07:22:22'),
+(112, 11, 1, 'Persegi\r\n', 1, '2020-11-08 11:00:45'),
+(113, 11, 2, 'Entitas lemah\r\n', 1, '2020-11-08 11:00:45'),
+(114, 11, 3, 'Siswa', 1, '2020-11-08 11:00:45'),
+(115, 11, 4, 'Memiliki primary key dan selalu bergantung pada entitas lain', 1, '2020-11-08 11:00:45'),
+(116, 11, 5, 'Gambarkan entitas dalam bentuk diagram menggunakan simbol yang ditetapkan', 1, '2020-11-08 11:00:45');
 
 -- --------------------------------------------------------
 
@@ -281,7 +286,11 @@ INSERT INTO `kelompok` (`id_kelompok`, `no_kelompok`, `tema`, `link`) VALUES
 (1, 1, 'Buku Sekolah Digital', 'https://bukusekolahdigital.com/data/2013/'),
 (2, 2, 'Toko Mainan Anak', 'http://www.mainananakonline.com/home.html'),
 (3, 3, 'Cat Tembok', 'https://cdn-test.dulux.co.id/id'),
-(4, 4, 'Toko Sepatu', 'http://adorableprojects.com/index.php');
+(4, 4, 'Toko Sepatu', 'http://adorableprojects.com/index.php'),
+(5, 1, 'Buku Sekolah Digital', 'https://bukusekolahdigital.com/data/2013/'),
+(6, 2, 'Toko Mainan Anak', 'http://www.mainananakonline.com/home.html'),
+(7, 3, 'Cat Tembok', 'https://cdn-test.dulux.co.id/id'),
+(8, 4, 'Toko Sepatu', 'http://adorableprojects.com/index.php');
 
 -- --------------------------------------------------------
 
@@ -334,7 +343,7 @@ CREATE TABLE `nilai_latihan` (
   `id_materi` int(11) NOT NULL,
   `id_siswa` int(11) NOT NULL,
   `nilai` int(11) NOT NULL,
-  `tanggal` date NOT NULL
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -342,51 +351,52 @@ CREATE TABLE `nilai_latihan` (
 --
 
 INSERT INTO `nilai_latihan` (`id_nilailatihan`, `id_materi`, `id_siswa`, `nilai`, `tanggal`) VALUES
-(1, 1, 0, 20, '2020-07-03'),
-(2, 1, 0, 0, '2020-07-03'),
-(3, 1, 0, 0, '2020-07-03'),
-(4, 2, 0, 0, '2020-07-03'),
-(5, 2, 0, 20, '2020-07-03'),
-(6, 2, 2, 0, '2020-10-10'),
-(7, 2, 2, 20, '2020-10-10'),
-(8, 3, 2, 20, '2020-10-22'),
-(9, 2, 6, 20, '2020-10-27'),
-(10, 3, 6, 20, '2020-10-27'),
-(11, 2, 6, 20, '2020-10-27'),
-(12, 1, 6, 0, '0000-00-00'),
-(13, 1, 6, 0, '0000-00-00'),
-(14, 1, 6, 0, '0000-00-00'),
-(15, 1, 6, 0, '0000-00-00'),
-(16, 2, 6, 0, '0000-00-00'),
-(17, 2, 6, 20, '2020-10-27'),
-(18, 4, 6, 20, '2020-10-27'),
-(19, 1, 8, 20, '2020-10-29'),
-(20, 2, 9, 20, '2020-10-29'),
-(21, 1, 3, 20, '2020-10-31'),
-(22, 1, 3, 20, '2020-11-02'),
-(23, 1, 3, 40, '2020-11-02'),
-(24, 2, 3, 20, '2020-11-02'),
-(25, 2, 12, 20, '2020-11-05'),
-(26, 2, 12, 20, '2020-11-05'),
-(27, 1, 11, 20, '2020-11-06'),
-(28, 1, 11, 40, '2020-11-06'),
-(29, 1, 11, 0, '2020-11-06'),
-(30, 0, 11, 0, '2020-11-06'),
-(31, 0, 11, 0, '2020-11-06'),
-(32, 0, 11, 0, '2020-11-06'),
-(33, 0, 11, 0, '2020-11-06'),
-(34, 3, 11, 60, '2020-11-06'),
-(35, 3, 11, 60, '2020-11-06'),
-(36, 2, 11, 20, '2020-11-06'),
-(37, 4, 11, 40, '2020-11-06'),
-(38, 4, 11, 40, '2020-11-06'),
-(39, 4, 11, 40, '2020-11-06'),
-(40, 1, 11, 0, '2020-11-06'),
-(41, 4, 11, 40, '2020-11-06'),
-(42, 1, 11, 20, '2020-11-08'),
-(43, 2, 11, 20, '2020-11-08'),
-(44, 3, 11, 0, '2020-11-08'),
-(45, 4, 11, 20, '2020-11-08');
+(1, 1, 0, 20, '2020-07-02 17:00:00'),
+(2, 1, 0, 0, '2020-07-02 17:00:00'),
+(3, 1, 0, 0, '2020-07-02 17:00:00'),
+(4, 2, 0, 0, '2020-07-02 17:00:00'),
+(5, 2, 0, 20, '2020-07-02 17:00:00'),
+(6, 2, 2, 0, '2020-10-09 17:00:00'),
+(7, 2, 2, 20, '2020-10-09 17:00:00'),
+(8, 3, 2, 20, '2020-10-21 17:00:00'),
+(9, 2, 6, 20, '2020-10-26 17:00:00'),
+(10, 3, 6, 20, '2020-10-26 17:00:00'),
+(11, 2, 6, 20, '2020-10-26 17:00:00'),
+(12, 1, 6, 0, '0000-00-00 00:00:00'),
+(13, 1, 6, 0, '0000-00-00 00:00:00'),
+(14, 1, 6, 0, '0000-00-00 00:00:00'),
+(15, 1, 6, 0, '0000-00-00 00:00:00'),
+(16, 2, 6, 0, '0000-00-00 00:00:00'),
+(17, 2, 6, 20, '2020-10-26 17:00:00'),
+(18, 4, 6, 20, '2020-10-26 17:00:00'),
+(19, 1, 8, 20, '2020-10-28 17:00:00'),
+(20, 2, 9, 20, '2020-10-28 17:00:00'),
+(21, 1, 3, 20, '2020-10-30 17:00:00'),
+(22, 1, 3, 20, '2020-11-01 17:00:00'),
+(23, 1, 3, 40, '2020-11-01 17:00:00'),
+(24, 2, 3, 20, '2020-11-01 17:00:00'),
+(25, 2, 12, 20, '2020-11-04 17:00:00'),
+(26, 2, 12, 20, '2020-11-04 17:00:00'),
+(27, 1, 11, 20, '2020-11-05 17:00:00'),
+(28, 1, 11, 40, '2020-11-05 17:00:00'),
+(29, 1, 11, 0, '2020-11-05 17:00:00'),
+(30, 0, 11, 0, '2020-11-05 17:00:00'),
+(31, 0, 11, 0, '2020-11-05 17:00:00'),
+(32, 0, 11, 0, '2020-11-05 17:00:00'),
+(33, 0, 11, 0, '2020-11-05 17:00:00'),
+(34, 3, 11, 60, '2020-11-05 17:00:00'),
+(35, 3, 11, 60, '2020-11-05 17:00:00'),
+(36, 2, 11, 20, '2020-11-05 17:00:00'),
+(37, 4, 11, 40, '2020-11-05 17:00:00'),
+(38, 4, 11, 40, '2020-11-05 17:00:00'),
+(39, 4, 11, 40, '2020-11-05 17:00:00'),
+(40, 1, 11, 0, '2020-11-05 17:00:00'),
+(41, 4, 11, 40, '2020-11-05 17:00:00'),
+(42, 1, 11, 20, '2020-11-07 17:00:00'),
+(43, 2, 11, 20, '2020-11-07 17:00:00'),
+(44, 3, 11, 0, '2020-11-07 17:00:00'),
+(45, 4, 11, 20, '2020-11-07 17:00:00'),
+(46, 1, 11, 20, '2020-11-07 17:00:00');
 
 -- --------------------------------------------------------
 
@@ -427,7 +437,7 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`id_siswa`, `nama`, `username`, `password`, `kelompok`) VALUES
-(11, 'Nur Amruna Dini', 'amrunadini', 'dini123', ''),
+(11, 'Nur Amruna Dini', 'amrunadini', 'dini123', '1'),
 (12, 'Dini', 'dinihehe', 'dini123', ''),
 (13, 'Ijul', 'ijulrizal', 'ijul123', '');
 
@@ -517,6 +527,7 @@ INSERT INTO `status_materi` (`id`, `id_siswa`, `id_materi`, `keterangan`) VALUES
 
 CREATE TABLE `tugas` (
   `id_tugas` int(11) NOT NULL,
+  `id_kelompok` int(11) NOT NULL,
   `nama_tugas` varchar(100) NOT NULL,
   `des_tugas` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -525,8 +536,15 @@ CREATE TABLE `tugas` (
 -- Dumping data for table `tugas`
 --
 
-INSERT INTO `tugas` (`id_tugas`, `nama_tugas`, `des_tugas`) VALUES
-(1, 'Tugas Observasi', 'Lakukanlah observasi secara berkelompok dengan kelompok dan tema yang sudah ditentukan, lalu masukkanlah hasil observasi tersebut ke dalam website');
+INSERT INTO `tugas` (`id_tugas`, `id_kelompok`, `nama_tugas`, `des_tugas`) VALUES
+(1, 1, 'Tugas Observasi', 'Lakukanlah observasi secara berkelompok dengan kelompok dan tema yang sudah ditentukan, lalu masukkanlah hasil observasi tersebut ke dalam website'),
+(2, 2, 'Tugas Observasi', 'Lakukanlah observasi secara berkelompok dengan kelompok dan tema yang sudah ditentukan, lalu masukkanlah hasil observasi tersebut ke dalam website'),
+(3, 3, 'Tugas Observasi', 'Lakukanlah observasi secara berkelompok dengan kelompok dan tema yang sudah ditentukan, lalu masukkanlah hasil observasi tersebut ke dalam website'),
+(4, 4, 'Tugas Observasi', 'Lakukanlah observasi secara berkelompok dengan kelompok dan tema yang sudah ditentukan, lalu masukkanlah hasil observasi tersebut ke dalam website'),
+(5, 5, 'Tugas Observasi', 'Lakukanlah observasi secara berkelompok dengan kelompok dan tema yang sudah ditentukan, lalu masukkanlah hasil observasi tersebut ke dalam website'),
+(6, 6, 'Tugas Observasi', 'Lakukanlah observasi secara berkelompok dengan kelompok dan tema yang sudah ditentukan, lalu masukkanlah hasil observasi tersebut ke dalam website'),
+(7, 7, 'Tugas Observasi', 'Lakukanlah observasi secara berkelompok dengan kelompok dan tema yang sudah ditentukan, lalu masukkanlah hasil observasi tersebut ke dalam website'),
+(8, 8, 'Tugas Observasi', 'Lakukanlah observasi secara berkelompok dengan kelompok dan tema yang sudah ditentukan, lalu masukkanlah hasil observasi tersebut ke dalam website');
 
 --
 -- Indexes for dumped tables
@@ -636,7 +654,7 @@ ALTER TABLE `jawaban_evaluasi`
 -- AUTO_INCREMENT for table `jawaban_latihan`
 --
 ALTER TABLE `jawaban_latihan`
-  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id_jawabanlatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT for table `jawaban_tugas`
@@ -648,7 +666,7 @@ ALTER TABLE `jawaban_tugas`
 -- AUTO_INCREMENT for table `kelompok`
 --
 ALTER TABLE `kelompok`
-  MODIFY `id_kelompok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kelompok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `materi`
@@ -666,7 +684,7 @@ ALTER TABLE `nilai_evaluasi`
 -- AUTO_INCREMENT for table `nilai_latihan`
 --
 ALTER TABLE `nilai_latihan`
-  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id_nilailatihan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `nilai_tugas`
@@ -702,7 +720,7 @@ ALTER TABLE `status_materi`
 -- AUTO_INCREMENT for table `tugas`
 --
 ALTER TABLE `tugas`
-  MODIFY `id_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
