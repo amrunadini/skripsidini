@@ -148,7 +148,7 @@
 		}
 
 		function jawabsoal($idsiswa,$idsoal,$jawaban,$idmateri){
-			$this->db->query("insert into jawaban_latihan values (null,'$idsiswa','$idsoal','$idmateri','$jawaban')");
+			$this->db->query("insert into jawaban_latihan values (null,'$idsiswa','$idsoal','$idmateri','$jawaban',null)");
 		}
 
 		function nilaisoal($idmateri,$idsiswa,$nilai,$tanggal){
