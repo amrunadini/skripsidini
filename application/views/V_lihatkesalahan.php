@@ -71,11 +71,14 @@
                 <tbody>
                 <?php
                 // print_r($datasoal);
+                $jawabansoall = "";
                 foreach ($datasoal as $kuy) {  
                     // echo $key->no_soal;
-                  
+                    $idsoall =  $kuy->id_soal;
                     foreach ($jawaban as $jawab) {
-                      if($kuy->no_soal == $jawab->id_soal){
+                      // echo $jawab->jawaban;
+                      $idsoaljawaban = $jawab->id_soal;
+                      if($idsoall == $idsoaljawaban){
                         $jawabansoall = $jawab->jawaban;
                       }
                     }

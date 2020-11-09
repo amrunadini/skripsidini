@@ -45,10 +45,10 @@ class C_profil extends CI_Controller
 
 		$where2 = array('id_materi' => $idmateri);
 		$data1['datasoal'] = $this->M_siswa->selectJawabanSoallatBenar($where2)->result();
-		// print_r($data['jawaban']);
+		// print_r($data1['jawaban']);
 		// echo "<br>";
 		// echo "<br>";
-		// print_r($data['datasoal']);
+		// print_r($data1['datasoal']);
 		 $this->load->view('V_lihatkesalahan',$data1);
 	}
 
