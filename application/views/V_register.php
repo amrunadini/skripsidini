@@ -52,13 +52,25 @@
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                        <input class="input100" type="text" required="" name="nama" id="nama" placeholder="Nama">
+                        <input class="input100" type="text" required="" name="nama" id="nama" placeholder="Nama Lengkap">
                         <span class="focus-input100-1"></span>
                         <span class="focus-input100-2"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                         <input class="input100" type="text" required="" name="username" id="username" placeholder="Username">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" required="" name="kelas" id="kelas" placeholder="Kelas">
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" required="" name="kelompok" id="kelompok" placeholder="Kelompok">
                         <span class="focus-input100-1"></span>
                         <span class="focus-input100-2"></span>
                     </div>

@@ -80,16 +80,16 @@
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Drag from Here</h3>
               <div id="source-container" class="list">
-              <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a1.png"> <input id="jawaban" type="hidden" value="Nama Siswa merupakan Atribut Siswa"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a2.png"> <input id="jawaban" type="hidden" value="Nama Guru bukan merupakan Atribut Siswa"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a3.png"> <input id="jawaban" type="hidden" value="Tempat, tanggal, lahir merupakan Atribut Siswa"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a4.png"> <input id="jawaban" type="hidden" value="Mata Pelajaran bukan merupakan Atribut Siswa"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a5.png"> <input id="jawaban" type="hidden" value="Mempelajari bukan merupakan Atribut Siswa"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a6.png"> <input id="jawaban" type="hidden" value="Jenis Kelamin merupakan Atribut Siswa"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a7.png"><input id="jawaban" type="hidden" value="Memiliki bukan merupakan Atribut Siswa"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a8.png"><input id="jawaban" type="hidden" value="Agama merupakan Atribut Siswa"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a9.png"><input id="jawaban" type="hidden" value="NISN merupakan Atribut Siswa"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/a10.png"><input id="jawaban" type="hidden" value="Nilai bukan merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut1.png"> <input id="jawaban" type="hidden" value="Nama Siswa merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut2.png"> <input id="jawaban" type="hidden" value="Nama Guru bukan merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut3.png"> <input id="jawaban" type="hidden" value="Tempat, tanggal, lahir merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut4.png"> <input id="jawaban" type="hidden" value="Mata Pelajaran bukan merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut5.png"> <input id="jawaban" type="hidden" value="Mempelajari bukan merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut6.png"> <input id="jawaban" type="hidden" value="Jenis Kelamin merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut7.png"><input id="jawaban" type="hidden" value="Memiliki bukan merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut8.png"><input id="jawaban" type="hidden" value="Agama merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut9.png"><input id="jawaban" type="hidden" value="NISN merupakan Atribut Siswa"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/atribut/atribut10.png"><input id="jawaban" type="hidden" value="Nilai bukan merupakan Atribut Siswa"></div>
               </div>
             </div>
           </div>

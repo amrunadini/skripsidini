@@ -73,6 +73,20 @@ class C_guru extends CI_Controller
 		$this->load->view('V_tampiltugas', $data);
 	}
 
+	public function tampil_datakelompok()
+	{
+		$this->load->Model('M_guru');
+		$data['datauser'] = $this->M_guru->selectListKelompok()->result();
+		$this->load->view('V_tampilkelompok', $data);
+	}
+
+	public function tampil_nilailat()
+	{
+		$this->load->Model('M_guru');
+		$data['datauser'] = $this->M_guru->selectNilaiLat()->result();
+		$this->load->view('V_nilailat', $data);
+	}
+
 	public function insertsoal(){
         $data['id_materi'] = $this->input->post('id');
         $data['soal'] = $this->input->post('soal');
@@ -131,12 +145,12 @@ class C_guru extends CI_Controller
 	public function updatesiswa(){
 		$id = $this->input->post('id');
 		$nama = $this->input->post('nama');
-		$email = $this->input->post('email');
+		$username = $this->input->post('username');
 		$kelompok = $this->input->post('kelompok');
 
 		$data = array(
 			'nama' => $nama, 
-			'email' => $email,
+			'username' => $username,
 			'kelompok' => $kelompok
 		);
 
@@ -191,6 +205,41 @@ class C_guru extends CI_Controller
 
 		//membuka kembali controller C_mahasiswa
 		redirect(site_url('C_guru/tampil_datatugas'));
+	}
+
+	public function editkelompok($id){
+		$where = array('id_kelompok' => $id);
+		$this->load->Model('M_guru');
+		$data['kelompok'] = $this->M_guru->edit_kelompok($where, 'kelompok')->result();
+		$this->load->view('V_editkelompok', $data);
+	}
+
+	public function updatekelompok(){
+		$id = $this->input->post('id');
+		$tema = $this->input->post('tema');
+		$link = $this->input->post('link');
+
+		$data = array(
+			'tema' => $tema,
+			'link' => $link
+		);
+
+		$where = array(
+			'id_kelompok' => $id
+		);
+
+		$this->load->Model('M_guru');
+		$this->M_guru->update_kelompok($where,$data,'kelompok');
+		redirect('C_guru/tampil_datakelompok');
+	}
+
+	public function deletekelompok($id){
+		$where = array('id_kelompok' => $id);
+		$this->load->Model('M_guru');
+		$this->M_guru->delete($where,'kelompok');
+
+		//membuka kembali controller C_mahasiswa
+		redirect(site_url('C_guru/tampil_datakelompok'));
 	}
 }
 ?>

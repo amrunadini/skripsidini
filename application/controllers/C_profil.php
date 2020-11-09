@@ -14,6 +14,7 @@ class C_profil extends CI_Controller
 		$data['materi'] = $this->M_siswa->selectMateri()->result();
 		$data['nama'] = $this->session->userdata('nama');
 		$data['username'] = $this->session->userdata('username');
+		$data['kelas'] = $this->session->userdata('kelas');
 		$data['kelompok'] = $this->session->userdata('kelompok');
 		// print_r($data['nilai_materi']);
 		// print_r($where);

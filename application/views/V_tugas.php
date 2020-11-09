@@ -120,28 +120,28 @@
             </div>
             <div class="col-lg-20 col-md-30" data-aos="fade-up" data-aos-delay="300">
               <tr>
-                <th> Entitas </th>
+                <th> Entitas (contoh: Guru, Siswa)</th>
                 <td>
                   <textarea class="form-control" name="entitas" rows="5" data-rule="required" placeholder="Masukkan entitas"></textarea>
                   <div class="validate"></div>
                 </td>
               </tr>
               <tr>
-                <th> Atribut </th>
+                <th> Atribut (contoh: Guru: id_guru, nama, NIP)</th>
                 <td>
                   <textarea class="form-control" name="atribut" rows="5" data-rule="required" placeholder="Masukkan atribut"></textarea>
                     <div class="validate"></div>
                 </td>
               </tr>
               <tr>
-                <th> Relasi (Sebutkan entitasnya) </th>
+                <th> Relasi (contoh: Guru mengajar Siswa) </th>
                 <td>
                  <textarea class="form-control" name="relasi" rows="5" data-rule="required" placeholder="Masukkan relasi"></textarea>
                     <div class="validate"></div>
                 </td>
               </tr>
               <tr>
-                <th> Kardinalitas (Sebutkan entitasnya) </th>
+                <th> Kardinalitas (contoh: Banyak guru mengajar banyak Siswa) </th>
                 <td>
                   <textarea class="form-control" name="kardinalitas" rows="5" data-rule="required" placeholder="Masukkan kardinalitas"></textarea>
                     <div class="validate"></div>
@@ -152,7 +152,7 @@
         
             <table id="example1" class="table table-bordered table-hover" border="1px">
             <div class="row" data-aos="fade-up" data-aos-delay="300">
-              <p>Unggah hasil observasi</p>
+              <p>Unggah hasil observasi (format file: Kelas_Kelompok)</p>
             </div>
             <div class="content" data-aos="fade-up" data-aos-delay="300">
               <div class="col-md-10">

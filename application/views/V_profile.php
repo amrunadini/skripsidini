@@ -78,6 +78,7 @@
               <img src="/skripsidini/assets/img/user.png" alt="" class="img-fluid" style="width: 200px; height: 200px; margin: 70px;">
               <h2><?php echo $nama; ?></h2>
               <ul><?php echo $username; ?></ul>
+              <ul><?php echo $kelas; ?></ul>
               <ul>Kelompok <?php echo $kelompok; ?></ul>
             </div>
           </div>

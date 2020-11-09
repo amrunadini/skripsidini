@@ -56,14 +56,18 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Data Latihan</h2>
+          <h2>Data Tugas</h2>
         </div>
 
           <table id="example1" class="table table-bordered table-hover" border="1px">
             <thead class="danger">
               <tr class="danger">
                 <th>ID Siswa</th>
-                <th>Jawaban</th>
+                <th>Kelompok</th>
+                <th>Entitas</th>
+                <th>Atribut</th>
+                <th>Relasi</th>
+                <th>Kardinalitas</th>
                 <th>File Tugas</th>
                 <th>Tanggal</th>
               </tr>
@@ -75,7 +79,11 @@
               ?>
               <tr>
                 <th><?php echo $key->id_siswa; ?></th>
-                <th><?php echo $key->jawaban; ?></th>
+                <th><?php echo $key->id_kelompok; ?></th>
+                <th><?php echo $key->entitas; ?></th>
+                <th><?php echo $key->atribut; ?></th>
+                <th><?php echo $key->relasi; ?></th>
+                <th><?php echo $key->kardinalitas; ?></th>
                 <th><a href="<?php echo base_url('upload/'.$key->file_name)?>"><?php echo $key->file_name; ?></th>
                 <th><?php echo $key->tanggal; ?></th>
               </tr>

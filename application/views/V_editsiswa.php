@@ -62,7 +62,7 @@
         <?php
             foreach ($siswa as $u) {
         ?>
-        <form action="<?php echo base_url().'C_guru/update'; ?>" method="POST">
+        <form action="<?php echo base_url().'C_guru/updatesiswa'; ?>" method="POST">
           <table id="example1" class="table table-bordered table-hover" border="1px">
             <tr>
               <td>Nama</td>

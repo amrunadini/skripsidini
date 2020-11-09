@@ -155,7 +155,7 @@
 
         <div data-aos="zoom-in">
           <br>
-          <a href="<?php echo base_url(); ?>index.php/C_guru/guru">Kembali</a>
+          <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_guru"><b>Kembali</b></a></button>
         </div>
 
       </div>

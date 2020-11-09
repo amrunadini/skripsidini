@@ -56,14 +56,16 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Nilai Siswa</h2>
+          <h2>DATA TUGAS</h2>
         </div>
 
-              <table id="example1" class="table table-bordered table-hover" border="1px">
+        <table id="example1" class="table table-bordered table-hover" border="1px">
                 <thead class="danger">
                   <tr class="danger">
-                    <th style="text-align: center;">ID SISWA</th>
-                    <th style="text-align: center;">NILAI</th>
+                    <th style="text-align: center;">ID TUGAS</th>
+                    <th style="text-align: center;">TUGAS</th>
+                    <th style="text-align: center;">DESKRIPSI TUGAS</th>
+                    <th colspan="2" style="text-align: center;">AKSI</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -71,14 +73,22 @@
                     foreach ($datauser as $key) { 
                   ?>
                   <tr>
-                    <th style="text-align: center;"><?php echo $key->id_siswa; ?></th>
-                    <th style="text-align: center;"><?php echo $key->nilai; ?></th>
+                    <th style="text-align: center;"><?php echo $key->id_tugas; ?></th>
+                    <th style="text-align: center;"><?php echo $key->nama_tugas; ?></th>
+                    <th style="text-align: center;"><?php echo $key->des_tugas; ?></th>
+                    <th style="text-align: center;">
+                      <a href="<?php echo site_url('C_guru/edittugas/'.($key->id_tugas)); ?>">EDIT</a>
+                    </th>
+                    <th style="text-align: center;">
+                      <a href="<?php echo site_url('C_guru/deletetugas/'.($key->id_tugas)); ?>">DELETE</a>
+                    </th>
                   </tr>
                   <?php
                     }
                   ?>
                 </tbody>
               </table>
+              
               <div data-aos="zoom-in">
               <br>
               <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_guru"><b>Kembali</b></a></button>

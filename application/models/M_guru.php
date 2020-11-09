@@ -60,6 +60,13 @@ class M_guru extends CI_model
 		return $this->db->get();
 	}
 
+	function selectListKelompok(){
+		$this->db->select('*');
+		$this->db->from('kelompok');
+
+		return $this->db->get();
+	}
+
 	function selectjawabanTugas(){
 		$this->db->select('*');
 		$this->db->from('jawaban_tugas');
@@ -105,6 +112,10 @@ class M_guru extends CI_model
 		$this->db->delete($siswa);
 	}
 
+	function edit_tugas($where,$tugas){
+		return $this->db->get_where($tugas,$where);
+	}
+
 	function update_tugas($where,$data,$tugas){
 		// $this->db->set($data);
 		$this->db->where($where);
@@ -114,6 +125,21 @@ class M_guru extends CI_model
 	function delete_tugas($where,$tugas){
 		$this->db->where($where);
 		$this->db->delete($tugas);
+	}
+
+	function edit_kelompok($where,$kelompok){
+		return $this->db->get_where($kelompok,$where);
+	}
+
+	function update_kelompok($where,$data,$kelompok){
+		// $this->db->set($data);
+		$this->db->where($where);
+		$this->db->update($kelompok, $data);
+	}
+
+	function delete_kelompok($where,$kelompok){
+		$this->db->where($where);
+		$this->db->delete($kelompok);
 	}
 }
 

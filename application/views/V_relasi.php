@@ -80,21 +80,19 @@
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Drag from Here</h3>
               <div id="source-container" class="list">
-              <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r1.png"> <input id="jawaban" type="hidden" value="Mengontrak bukan merupakan Relasi yang terjadi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r2.png"> <input id="jawaban" type="hidden" value="Mengembalikan merupakan salah satu Relasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r3.png"> <input id="jawaban" type="hidden" value="Tanggal Pinjam bukan merupakan Relasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r4.png"> <input id="jawaban" type="hidden" value="Meminjam merupakan salah satu Relasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r5.png"> <input id="jawaban" type="hidden" value="Mendata merupakan salah satu Relasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r6.png"> <input id="jawaban" type="hidden" value="Status Peminjaman bukan merupakan Relasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r7.png"><input id="jawaban" type="hidden" value="Membayar merupakan salah satu Relasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r8.png"><input id="jawaban" type="hidden" value="Membaca merupakan salah satu Relasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r9.png"><input id="jawaban" type="hidden" value="Kode Buku bukan merupakan Relasi"></div>
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/r10.png"><input id="jawaban" type="hidden" value="Membeli bukan merupakan Relasi yang terjadi"></div>
-              </div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi1.png"> <input id="jawaban" type="hidden" value="Mengontrak bukan merupakan Relasi yang terjadi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi2.png"> <input id="jawaban" type="hidden" value="Mengembalikan merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi3.png"> <input id="jawaban" type="hidden" value="Tanggal Pinjam bukan merupakan Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi4.png"> <input id="jawaban" type="hidden" value="Meminjam merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi5.png"> <input id="jawaban" type="hidden" value="Mendata merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi6.png"> <input id="jawaban" type="hidden" value="Status Peminjaman bukan merupakan Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi7.png"><input id="jawaban" type="hidden" value="Membayar merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi8.png"><input id="jawaban" type="hidden" value="Membaca merupakan salah satu Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi9.png"><input id="jawaban" type="hidden" value="Kode Buku bukan merupakan Relasi"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/relasi/relasi10.png"><input id="jawaban" type="hidden" value="Membeli bukan merupakan Relasi yang terjadi"></div>
               </div>
             </div>
           </div>
-
         </div>
 
         <div data-aos="zoom-in">

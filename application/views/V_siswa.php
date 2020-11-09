@@ -68,9 +68,10 @@
   <section id="hero">
     <div class="container">
       <div class="d-flex flex-column">
+      <h4 style="text-align: center;">Perhatikan video di bawah ini!</h4>
         <div class="p-3 mb-2 d-flex justify-content-center">
-            <video  id="vid" width="auto" height="480" loop frameborder="1" controls allow="autoplay">
-            <source src="<?php echo base_url(); ?>assets/vid/VideoAwal.mp4" type="video/mp4" autoplay="true">
+            <video  id="vid" width="auto" height="400" loop frameborder="1" controls allow="autoplay">
+            <source src="<?php echo base_url(); ?>assets/vid/Bismillah.mp4" type="video/mp4" autoplay="true">
             </video>
         </div>
       </div>
@@ -79,7 +80,8 @@
   
   <!-- ======= Hero Section ======= -->
   <section class="d-flex align-items-center">
-
+    <br>
+    <br>
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">

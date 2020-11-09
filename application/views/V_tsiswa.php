@@ -63,7 +63,8 @@
                 <thead class="danger">
                   <tr class="danger">
                     <th style="text-align: center;">NAMA</th>
-                    <th style="text-align: center;">E-MAIL</th>
+                    <th style="text-align: center;">USERNAME</th>
+                    <th style="text-align: center;">KELAS</th>
                     <th style="text-align: center;">KELOMPOK</th>
                     <th colspan="2" style="text-align: center;">AKSI</th>
                   </tr>
@@ -75,12 +76,13 @@
                   <tr>
                     <th style="text-align: center;"><?php echo $key->nama; ?></th>
                     <th style="text-align: center;"><?php echo $key->username; ?></th>
+                    <th style="text-align: center;"><?php echo $key->kelas; ?></th>
                     <th style="text-align: center;"><?php echo $key->kelompok; ?></th>
                     <th style="text-align: center;">
-                      <a href="<?php echo site_url('C_guru/edit/'.($key->id_siswa)); ?>">EDIT</a>
+                      <a href="<?php echo site_url('C_guru/editsiswa/'.($key->id_siswa)); ?>">EDIT</a>
                     </th>
                     <th style="text-align: center;">
-                      <a href="<?php echo site_url('C_guru/delete/'.($key->id_siswa)); ?>">DELETE</a>
+                      <a href="<?php echo site_url('C_guru/deletesiswa/'.($key->id_siswa)); ?>">DELETE</a>
                     </th>
                   </tr>
                   <?php
@@ -90,7 +92,7 @@
               </table>
               <div data-aos="zoom-in">
               <br>
-              <a href="<?php echo base_url(); ?>index.php/C_guru/guru">Kembali</a>
+              <button type="submit" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_guru"><b>Kembali</b></a></button>
               </div>
 
       </div>

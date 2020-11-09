@@ -24,6 +24,7 @@ class C_login extends CI_Controller
 				'nama' => $data['nama'], 
 				'password' => $data['password'],
 				'kelompok' => $data['kelompok'],
+				'kelas' => $data['kelas'],
 				'logged_in' => true		 
 			);
 
@@ -39,7 +40,7 @@ class C_login extends CI_Controller
 			if($username=="guru" && $password=="guru123"){
 			   //jika benar
 			   $this->session->set_userdata(array('username'=>$username));
-			   redirect('C_guru/guru');
+			   redirect('C_guru');
 			}
 			$this->load->view('V_login');
 	}}
@@ -66,12 +67,16 @@ class C_login extends CI_Controller
 	    } else {
 	        $username = $this->input->post('username');
 	        $nama = $this->input->post('nama');
-	        $password = $this->input->post('password');
+			$password = $this->input->post('password');
+			$kelompok = $this->input->post('kelompok');
+			$kelas = $this->input->post('kelas');
 	        // $pass = password_hash($password, PASSWORD_DEFAULT);
 	        $data = [
 	            'username' => $username,
 	            'nama' => $nama,
-	            'password' => $password
+				'password' => $password,
+				'kelompok' => $kelompok,
+				'kelas' => $kelas
 	        ];
 	        $this->load->model('M_login');
 	        $insert = $this->M_login->register("siswa", $data);

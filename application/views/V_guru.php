@@ -94,31 +94,31 @@
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <i class="ri-database-2-line" style="color: #47aeff;"></i>
-              <h3><a href="<?php echo site_url('C_guru/tampil_tugas'); ?>">Hasil Tugas</a></h3>
+              <h3><a href="<?php echo site_url('C_guru/tampil_datakelompok'); ?>">Data Kelompok</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-              <h3><a href="<?php echo site_url('C_guru/tampil_evaluasi'); ?>">Hasil Evaluasi</a></h3>
+              <h3><a href="<?php echo site_url('C_guru/tampil_tugas'); ?>">Hasil Tugas</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-              <h3><a href="<?php echo site_url('C_guru/tampil_nilaieval'); ?>">Nilai Eval</a></h3>
+              <h3><a href="<?php echo site_url('C_guru/tampil_evaluasi'); ?>">Hasil Evaluasi</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-              <h3><a href="<?php echo site_url('C_guru/tampil_nilailat'); ?>">Nilai Latihan</a></h3>
+              <h3><a href="<?php echo site_url('C_guru/tampil_nilaieval'); ?>">Nilai Eval</a></h3>
             </div>
           </div>
           <div class="col-lg-3 col-md-4 mt-4">
             <div class="icon-box">
               <i class="ri-anchor-line" style="color: #b2904f;"></i>
-              <h3><a href="<?php echo site_url('C_guru/tampil_nilaitugas'); ?>">Nilai Tugas</a></h3>
+              <h3><a href="<?php echo site_url('C_guru/tampil_nilailat'); ?>">Nilai Latihan</a></h3>
             </div>
           </div>
 

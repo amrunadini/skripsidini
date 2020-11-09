@@ -86,7 +86,7 @@
         <br>
         <div data-aos="zoom-in">
           <br>
-          <button style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_guru/tampil_siswa">Kembali</a></button>
+          <button style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px; margin-left: 0px;"><a href="<?php echo base_url(); ?>index.php/C_guru/tampil_datatugas">Kembali</a></button>
         </div>
       </div>
     </section><!-- End Pricing Section -->
