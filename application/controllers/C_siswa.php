@@ -157,7 +157,6 @@ class C_siswa extends CI_Controller
 		}else{
 			$data['statustugas'] = 'belum';
 		}
-
 		$result2 = $this->M_siswa->selectjawabanevalbyid1($this->session->userdata('id_siswa'))->result();
 		if (count($result2) > 0) {
 			$data['statuseval'] = 'sudah';
@@ -255,19 +254,17 @@ class C_siswa extends CI_Controller
         echo "</pre>";
         $tanggal = date("Y-m-d");
         foreach ($data['soal'] as $key) {
-        	echo "$key->id_soal";
+        	// echo "$key->id_soal";
 					$jawaban = $this->input->post($key->id_soal);
-        	echo "$jawaban <br>";
+        	// echo "$jawaban <br>";
         	$this->M_siswa->jawabsoal($idsiswa,$key->id_soal,$id,$jawaban,$waktu,$tanggal);
         	if ($key->kunci==$jawaban) {
-        		echo "Benar <br>";
+        		// echo "Benar <br>";
         		$score = $score + 20;
         	}else{
-        		echo "Salah";
+        		// echo "Salah";
         	}
-
 				}echo "Scorenya = $score";
-				
          $this->M_siswa->nilaisoal($id,$idsiswa,$score,$waktu,$tanggal);
         // echo "<pre>";
         // echo "$jawaban";
@@ -336,5 +333,4 @@ class C_siswa extends CI_Controller
         $this->M_siswa->inserteval($data);
         redirect(site_url('C_siswa'));
     }
-    
 }
