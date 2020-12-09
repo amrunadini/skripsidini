@@ -16,12 +16,13 @@ class C_profil extends CI_Controller
 		$data['username'] = $this->session->userdata('username');
 		$data['kelas'] = $this->session->userdata('kelas');
 		$data['kelompok'] = $this->session->userdata('kelompok');
-		$data['tugas'] = $this->M_siswa->cari_nilai($where, 'nilai_tugas')->result();
 		$data['nilai_tugas'] = $this->M_siswa->cari_nilai($where, 'nilai_tugas')->result();
+		$where2 = array('id_tugas' => $data['nilai_tugas'][0]->id_tugas);
+		$data['tugas'] = $this->M_siswa->cari_tugas($where2, 'tugas')->result();
 		$data['evaluasi'] = $this->M_siswa->selectEval()->result();
 		$data['nilai_eval'] = $this->M_siswa->cari_nilai($where, 'nilai_evaluasi')->result();
 		// print_r($data['nilai_materi']);
-		// print_r($where);
+		// print_r($data['tugas']);
 		 $this->load->view('V_profile',$data);
 	}
 

@@ -65,6 +65,10 @@
 			return $this->db->get_where($db,$where);
 		}
 
+		function cari_tugas($where,$db){
+			return $this->db->get_where($db,$where);
+		}
+
 		function cari_tanggal($where,$db){
 			// $this->db->select('*');
 			// $this->db->from('nilai_latihan');
