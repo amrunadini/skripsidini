@@ -88,6 +88,14 @@
 			return $this->db->get();
 		}
 
+		function selectByIdTugas1($id){
+			$this->db->select('*');
+			$this->db->from('tugas');
+			$this->db->where('id_tugas',$id);
+			
+			return $this->db->get();
+		}
+
 		function selectByIdEvaluasi($id){
 			$this->db->select('*');
 			$this->db->from('evaluasi');

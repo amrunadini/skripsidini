@@ -1,3 +1,16 @@
+<?php
+  if(isset($_GET['submit'])){
+    $entitas=$_GET['entitas'];
+    $atribut=$_GET['atribut'];
+    $relasi=$_GET['relasi'];
+    $kardinalitas=$_GET['kardinalitas'];
+    $idtugast=$_GET['idtugas'];
+    $userfile=$_GET['userfile'];
+  }else{
+    die("Maaf");
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -157,11 +170,11 @@
             <div class="content" data-aos="fade-up" data-aos-delay="300">
               <div class="col-md-10">
                 <div class="content table-responsive table-full-width">
-                  <input type="file" id="files" name="userfile" multiple="multiple" />&nbsp;
-                  <input type="hidden" id="files" name="idtugas" value="<?php echo $id ?>" />&nbsp;
-                  <input type="hidden" name="id_kelompok" value="<?php echo $id_kelompok ?>" />&nbsp;
+                  <input type="file" id="files" name="userfile" multiple="multiple" required />&nbsp;
+                  <input type="hidden" id="files" name="idtugas" value="<?php echo $id ?>" required />&nbsp;
+                  <input type="hidden" name="id_kelompok" value="<?php echo $id_kelompok ?>" required />&nbsp;
                   <br>
-                  <input type="submit" value="Upload" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">
+                  <input type="submit" name="submit" value="Upload" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">
                 </div>
               </div>
             </div>

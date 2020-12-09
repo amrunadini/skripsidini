@@ -79,7 +79,7 @@
             <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
               <h3>Drag from Here</h3>
               <div id="source-container" class="list">
-                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/entitas1.png"> <input id="jawaban" type="hidden" value="Jumlah SKS bukan merupakan Entitas dari Sekolah"></div>
+                <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/entitas1.png"> <input id="jawaban" type="hidden" value="Jumlah Jam Pelajaran bukan merupakan Entitas dari Sekolah"></div>
                 <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/entitas2.png"> <input id="jawaban" type="hidden" value="Kelas merupakan Entitas dari Sekolah"></div>
                 <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/entitas3.png"> <input id="jawaban" type="hidden" value="NISN bukan merupakan Entitas dari Sekolah"></div>
                 <div class="list-item m-1" draggable="true"><img src="<?php echo base_url();?>assets/img/entitas/entitas4.png"> <input id="jawaban" type="hidden" value="Membuat bukan merupakan Entitas dari Sekolah"></div>

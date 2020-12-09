@@ -305,8 +305,8 @@ class C_siswa extends CI_Controller
         		'relasi' => $data['relasi'],
         		'kardinalitas' => $data['kardinalitas'],
         		'id_siswa' => $data['id_siswa'],
-						'id_tugas' => $data['id_tugas'],
-						'id_kelompok' => $data['id_kelompok'],
+				'id_tugas' => $data['id_tugas'],
+				'id_kelompok' => $data['id_kelompok'],
         		'file_name' => $data['file_name'],
         		'file_size' => $data['file_size']
         	);
@@ -318,8 +318,8 @@ class C_siswa extends CI_Controller
 	
 	public function insertjawabaneval(){
         $data['id_jawabaneval'] = $this->input->post('id');
-				$data['id_siswa'] = $this->session->userdata('id_siswa');
-				$data['id_eval'] = $this->input->post('ideval');
+		$data['id_siswa'] = $this->session->userdata('id_siswa');
+		$data['id_eval'] = $this->input->post('ideval');
         $data['entitas'] = $this->input->post('entitas');
         $data['atribut'] = $this->input->post('atribut');
         $data['relasi'] = $this->input->post('relasi');

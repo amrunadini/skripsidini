@@ -116,6 +116,51 @@
                     ?>
                 </tbody>
               </table>
+              <table id="example1" class="table table-bordered table-hover" border="1px">
+                <thead class="danger">
+                  <tr>
+                    <th style="text-align: center;">Tugas</th>
+                    <th style="text-align: center;">Nilai</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                    foreach ($tugas as $kay) { 
+                      $nilai = 0;
+                      foreach ($nilai_tugas as $kuy) {
+                        if($kuy->id_tugas == $kay->id_tugas){
+                          $nilai = $kuy->nilai;
+                        }
+                      }
+                    ?>
+                    <tr>
+                     <th style="text-align: center;"><?php echo $kay->nama_tugas; ?></th>
+                      <th style="text-align: center;"><?php echo $nilai ?></th>
+                    </tr>
+                    <?php
+                    }
+                    // print_r($nilai_materi);
+                    ?>
+                </tbody>
+              </table>
+              <table id="example1" class="table table-bordered table-hover" border="1px">
+                <thead class="danger">
+                  <tr>
+                    <th style="text-align: center;">Nilai Evaluasi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                    foreach ($nilai_eval as $test) { 
+                  ?>
+                  <tr>
+                    <th style="text-align: center;"><?php echo $test->nilai; ?></th>
+                  </tr>
+                  <?php
+                    }
+                  ?>
+                </tbody>
+              </table>
             </div>
           </div>
 

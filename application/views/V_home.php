@@ -78,7 +78,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-          <img src="/skripsidini/assets/img/hero-img.png" class="img-fluid animated" alt="">
+          <img src="<?php echo base_url(); ?>/assets/img/hero-img.png" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>

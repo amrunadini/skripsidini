@@ -89,7 +89,7 @@ class C_login extends CI_Controller
 	public function logout(){
 		unset($_SESSION);
 		session_destroy();
-		redirect("C_login/home", "refresh");
+		redirect("C_login", "refresh");
 	}
 
 	public function home(){
