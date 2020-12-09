@@ -6,7 +6,7 @@
 class C_profil extends CI_Controller
 {
 	
-	public function index($id){
+	public function index(){
 		 $this->load->model('M_siswa');
 		// $data['datauser']=$this->M_siswa->
 		$where = array('id_siswa' => $this->session->userdata('id_siswa'));
@@ -16,7 +16,7 @@ class C_profil extends CI_Controller
 		$data['username'] = $this->session->userdata('username');
 		$data['kelas'] = $this->session->userdata('kelas');
 		$data['kelompok'] = $this->session->userdata('kelompok');
-		$data['tugas'] = $this->M_siswa->selectByIdTugas1($id)->result();
+		$data['tugas'] = $this->M_siswa->cari_nilai($where, 'nilai_tugas')->result();
 		$data['nilai_tugas'] = $this->M_siswa->cari_nilai($where, 'nilai_tugas')->result();
 		$data['evaluasi'] = $this->M_siswa->selectEval()->result();
 		$data['nilai_eval'] = $this->M_siswa->cari_nilai($where, 'nilai_evaluasi')->result();
