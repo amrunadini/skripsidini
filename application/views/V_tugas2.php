@@ -122,28 +122,28 @@
               <tr>
                 <th> Entitas (contoh: Guru, Siswa)</th>
                 <td>
-                  <textarea class="form-control" name="entitas" rows="5" data-rule="required" placeholder="Masukkan entitas"></textarea>
+                  <textarea class="form-control" name="entitas" rows="5" data-rule="required" placeholder="Masukkan entitas"><?php echo $jawabantugas['entitas']; ?></textarea>
                   <div class="validate"></div>
                 </td>
               </tr>
               <tr>
                 <th> Atribut (contoh: Guru: id_guru, nama, NIP)</th>
                 <td>
-                  <textarea class="form-control" name="atribut" rows="5" data-rule="required" placeholder="Masukkan atribut"></textarea>
+                  <textarea class="form-control" name="atribut" rows="5" data-rule="required" placeholder="Masukkan atribut"><?php echo $jawabantugas['atribut']; ?></textarea>
                     <div class="validate"></div>
                 </td>
               </tr>
               <tr>
                 <th> Relasi (contoh: Guru mengajar Siswa) </th>
                 <td>
-                 <textarea class="form-control" name="relasi" rows="5" data-rule="required" placeholder="Masukkan relasi"></textarea>
+                 <textarea class="form-control" name="relasi" rows="5" data-rule="required" placeholder="Masukkan relasi"><?php echo $jawabantugas['relasi']; ?></textarea>
                     <div class="validate"></div>
                 </td>
               </tr>
               <tr>
                 <th> Kardinalitas (contoh: Banyak guru mengajar banyak Siswa) </th>
                 <td>
-                  <textarea class="form-control" name="kardinalitas" rows="5" data-rule="required" placeholder="Masukkan kardinalitas"></textarea>
+                  <textarea class="form-control" name="kardinalitas" rows="5" data-rule="required" placeholder="Masukkan kardinalitas"><?php echo $jawabantugas['kardinalitas']; ?></textarea>
                     <div class="validate"></div>
                 </td>
               </tr>
@@ -152,7 +152,9 @@
         
             <table id="example1" class="table table-bordered table-hover" border="1px">
             <div class="row" data-aos="fade-up" data-aos-delay="300">
-              <p>Unggah hasil observasi (format file: docx)</p>
+            <p>file jawaban <a href="<?php echo base_url()."upload/".$jawabantugas['file_name']; ?>"><?php echo $jawabantugas['file_name']; ?></a>
+            <br>Unggah hasil observasi (format file: docx)
+            </p>
             </div>
             <div class="content" data-aos="fade-up" data-aos-delay="300">
               <div class="col-md-10">
@@ -161,7 +163,8 @@
                   <input type="hidden" id="files" name="idtugas" value="<?php echo $id ?>" required />&nbsp;
                   <input type="hidden" name="id_kelompok" value="<?php echo $id_kelompok ?>" required />&nbsp;
                   <br>
-                  <input type="submit" name="submit" value="Upload" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;">
+                  <!-- <input type="submit" name="submit" value="Ubah" style="width: 80px; height: 40px; background-color: #f6f6f6; border: none; border-radius: 8px;"> -->
+                  <button type="submit" class="btn btn-warning">ubah</button>
                 </div>
               </div>
             </div>

@@ -186,21 +186,28 @@ class C_siswa extends CI_Controller
 
 	public function tampil_tugas1($idkel,$idtugas){
 		$this->load->Model('M_siswa');
-		$where = array('id_siswa' => $this->session->userdata('id_siswa'),'id_kelompok' => $idkel,'id_kelompok' => $idkel);
+		$where = array('id_kelompok' => $idkel,'file_name' => strtolower($this->session->userdata('kelas')."_".$this->session->userdata('kelompok').".docx"));
 		$result = $this->M_siswa->selectjawabantugasbyid($where)->result();
 		if (count($result) > 0) {
 			$this->load->Model('M_siswa');
-		$data['datauser'] = $this->M_siswa->selectTugas()->result();
-		$data['datatugas'] = $this->M_siswa->selectAllTugas()->result();
+		// $data['datauser'] = $this->M_siswa->selectTugas()->result();
+		$data['datauser'] = $this->M_siswa->selectAllKelompok()->result();
+		// $data['datatugas'] = $this->M_siswa->selectAllTugas()->result();
+		$data['datatugas'] = $this->M_siswa->selectByIdTugas($idtugas)->result();
 		$datasiswa = $this->session->userdata('id_siswa');
 		$where1 = array('id_siswa' => $datasiswa);
-		$data['jawabantugas'] = $this->M_siswa->selectjawabanlatihan($where1)->result();
+		$data['jawabantugas'] = $this->M_siswa->selectjawabantugasbyid($where)->row_array();
+		// $data['jawabantugas'] = $this->M_siswa->selectjawabanlatihan($where1)->result();
 		$where = array('id_siswa' => $datasiswa);
 		$data['idkelompok'] = $this->M_siswa->cariidkelompok($where)->result();
-		$data['id'] = $this->session->userdata('id_siswa');
+		// $data['id'] = $this->session->userdata('id_siswa');
 		// print_r($data['jawabantugas']);
 		// $where = array('id_materi' => 1);
-		$this->load->view('V_awaltugas', $data);
+		// $this->load->view('V_awaltugas', $data);
+		$this->load->view('V_tugas2', $data);
+		// echo "<pre>";
+		// print_r($data);
+		// echo "</pre>";
 		} else {
 			$data['datatugas'] = $this->M_siswa->selectByIdTugas($idtugas)->result();
 			$data['datauser'] = $this->M_siswa->selectAllKelompok()->result();
@@ -274,18 +281,21 @@ class C_siswa extends CI_Controller
 
 	public function insertjawabantug(){
         $data['upload_path']		= 'upload/';
-        $data['allowed_types']	= 'gif|jpg|jpeg|png|iso|dmg|zip|rar|doc|docx|xls|xlsx|ppt|pptx|csv|ods|odt|odp|pdf|rtf|sxc';
+        $data['allowed_types']	= 'docx';
         $data['max_size'] 			= '5000';
         $data['overwrite']  		= TRUE;
         $data['file_ext_tolower']	= TRUE;
 		$data['remove_spaces']		= TRUE;
 		$data['mod_mime_fix']		= TRUE;
 		$data['detect_mime']		= TRUE;
+		$data['file_name']			= strtolower($this->session->userdata('kelas')."_".$this->session->userdata('kelompok').".docx");
 		$this->load->library('upload', $data);
-    
        	if ( ! $this->upload->do_upload('userfile')){
-            $error = array('error' => $this->upload->display_errors());
-            redirect(site_url('C_siswa'));
+			$error = array('error' => $this->upload->display_errors());
+			// echo "<pre>";
+			// print_r($error);
+			// echo "</pre>";
+			echo $error['error'];
         }
         else{
         	$data = $this->upload->data();
@@ -312,7 +322,8 @@ class C_siswa extends CI_Controller
         	);
         	$this->load->Model('M_siswa');
         	$this->M_siswa->insertjwb($data);
-        	redirect(site_url('C_siswa'));
+			redirect(site_url('C_siswa'));
+			print_r($data);
         }      
     }
 	
